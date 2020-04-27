@@ -9,8 +9,6 @@ group: contact
 <img class="img-fluid mx-auto d-block" src="/static/img/contact_calico_jungle_dahlov_ipcar.jpg" alt="Calico Jungle by Dahlov Ipcar" style="paddig-bottom:0.5em;">
 Calico Jungle by Dahlov Ipcar
 
-<img class="img-fluid mx-auto d-block" src="/static/img/research_philip_barter_fall_birches.png" alt="Fall Birches by Philip Barter">
-
 <div class="row">
 
 <div class="col-md-4">
