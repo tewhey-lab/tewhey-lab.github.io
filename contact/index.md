@@ -49,9 +49,7 @@ Calico Jungle by Dahlov Ipcar
 
 <h4>Office Address</h4>
 
-Department of Bioengineering and Therapeutic Sciences Box #2240<br>
-600 16th Street, Genentech Hall Room S472E<br>
-San Francisco, CA 94143
+Mailing Address Needed
 
 
 </div>
