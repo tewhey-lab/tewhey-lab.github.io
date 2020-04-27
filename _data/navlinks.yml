@@ -14,26 +14,6 @@
   link: "/members"
   group: members
 
-- name: teaching
-  link: "/courses"
-  group: courses
-
-- name: news
-  link: "/news"
-  group: news
-
-- name: join
-  link: "/join"
-  group: join
-
 - name: contact
   link: "/contact"
   group: contact
-
-# - name: links
-#   link: "/links"
-#   group: links
-
-- name: private
-  link: "https://sites.google.com/a/fraserlab.com/ucsf-private/"
-  group: private
