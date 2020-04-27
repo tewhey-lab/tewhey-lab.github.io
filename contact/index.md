@@ -4,10 +4,10 @@ layout: default
 group: contact
 ---
 
-# Contact the Tewhey Lab
-
 <img class="img-fluid mx-auto d-block" src="/static/img/contact_calico_jungle_dahlov_ipcar.jpg" alt="Calico Jungle by Dahlov Ipcar" style="paddig-bottom:0.5em;">
 Calico Jungle by [Dahlov Ipcar](https://www.dahlovipcarart.com/)
+
+# Contact the Tewhey Lab
 
 <div class="row">
 
