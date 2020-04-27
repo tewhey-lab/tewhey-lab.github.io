@@ -5,6 +5,7 @@ group: research
 ---
 
 <img class="img-fluid mx-auto d-block" src="/static/img/research_philip_barter_fall_birches.png" alt="Fall Birches by Philip Barter">
+Fall Birches by Philip Barter
 
 # The Tewhey lab is focused on answering some of the central questions in Identifying the precise genetic mechanisms for complex traits and disease risk:
 
