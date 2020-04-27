@@ -1,0 +1,395 @@
+# THE WEIRDEST BUG: using escapes requires single-quotes instead of double...
+#
+# - citation: "Petek N, Kraemer J, Derman A, **Fraser JS**, DiMaio F, Baker D,  Pogliano J, Agard D, Mullins RD.Structure and function of actin-like protein Alp7A reveal conserved and unique features of actin-based plasmid segregation. *Submitted*, 2015."
+#   date: '201507'
+#   image: '/static/img/pub/petek_2015.jpg'
+#   pmid: 'TBD'
+#   pmcid: 'In Process'
+#   pdf: '/static/pdf/publications/petek_2015.pdf'
+#   pdbs:
+#     - 5XXX
+#   links:
+#     - name: Mullins lab
+#       url: http://mullinslab.ucsf.edu/
+#
+
+- citation: "Khetan S, **Kales S**, Kursawe R, Jillette A, Reilly SK, Ucar D, **Tewhey R**, Stitzel ML.
+Functional characterization of thousands of type 2 diabetes-associated and chromatin-modulating variants under
+steady state and endoplasmic reticulum stress. *Submitted – Preprint on BioRxiv*. 2020."
+  date: '202002'
+  # image: '/static/img/pub/'
+  # pmid: ''
+  # pmcid: ''
+  biorxiv: '2020.02.12.939348'
+  # pdf: '/static/pdf/publications/'
+
+
+- citation: "Ray JP, de Boer CG, Fulco CP, Lareau CA, Kanai M, Ulirsch JC, **Tewhey R**, Ludwig LS, Reilly SK, Bergman DT, Engreitz JM,
+Issner R, Finucane HK, Lander ES, Regev A, Hacohen N. Prioritizing disease and trait causal variants at the TNFAIP3 locus using functional
+and genomic features. Nat Commun. 2020"
+  date: '202003'
+  # image: '/static/img/pub/'
+  pmid: '32144282'
+  pmcid: 'PMC7060350'
+  # biorxiv: ''
+  pdf: '/static/pdf/publications/Ray_2020.pdf'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Kreimer A, Zeng H, Edwards MD, Guo Y, Tian K, Shin S, Welch R, Wainberg M, Mohan R, Sinnott-Armstrong NA, Li Y,
+Eraslan G, Amin TB, **Tewhey R**, Sabeti PC, Goke J, Mueller NS, Kellis M, Kundaje A, Beer MA, Keles S, Gifford DK, Yosef N.
+Predicting gene expression in massively parallel reporter assays: A comparative study. Hum Mutat. 2017."
+  date: '201703'
+  # image: '/static/img/pub/'
+  pmid: '28220625'
+  pmcid: 'PMC5560998'
+  # biorxiv: ''
+  pdf: '/static/pdf/publications/Kriemer_2017.pdf'
+  # pdbs:
+  #   -
+  # paired_maps_and_models:
+  #   - pdb:
+  #     emdb: ''
+  # data:
+  #     - ''
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Grossman SR, Zhang X, Wang L, Engreitz J, Melnikov A, Rogov P, **Tewhey R**, Isakova A, Deplancke B,
+Bernstein BE, Mikkelsen TS, Lander ES. Systematic dissection of genomic features determining transcription factor binding
+and enhancer function. Proc Natl Acad Sci U S A. 2017"
+  date: '201702'
+  # image: '/static/img/pub/'
+  pmid: '28137873'
+  pmcid: 'PMC5321001'
+  # arxiv: ''
+  pdf: '/static/pdf/publications/Grossman_2017.pdf'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "**Tewhey R**, Kotliar D, Park DS, Liu B, Winnicki S, Reilly SK, Andersen KG, Mikkelsen TS, Lander ES, Schaffner SF, Sabeti PC.
+Direct Identification of Hundreds of Expression-Modulating Variants using a Multiplexed Reporter Assay. Cell. 2016."
+  date: '201606'
+  # image: '/static/img/pub/'
+  pmid: '27259153'
+  pmcid: 'PMC4957403'
+  pdf: '/static/pdf/publications/Tewhey_2016.pdf'
+  # paired_maps_and_models:
+  #   - pdb:
+  #     emdb: ''
+  # zenodo:
+  #   - code: ''
+  #     description:
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Wagschal A, Najafi-Shoushtari SH, Wang L, Goedeke L, Sinha S, deLemos AS, Black JC, Ramírez CM, Li Y,
+**Tewhey R**, Hatoum I, Shah N, Lu Y, Kristo F, Psychogios N, Vrbanac V, Lu YC, Hla T, de Cabo R, Tsang JS, Schadt E,
+Sabeti PC, Kathiresan S, Cohen DE, Whetstine J, Chung RT, Fernández-Hernando C, Kaplan LM, Bernards A, Gerszten RE, Näär AM.
+Genome-wide identification of microRNAs regulating cholesterol and triglyceride homeostasis. Nat Med. 2015."
+  date: '201511'
+  # image: '/static/img/pub/'
+  pmid: '26501192'
+  pmcid: 'PMC4993048'
+  pdf: '/static/pdf/publications/Wagschal_2015.pdf'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Andersen KG, Shapiro BJ, Matranga CB, Sealfon R, Lin AE, Moses LM, Folarin OA, Goba A, Odia I, Ehiane PE, Momoh M,
+England EM, Winnicki S, Branco LM, Gire SK, Phelan E, Tariyal R, **Tewhey R**, Omoniwa O, Fullah M, Fonnie R, Fonnie M, Kanneh L,
+Jalloh S, Gbakie M, Saffa S, Karbo K, Gladden AD, Qu J, Stremlau M, Nekoui M, Finucane HK, Tabrizi S, Vitti JJ, Birren B,
+Fitzgerald M, McCowan C, Ireland A, Berlin AM, Bochicchio J, Tazon-Vega B, Lennon NJ, Ryan EM, Bjornson Z, Milner DA Jr, Lukens AK,
+Broodie N, Rowland M, Heinrich M, Akdag M, Schieffelin JS, Levy D, Akpan H, Bausch DG, Rubins K, McCormick JB, Lander ES, Günther S,
+Hensley L, Okogbenin S, Schaffner SF, Okokhere PO, Khan SH, Grant DS, Akpede GO, Asogun DA, Gnirke A, Levin JZ, Happi CT, Garry RF, Sabeti PC.
+Clinical Sequencing Uncovers Origins and Evolution of Lassa Virus. Cell. 2015."
+  date: '201508'
+  # image: '/static/img/pub/'
+  pmid: '26276630'
+  pmcid: 'PMC4537774'
+  pdf: '/static/pdf/publications/Andersen_2015.pdf'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Bright AT, Manary MJ, **Tewhey R**, Arango EM, Wang T, Schork NJ, Yanow SK, Winzeler EA. A high resolution case study of a patient
+with recurrent Plasmodium vivax infections shows that relapses were caused by meiotic siblings. PLoS Negl Trop Dis. 2014."
+  date: '201406'
+  # image: '/static/img/pub/'
+  pmid: '24901334'
+  pmcid: 'PMC4046966'
+  pdf: '/static/pdf/publications/Bright_2014.PDF'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Scott-Van Zeeland AA, Bloss CS, **Tewhey R**, Bansal V, Torkamani A, Libiger O, Duvvuri V, Wineinger N, Galvez L,
+Darst BF, Smith EN, Carson A, Pham P, Phillips T, Villarasa N, Tisch R, Zhang G, Levy S, Murray S, Chen W, Srinivasan S,
+Berenson G, Brandt H, Crawford S, Crow S, Fichter MM, Halmi KA, Johnson C, Kaplan AS, La Via M, Mitchell JE, Strober M, Rotondo A,
+Treasure J, Woodside DB, Bulik CM, Keel P, Klump KL, Lilenfeld L, Plotnicov K, Topol EJ, Shih PB, Magistretti P, Bergen AW,
+Berrettini W, Kaye W, Schork NJ. Evidence for the role of EPHX2 gene variants in anorexia nervosa. Mol Psychiatry. 2014."
+  date: '201406'
+  # image: '/static/img/pub/'
+  pmid: '23999524'
+  pmcid: 'PMC3852189'
+  pdf: '/static/pdf/publications/Zeeland_2014.pdf'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "**Tewhey R**, Gu B, Kelesidis T, Charlton C, Bobenchik A, Hindler J, Schork NJ, Humphries RM.
+Mechanisms of linezolid resistance among coagulase-negative staphylococci determined by whole-genome sequencing. mBio. 2014."
+  date: '201405'
+  # image: '/static/img/pub/'
+  pmid: '24915435'
+  pmcid: 'PMC4030478'
+  pdf: '/static/pdf/publications/Tewhey_2014.pdf'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Hernandez D, **Tewhey R**, Veyrieras JB, Farinelli L, Østerås M, François P, Schrenzel J.
+De novo finished 2.8 Mbp Staphylococcus aureus genome assembly from 100 bp short and long range paired-end reads. Bioinformatics. 2014."
+  date: '201401'
+  # image: '/static/img/pub/'
+  pmid: '24130309'
+  pmcid: 'PMC6280916'
+  chemrxiv: '8346107'
+  pdf: '/static/pdf/publications/Hernandez_2014.pdf'
+  # paired_maps_and_models:
+  #   - pdb:
+  #     emdb: ''
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Matranga CB, Andersen KG, Winnicki S, Busby M, Gladden AD, **Tewhey R**, Stremlau M, Berlin A, Gire SK,
+England E, Moses LM, Mikkelsen TS, Odia I, Ehiane PE, Folarin O, Goba A, Kahn SH, Grant DS, Honko A, Hensley L,
+Happi C, Garry RF, Malboeuf CM, Birren BW, Gnirke A, Levin JZ, Sabeti PC. Enhanced methods for unbiased deep sequencing of
+Lassa and Ebola RNA viruses from clinical and biological samples. Genome Biol. 2014."
+  date: '201401'
+  # image: '/static/img/pub/'
+  pmid: '25403361'
+  pmcid: 'PMC4262991'
+  pdf: '/static/pdf/publications/Mantraga_2014.pdf'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Berti AD, Sakoulas G, Nizet V, **Tewhey R**, Rose WE. β-Lactam antibiotics targeting PBP1 selectively
+enhance daptomycin activity against methicillin-resistant Staphylococcus aureus. Antimicrob Agents Chemother. 2013."
+  date: '201310'
+  # image: '/static/img/pub/'
+  pmid: '23896478'
+  pmcid: 'PMC3811465'
+  pdf: '/static/pdf/publications/Berti_2013.pdf'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Kelesidis T, **Tewhey R**, Humphries RM. Evolution of high-level daptomycin resistance in Enterococcus
+faecium during daptomycin therapy is associated with limited mutations in the bacterial genome. J Antimicrob Chemother. 2013."
+  date: '201304'
+  # image: '/static/img/pub/'
+  pmid: '23580562'
+  pmcid: ' PMC6373497'
+  pdf: '/static/pdf/publications/Kelesidis_2013.pdf'
+  # pdbs:
+  #   -
+  # links:
+  #   - name: ''
+  #     url:
+
+- citation: "Vidaillac C, Gardete S, **Tewhey R**, Sakoulas G, Kaatz GW, Rose WE, Tomasz A, Rybak MJ.
+Alternative mutational pathways to intermediate resistance to vancomycin in methicillin-resistant Staphylococcus aureus. J Infect Dis. 2013."
+  date: '201303'
+  # image: '/static/img/pub/'
+  pmid: '23539745'
+  pmcid: 'PMC3666135'
+  pdf: '/static/pdf/publications/Vidaillac_2013.pdf'
+  # paired_maps_and_models:
+  #   - pdb:
+  #     emdb: ''
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Werth BJ, Sakoulas G, Rose WE, Pogliano J, **Tewhey R**, Rybak MJ. Ceftaroline increases membrane binding and
+enhances the activity of daptomycin against daptomycin-nonsusceptible vancomycin-intermediate Staphylococcus aureus in a
+pharmacokinetic/pharmacodynamic model. Antimicrob Agents Chemother. 2013."
+  date: '201301'
+  # image: '/static/img/pub/'
+  pmid: '23070161'
+  pmcid: 'PMC3535972'
+  pdf: '/static/pdf/publications/Werth_2013.pdf'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Torkamani A, Pham P, Libiger O, Bansal V, Zhang G, Scott-Van Zeeland AA, **Tewhey R**, Topol EJ, Schork NJ.
+Clinical implications of human population differences in genome-wide rates of functional genotypes. Front Genet. 2012."
+  date: '201211'
+  # image: '/static/img/pub/'
+  pmid: '23125845'
+  pmcid: 'PMC3485509'
+  pdf: '/static/pdf/publications/Torkamani_2012.pdf'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Humphries RM, Kelesidis T, **Tewhey R**, Rose WE, Schork N, Nizet V, Sakoulas G. Genotypic and phenotypic
+evaluation of the evolution of high-level daptomycin nonsusceptibility in vancomycin-resistant Enterococcus faecium.
+Antimicrob Agents Chemother. 2012."
+  date: '201211'
+  # image: '/static/img/pub/'
+  pmid: '22948885'
+  pmcid: 'PMC3486580'
+  pdf: '/static/pdf/publications/Humphries_2012.pdf'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "**Tewhey R**, Cannavino CR, Leake JA, Bansal V, Topol EJ, Torkamani A, Bradley JS, Schork NJ.
+Genetic structure of community acquired methicillin-resistant Staphylococcus aureus USA300. BMC Genomics. 2012."
+  date: '201209'
+  # image: '/static/img/pub/'
+  pmid: '23009684'
+  pmcid: 'PMC3598774'
+  pdf: '/static/pdf/publications/Publications/Tewhey_2012.pdf'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Bright AT, **Tewhey R**, Abeles S, Chuquiyauri R, Llanos-Cuentas A, Ferreira MU, Schork NJ, Vinetz JM, Winzeler EA.
+Whole genome sequencing analysis of Plasmodium vivax using whole genome capture. BMC Genomics. 2012."
+  date: '201206'
+  # image: '/static/img/pub/'
+  pmid: '22721170'
+  pmcid: 'PMC3410760'
+  pdf: '/static/pdf/publications/Bright_2012.pdf'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Bansal V, **Tewhey R**, Leproust EM, Schork NJ. Efficient and cost effective population resequencing by
+pooling and in-solution hybridization. PLoS One. 2011."
+  date: '201103'
+  # image: '/static/img/pub/'
+  pmid: '21479135'
+  pmcid: 'PMC3068187'
+  pdf: '/static/pdf/publications/Bansal_2011b.PDF'
+  # links:
+  #   - name: ''
+  #     url:
+
+- citation: "**Tewhey R**, Bansal V, Torkamani A, Topol EJ, Schork NJ. The importance of phase information for human genomics.
+Nat Rev Genet. 2011."
+  date: '201103'
+  # image: '/static/img/pub/'
+  pmid: '21301473'
+  pmcid: 'PMC3753045'
+  pdf: '/static/pdf/publications/Tewhey_2011.pdf'
+  # pdbs:
+  #   -
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Bansal V, **Tewhey R**, Topol EJ, Schork NJ. The next phase in human genetics. Nat Biotechnol. 2011."
+  date: '201101'
+  # image: '/static/img/pub/'
+  pmid: '21221098'
+  pdf: '/static/pdf/publications/Bansal_2011a.pdf'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Sim BM, Chantratita N, Ooi WF, Nandi T, **Tewhey R**, Wuthiekanun V, Thaipadungpanit J, Tumapa S, Ariyaratne P, Sung WK,
+Sem XH, Chua HH, Ramnarayanan K, Lin CH, Liu Y, Feil EJ, Glass MB, Tan G, Peacock SJ, Tan P. Genomic acquisition of a capsular
+polysaccharide virulence cluster by non-pathogenic Burkholderia isolates. Genome Biol. 2010."
+  date: '201008'
+  # image: '/static/img/pub/'
+  pmid: '20799932'
+  pmcid: 'PMC2945791'
+  pdf: '/static/pdf/publications/Sim_2010.pdf'
+  # pdbs:
+  #   -
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Bansal V, Harismendy O, **Tewhey R**, Murray SS, Schork NJ, Topol EJ, Frazer KA. Accurate detection and genotyping of
+SNPs utilizing population sequencing data. Genome Res. 2010."
+  date: '201004'
+  # image: '/static/img/pub/'
+  pmid: '20150320'
+  pmcid: 'PMC2847757'
+  pdf: '/static/pdf/publications/Bansal_2010.pdf'
+  # pdbs:
+  #   -
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "**Tewhey R**, Warner JB, Nakano M, Libby B, Medkova M, David PH, Kotsopoulos SK, Samuels ML, Hutchison JB, Larson JW,
+Topol EJ, Weiner MP, Harismendy O, Olson J, Link DR, Frazer KA. Microdroplet-based PCR enrichment for large-scale targeted sequencing.
+Nat Biotechnol. 2009."
+  date: '200911'
+  # image: '/static/img/pub/'
+  pmid: '19881494'
+  pmcid: 'PMC2779736'
+  pdf: '/static/pdf/publications/Tewhey_2009b.pdf'
+  # pdbs:
+  #   -
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "**Tewhey R**, Nakano M, Wang X, Pabón-Peña C, Novak B, Giuffre A, Lin E, Happe S, Roberts DN, LeProust EM, Topol EJ,
+Harismendy O, Frazer KA. Enrichment of sequencing targets from the human genome by solution hybridization. Genome Biol. 2009."
+  date: '200910'
+  # image: '/static/img/pub/'
+  pmid: '19835619'
+  pmcid: 'PMC2784331'
+  pdf: '/static/pdf/publications/Tewhey_2009a.pdf'
+  # pdbs:
+  #   -
+  # data:
+  #     - '10.15785/SBGRID/428'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Orho-Melander M, Melander O, Guiducci C, Perez-Martinez P, Corella D, Roos C, **Tewhey R**, Rieder MJ, Hall J,
+Abecasis G, Tai ES, Welch C, Arnett DK, Lyssenko V, Lindholm E, Saxena R, de Bakker PI, Burtt N, Voight BF, Hirschhorn JN,
+Tucker KL, Hedner T, Tuomi T, Isomaa B, Eriksson KF, Taskinen MR, Wahlstrand B, Hughes TE, Parnell LD, Lai CQ, Berglund G,
+Peltonen L, Vartiainen E, Jousilahti P, Havulinna AS, Salomaa V, Nilsson P, Groop L, Altshuler D, Ordovas JM, Kathiresan S.
+Common missense variant in the glucokinase regulatory protein gene is associated with increased plasma triglyceride and C-reactive
+protein but lower fasting glucose concentrations. Diabetes. 2008."
+  date: '200811'
+  # image: '/static/img/pub/'
+  pmid: '18678614'
+  pmcid: 'PMC2570409'
+  pdf: '/static/pdf/publications/Oroho-Melander_2008.pdf'
+  # links:
+  #   - name:
+  #     url:
+
+- citation: "Saxena R, Voight BF, Lyssenko V, Burtt NP, de Bakker PI, Chen H, Roix JJ, Kathiresan S, Hirschhorn JN, Daly MJ,
+Hughes TE, Groop L, Altshuler D, Almgren P, Florez JC, Meyer J, Ardlie K, Bengtsson Boström K, Isomaa B, Lettre G, Lindblad U,
+Lyon HN, Melander O, Newton-Cheh C, Nilsson P, Orho-Melander M, Råstam L, Speliotes EK, Taskinen MR, Tuomi T, Guiducci C,
+Berglund A, Carlson J, Gianniny L, Hackett R, Hall L, Holmkvist J, Laurila E, Sjögren M, Sterner M, Surti A, Svensson M, Svensson M,
+**Tewhey R**, Blumenstiel B, Parkin M, Defelice M, Barry R, Brodeur W, Camarata J, Chia N, Fava M, Gibbons J, Handsaker B, Healy C,
+Nguyen K, Gates C, Sougnez C, Gage D, Nizzari M, Gabriel SB, Chirn GW, Ma Q, Parikh H, Richardson D, Ricke D, Purcell S. Genome-wide
+association analysis identifies loci for type 2 diabetes and triglyceride levels. Science. 2007."
+  date: '200706'
+  # image: '/static/img/pub/'
+  pmid: '17463246'
+  # pdf: '/static/pdf/publications/'
+  # links:
+  #   - name:
+  #     url:

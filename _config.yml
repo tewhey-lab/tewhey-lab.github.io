@@ -1,0 +1,13 @@
+name: "Tewhey Lab"
+description: "This is the official web page for the Tewhey Lab at The Jackson Laboratory."
+
+url: "http://tewheylab.com"
+
+paginate: 5
+plugins: [jekyll-paginate]
+paginate_path: "news/page:num"
+
+permalink: pretty
+markdown: kramdown
+kramdown:
+  parse_block_html: true

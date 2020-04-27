@@ -1,0 +1,74 @@
+- name: Ryan Tewhey
+  image: /static/img/members/Ryan.jpg
+  pronouns: he/him/his
+  position: Principal Investigator
+  email: ryan.tewhey (at) jax.org
+  orcid: 0000-0002-4607-8001
+  github: tewhey-lab
+#   description:
+
+- name: Susan Kales
+  image: /static/img/members/Susan-Meeting.jpg
+  altimage: /static/img/members/Susan-Skip.jpg
+  position: Research Assistant III
+  email: susan.kales (at) jax.org
+  description: "Susan graduated from the University of Colorado, Boulder with a degree in Molecular Cellular Developmental Biology.  \
+  Before joining  JAX for four years Susan worked at Merck & Co. as a Research Biologist.  Susan worked for six years in \
+  Tom Jessell’s lab and during that time held a dual position for four years in the Jessell and Axel labs at Columbia University.  \
+  Susan was there when Dr. Axel won the Nobel Prize. Prior to working at Columbia University, Susan worked at MSKCC in Manhattan \
+  in a molecular diagnostic lab and she worked at Chugai Pharmaceutical Co. in Tokyo, Japan in the International Group. \
+  Susan is a Research Assistant in the Tewhey Lab and contributes to many different projects but her expertise is ES and iPS cell work.  \
+  In her spare time Susan likes to paint, draw, walk/hike with her dog and husband, cook and be on the water boating or swimming."
+
+- name: Kousuke Mouri (KOH-skay)
+  image: /static/img/members/Kousuke.jpg
+  altimage: /static/img/members/Kousuke_and_Lobster.jpg
+  pronouns: he/him/his
+  position: Postdoctoral Associate
+  email: kousuke.Mouri (at) jax.org
+  twitter: @kousuke_mouri
+  orcid: 0000-0003-1712-6833
+  description: "Kousuke graduated from Kyoto University with a degree in life science, while working with Dr. Tadashi Uemura \
+  by using six-legged fruit fly. Before coming to Jax, Kousuke had been working with four-legged mouse as a postdoctoral fellow \
+  with Dr. Toshihiko Shiroishi at National Institute of Genetics, Japan. Now, as a postodoctoral associate in the Tewhey lab, \
+  Kousuke works 2-legged human genetics to decipher the mechanisms of the cis regulatory element which makes wonderful variety \
+  of animal morphology and phenotype. In his free time Kousuke enjoys snowboarding and taking care of his kawaii tortoise, Chicago."
+
+- name: Daniel Berenzy
+  # image: /static/img/members/Berenzy.jpg
+  # altimage: /static/img/members/Berenzy_pb.jpg
+  pronouns: he/him/his
+  position: Research Asssitant I
+  email: daniel.berenzy (at) jax.org
+  description: "Daniel graduated from Florida Gulf Coast University (FGCU) with a degree in Biotechnology, while working with \
+  Dr. Takashi Ueda in the school’s Biotechnology lab. Upon graduating from FGCU, Daniel immediately joined the Tewhey Lab as a \
+  Research Assistant and concurrently enrolled in the Professional Science Masters (PSM) program in Bioinformatics at the \
+  University of Maine. As a Research Assistant in the Tewhey Lab, Daniel contributes to several different projects in both the \
+  “wet” and “dry” lab but his expertise is in Biotechnology methods. In his free time, Daniel studies for a Master’s degree but \
+  is also an avid Cyclist, Climber, Kayaker and all-around outdoorsy type. "
+
+- name: Hannah Dewey
+  # image: /static/img/members/Dewey.jpg
+  # altimage: /static/img/members/Dewey_pb.jpg
+  pronouns: she/her/hers
+  position: Data Analyst I
+  email: hannah.dewey (at) jax.org
+  github: deweyhannah
+  description: "Hannah graduated from the University of Maine with a degree in Mathematics, while working with Dr. Andre Khalil \
+  in the CompuMAINE lab. Before joining the Tewhey Lab, Hannah completed postgraduate degrees in Applied Mathematics (2015) and \
+  Bioinformatics and Computational Genomics (2019) at Rensselaer Polytechinic Institute and Queens University Belfast respectively, \
+  as well as serving as a Peace Corps Volunteer in Namibia. Now, as a data analyst in the Tewhey Lab, Hannah works developing \
+  pipelines to be used in the analysis of MPRA count data as well as participating in the analysis itself. In her free time Hannah \
+  enjoys baking, sharing said baked goods with other lab members, and knitting."
+
+- name: Lucy Benjamin
+  image: /static/img/members/Benjamin.jpg
+  # altimage: /static/img/members/Benjamin_pb.jpg
+  position: Research Administrative Assistant
+  pronouns: she/her/hers
+  email: lucy.benjamin (at) jax.org
+  description: "Lucy graduated from Oxford University and MIT with degrees in Georgraphy and Real Estate. Before coming to JAX, \
+  Lucy was a chartered surveyor in the UK and has since set up several businesses in the US including a small granola \
+  manufacturing company. Now, as a Research Administrative Assistant in the Tewhey lab, Lucy works doing a variety of administrative \
+  jobs for Ryan and the lab group. For fun, lucy loves to cook, bike ride, play duplicate bridge and garden, although she does not \
+  have much spare time."
