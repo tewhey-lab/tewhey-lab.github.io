@@ -13,4 +13,5 @@ The past decade has seen a transformational change in our understanding of the h
 
 #The mission of our research group is to:
 
- (1) characterize and learn the grammar of cis-regulatory elements, in both mouse and human models, using novel technological approaches such as high-throughput reporter assays and CRISPR based screens of non-coding regions in the genome. (2) Build upon the knowledge from genome wide association studies and leverage this resource of genetic risk to disease in human populations to construct better animal models that precisely reflect disease phenotypes.
+ (1) characterize and learn the grammar of cis-regulatory elements, in both mouse and human models, using novel technological approaches such as high-throughput reporter assays and CRISPR based screens of non-coding regions in the genome. 
+ (2) Build upon the knowledge from genome wide association studies and leverage this resource of genetic risk to disease in human populations to construct better animal models that precisely reflect disease phenotypes.
