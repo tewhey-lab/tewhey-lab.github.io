@@ -3,18 +3,13 @@ title: Contact
 ---
 
 
-### Contact the Fraser Lab
+### Contact the Tewhey Lab
 
-James Fraser, Ph.D.
-Associate Professor
-Department of Bioengineering and Therapeutic Sciences
-California Institute of Quantitative Biosciences (QB3)
+Ryan Tewhey, Ph.D.
+Assistant Professor
+The Jackson Laboratory
 
-email: jfraser (#!) fraserlab.com
-tel: 415 493 842 one
-fax: 415 514 016 nine
+email: ryan.tewhey (#!) jax.org
+tel: 207 288 6000
 
-Genentech Hall Room S472E (Office), S476 (Lab)
-UCSF Mail Code 2240
-600 16th Street
-San Francisco, CA 94158
+
