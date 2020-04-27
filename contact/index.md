@@ -6,10 +6,8 @@ group: contact
 
 # Contact the Tewhey Lab
 
-<div class="container px-2 max-width: 100%" style="text-align:left;">
-    <img class="img-fluid mx-auto d-block" src="/static/img/contact_calico_jungle_dahlov_ipcar.jpg" alt="Calico Jungle by Dahlov Ipcar" style="paddig-bottom:0.5em;"/>
-    Calico Jungle by Dahlov Ipcar
-</div>
+<img class="img-fluid mx-auto d-block" src="/static/img/contact_calico_jungle_dahlov_ipcar.jpg" alt="Calico Jungle by Dahlov Ipcar" style="paddig-bottom:0.5em;"/>
+Calico Jungle by Dahlov Ipcar
 
 <div class="row">
 
