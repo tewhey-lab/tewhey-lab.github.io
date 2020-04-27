@@ -22,7 +22,6 @@ Calico Jungle by [Dahlov Ipcar](https://www.dahlovipcarart.com/)
 
   <h4>Ryan Tewhey</h4>
   Assistant Professor  <br>
-  Department of Bioengineering and Therapeutic Sciences  <br>
   The Jackson Laboratory (Bar Harbor Campus)  <br>
   email: ryan.tewhey (at) jax.org <br>
   tel: 207 288 6000
