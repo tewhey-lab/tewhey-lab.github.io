@@ -13,5 +13,5 @@ group: home
 
 {: .welcomefont}
 
-We are located in Building 21 at the Bar Harbor Campus of The Jackson Laboratory.
+We are located in Snell Building at the Bar Harbor Campus of The Jackson Laboratory.
 {: .welcomefont}
