@@ -6,15 +6,10 @@
     Labor Mural by <a href="http://www.judytaylorstudio.com/" > Judy Taylor </a> 
       </div>
       <div class="row">
-         <div class="col-sm-9">
-            <br>
-               {{ content }}
-         </div>
-         <div class="col-sm-3 smalltxt">
+         {{ content }}
          <br>
-            {% capture sidebar %}{% include alumni_sidebar.md %}{% endcapture %}
-            {{ sidebar | markdownify }}
-         </div>
+         {% capture sidebar %}{% include alumni_sidebar.md %}{% endcapture %}
+         {{ sidebar | markdownify }}
       </div>
    </div>
 </div>
