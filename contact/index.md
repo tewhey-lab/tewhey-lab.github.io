@@ -4,10 +4,10 @@ layout: default
 group: contact
 ---
 
-# Contact the Tewhey Lab
-
 <img class="img-fluid mx-auto d-block" src="/static/img/contact_calico_jungle_dahlov_ipcar.jpg" alt="Calico Jungle by Dahlov Ipcar" style="paddig-bottom:0.5em;">
 Calico Jungle by [Dahlov Ipcar](https://www.dahlovipcarart.com/)
+
+# Contact the Tewhey Lab
 
 <div class="row">
 
@@ -22,7 +22,6 @@ Calico Jungle by [Dahlov Ipcar](https://www.dahlovipcarart.com/)
 
   <h4>Ryan Tewhey</h4>
   Assistant Professor  <br>
-  Department of Bioengineering and Therapeutic Sciences  <br>
   The Jackson Laboratory (Bar Harbor Campus)  <br>
   email: ryan.tewhey (at) jax.org <br>
   tel: 207 288 6000

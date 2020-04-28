@@ -4,19 +4,19 @@ layout: default
 group: publications
 ---
 
-<h1>Publications</h1>
-
 <div class="container px-2 max-width: 100%" style="text-align:left;">
     <img class="img-fluid mx-auto d-block" src="/static/img/publications_eric_hopkins_thoroghfare_islands_with_roses.png" alt="Thoroghfare Islands with Roses by Eric Hopkins" style="paddig-bottom:0.5em;"/>
 	Thoroghfare Islands with Roses by <a href="http://www.erichopkins.com/" > Eric Hopkins </a>
 </div>
+<br>
+<h1>Publications</h1>
 
 <div class="container-fluid">
 
 {% for publication in site.data.publications %}
 <hr>
-<div class="row" style="padding-top: 60px; margin-top: -60px;" id="{{publication.pmid}}">
-<div style="font-size: 120% !important;">{{ publication.citation | markdownify }}</div>
+<div class="row" style="padding-top: 30px; margin-top: -30px;" id="{{publication.pmid}}">
+<div style="font-size: 108% !important;">{{ publication.citation | markdownify }}</div>
 			<strong>Access the paper </strong>
 			<!--PMID-->
 			{% if publication.pmid %}

@@ -1,15 +1,15 @@
 ---
 title: Tewhey Lab Members
-layout: members
+layout: default
 group: members
 ---
-
-<h1>Tewhey Lab Members</h1>
 
 <div class="container px-2 max-width: 100%" style="text-align:left;">
     <img class="img-fluid mx-auto d-block" src="/static/img/members_labor_mural_judy_taylor.png" alt="Labor Mural by Judy Taylor" style="paddig-bottom:0.5em;"/>
     Labor Mural by <a href="http://www.judytaylorstudio.com/" > Judy Taylor </a> 
 </div>
+<br>
+<h1>Tewhey Lab Members</h1>
 
 {% for person in site.data.members %}
 <hr>
@@ -34,10 +34,6 @@ group: members
           <a href="http://www.linkedin.com"><img class="inline-block mem-icon" src="/static/img/lin_logo.svg"></a>
           <a href= "http://www.linkedin.com/in/{{person.linkedin}}"> {{person.linkedin}} </a> <br>
         {% endif %}
-        {% if person.UCSF %}
-          <a href="http://www.ucsf.edu"><img class="inline-block mem-icon" src="/static/img/ucsf_logo_black.svg"></a>
-          <a href= "http://profiles.ucsf.edu/profile/{{person.UCSF}}"> Profile </a> <br>
-        {% endif %}
         {% if person.scholar %}
           <a href="http://scholar.google.com"><img class="inline-block mem-icon" src="/static/img/gscholar_logo.svg"></a>
           <a href= "http://scholar.google.com/citations?user={{person.scholar}}"> Scholar Citations </a> <br>
@@ -57,3 +53,13 @@ group: members
 </div>
 {% endfor %}
 <hr>
+<br>
+<h2>Tewhey Lab Alumni</h2>
+
+{% for alum in site.data.alumni %}
+<div id = "{{alum.name}}" style="padding-top: 60px; margin-top: -60px;">
+<p><strong>{{alum.name}}</strong> - <em>{{alum.position}}</em><br>
+{% if alum.startdate %} {{alum.startdate}} - {% endif %}{{alum.enddate}} <br>
+Subsequent Position: {{alum.current}} </p>
+</div> {% endfor %}
+
