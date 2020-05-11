@@ -15,6 +15,7 @@ Calico Jungle by [Dahlov Ipcar](https://www.dahlovipcarart.com/)
 
   <h4>Lab Area </h4>
   tel: 207 288 6000
+  snail mail: 
 
 </div>
 
@@ -40,28 +41,3 @@ Calico Jungle by [Dahlov Ipcar](https://www.dahlovipcarart.com/)
 
 </div>
 
-# Directions to the Tewhey Lab
-
-<div class="row">
-
-<div class="col-md-4">
-
-<h4>Office Address</h4>
-
-Mailing Address Needed
-
-
-</div>
-
-<div class="col-md-4">
-
-
-
-<!-- Our lab is in Building 21 of the Bar Harbor Campus of the Jackson Laboratory
- -->
-
-### The Bar Harbor Campus can be reached:  
-
-### Once on campus, :
-
-<img class="img-fluid" src="/static/img/map_to_mission_bay.png" alt="Map of Mission Bay">
