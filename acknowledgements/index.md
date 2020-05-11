@@ -10,8 +10,10 @@ Long Meadow and Islands by [Tom Curry](http://tomcurrymaineartist.com/)
 # Acknowledgements
 
 ## Collaborators:
-  - 
-  
+  - [Sabeti Lab](https://www.sabetilab.org)
+  - [Stitzel Lab](https://www.jax.org/research-and-faculty/research-labs/the-stitzel-lab)
+  - [Ucar Lab](https://www.jax.org/research-and-faculty/research-labs/the-ucar-lab)
+  - [Sankaran Lab](https://www.bloodgenes.org)
 
 ## Funding:
   -
