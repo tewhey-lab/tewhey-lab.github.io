@@ -14,7 +14,7 @@ Calico Jungle by [Dahlov Ipcar](https://www.dahlovipcarart.com/)
 <div class="col-md-4">
 
   <h4>Lab Area </h4>
-  tel: 207 288 6000
+  tel: 207 288 6000 <br>
   snail mail: 
 
 </div>
