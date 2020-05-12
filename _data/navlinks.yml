@@ -18,14 +18,11 @@
   link: "/resources"
   group: resources
  
-- name: acknowledgements
-  link: "/acknowledgements"
-  group: acknowledgements
+- name: gratitude
+  link: "/gratitude"
+  group: gratitude
 
 - name: contact
   link: "/contact"
   group: contact
 
-- name: news
-  link: "/news"
-  group: news
