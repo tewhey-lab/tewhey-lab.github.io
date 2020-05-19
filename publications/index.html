@@ -16,9 +16,8 @@ group: publications
 {% for publication in site.data.publications %}
 <hr>
 <div class="row" style="padding-top: 10px; margin-top: -10px;" id="{{publication.pmid}}">
-<div style="font-size: 108% !important;">{{ publication.citation | markdownify }}</div>
-<br>
-			<strong>Access the paper &emsp; </strong>
+<div style="font-size: 108% !important;">{{ publication.citation | markdownify }}<br></div>
+			<strong>Access the paper: &emsp; </strong>
 			<!--PMID-->
 			{% if publication.pmid %}
 			<li>PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{publication.pmid}}" alt = "pubmed link: {{publication.pmid}}"> {{publication.pmid}}</a> &emsp; </li>
