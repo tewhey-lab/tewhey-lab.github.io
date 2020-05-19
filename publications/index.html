@@ -17,30 +17,16 @@ group: publications
 <hr>
 <div class="row" style="padding-top: 10px; margin-top: -10px;" id="{{publication.pmid}}">
 <div style="font-size: 108% !important;">{{ publication.citation | markdownify }}</div>
+<br>
 			<strong>Access the paper </strong>
 			<!--PMID-->
 			{% if publication.pmid %}
 			<li>PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{publication.pmid}}" alt = "pubmed link: {{publication.pmid}}"> {{publication.pmid}}</a></li>
 			{% endif %}
 
-			<!--PMCID - optional -->
-			{% if publication.pmcid %}
-			<li>PMCID: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/{{publication.pmcid}}" alt = "pubmed central link: {{publication.pmcid}}"> {{publication.pmcid}}</a></li>
-			{% endif %}
-
 			<!--Biorxiv - optional -->
 			{% if publication.biorxiv %}
 			<li>Biorxiv Preprint: <a href="http://dx.doi.org/10.1101/{{publication.biorxiv}}" alt = "biorxiv preprint link: {{publication.biorxiv}}"> {{publication.biorxiv | split: "." | last }}</a></li>
-			{% endif %}
-
-			<!--Arxiv - optional -->
-			{% if publication.arxiv %}
-			<li>arXiv Preprint: <a href="https://arxiv.org/abs/{{publication.arxiv}}" alt = "arxiv preprint link: {{publication.arxiv}}"> {{publication.arxiv}}</a></li>
-			{% endif %}
-
-			<!--Chemrxiv - optional -->
-			{% if publication.chemrxiv %}
-			<li>ChemRxiv Preprint: <a href=" https://doi.org/10.26434/chemrxiv.{{publication.chemrxiv}}" alt = "chemrxiv preprint link: {{publication.chemrxiv}}"> {{publication.chemrxiv}}</a></li>
 			{% endif %}
 
 			<!-- PDF -->
