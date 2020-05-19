@@ -17,7 +17,6 @@ group: publications
 <hr>
 <div class="row" style="padding-top: 10px; margin-top: -10px;" id="{{publication.pmid}}">
 <div style="font-size: 108% !important;">{{ publication.citation | markdownify }}</div>
-<div class="row" style="padding-top: 10px; margin-top: -10px;">
 			<strong> &emsp; &emsp; Access the paper: &emsp; </strong>
 			<!--PMID-->
 			{% if publication.pmid %}
@@ -83,6 +82,6 @@ group: publications
 			</li>
 			{% endif %}
 
-</div>
+</div> <br>
 {% endfor %}
 </div>
