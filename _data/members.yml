@@ -73,6 +73,19 @@
   pipelines to be used in the analysis of MPRA count data as well as participating in the analysis itself. In her free time Hannah \
   enjoys baking, sharing said baked goods with other lab members, and knitting."
 
+- name: John Butts
+  image: /static/img/members/John.jpeg
+  altimage: /static/img/members/John_alt.jpg
+  pronouns: he/him/his
+  position: Graduate Student
+  email: john.butts (at) jax.org
+  description: "John graduated from University of Dayton with a B.S./M.S. in Biology. It was there he first began his interest in gene \
+  regulation, particularly cis-regulatory elements, while working with Dr. Thomas Williams studying the evolution of pigmenation patterns \
+  in Drosophila. Following graduation John joined Dr. Victoria Meller’s lab at Wayne State University working as Lab Manager and \
+  Research Assistant studying the impact of chromatin conformation on dosage compensation in fruit flies. As a PhD student John hopes \
+  to continue to probe the logic underyling CREs and how advancements in experimental methods can enahance this study. In his free time \
+  John enjoys making music, running, and playing tennis."
+
 - name: Lucy Benjamin
   image: /static/img/members/Benjamin.jpg
   # altimage: /static/img/members/Benjamin_pb.jpg
