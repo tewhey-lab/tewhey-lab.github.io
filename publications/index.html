@@ -18,19 +18,19 @@ group: publications
 <div class="row" style="padding-top: 10px; margin-top: -10px;" id="{{publication.pmid}}">
 <div style="font-size: 108% !important;">{{ publication.citation | markdownify }}</div>
 <br>
-			<strong>Access the paper </strong>
+			<strong>Access the paper &emsp; </strong>
 			<!--PMID-->
 			{% if publication.pmid %}
-			<li>PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{publication.pmid}}" alt = "pubmed link: {{publication.pmid}}"> {{publication.pmid}}</a></li>
+			<li>PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{publication.pmid}}" alt = "pubmed link: {{publication.pmid}}"> {{publication.pmid}}</a> &emsp; </li>
 			{% endif %}
 
 			<!--Biorxiv - optional -->
 			{% if publication.biorxiv %}
-			<li>Biorxiv Preprint: <a href="http://dx.doi.org/10.1101/{{publication.biorxiv}}" alt = "biorxiv preprint link: {{publication.biorxiv}}"> {{publication.biorxiv | split: "." | last }}</a></li>
+			<li>Biorxiv Preprint: <a href="http://dx.doi.org/10.1101/{{publication.biorxiv}}" alt = "biorxiv preprint link: {{publication.biorxiv}}"> {{publication.biorxiv | split: "." | last }}</a> &emsp; </li>
 			{% endif %}
 
 			<!-- PDF -->
-			<li><a href="{{publication.pdf}}" alt = "PDF"> Full Text</a></li>
+			<li><a href="{{publication.pdf}}" alt = "PDF"> Full Text</a> &emsp; </li>
 
 			<!-- Datasets - optional -->
 			{% if publication.data %}
