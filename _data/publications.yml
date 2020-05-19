@@ -13,7 +13,7 @@
 #       url: http://mullinslab.ucsf.edu/
 #
 - citation: "Reilly SK, Gosai SJ, Gutierrez A, Ulirsch JC, Kanai M, **Berenzy D, Kales S**, Butler GB, Gladden-Young A, Finucane HK, Sabeti PC, **Tewhey R**.
-HCR-FlowFISH: A flexible CRISPR screening method to identify cis-regulator elements and their taget genes. *Submitted - Preprint on BioRxiv*. 2020"
+HCR-FlowFISH: A flexible CRISPR screening method to identify cis-regulatory elements and their taget genes. *Submitted - Preprint on BioRxiv*. 2020"
   date: '202005'
   # pmid: ''
   biorxiv: '2020.05.11.078675'
