@@ -16,7 +16,7 @@ group: publications
 {% for publication in site.data.publications %}
 <hr>
 <div class="row" style="padding-top: 10px; margin-top: -10px;" id="{{publication.pmid}}">
-<div style="font-size: 108% !important;">{{ publication.citation | markdownify }}</div><br>
+<div style="font-size: 108% !important;">{{ publication.citation | markdownify }} &emsp; </div><br>
 			<strong>Access the paper: &emsp; </strong>
 			<!--PMID-->
 			{% if publication.pmid %}
