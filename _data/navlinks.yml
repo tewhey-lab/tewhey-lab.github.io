@@ -17,11 +17,11 @@
 - name: resources
   link: "/resources"
   group: resources
- 
-- name: contact
-  link: "/contact"
-  group: contact
 
 - name: gratitude
   link: "/gratitude"
   group: gratitude
+
+- name: contact
+  link: "/contact"
+  group: contact
