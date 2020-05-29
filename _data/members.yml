@@ -86,6 +86,18 @@
   to continue to probe the logic underyling CREs and how advancements in experimental methods can enahance this study. In his free time \
   John enjoys making music, running, and playing tennis."
 
+- name: Luke Parsley
+  # image: /static/img/members/Luke.
+  # altimage: /static/img/members/Luke_alt.
+  pronouns: he/him/his
+  position: Graduate Student
+  email: luke.parsley (at) jax.org
+  description: "Luke graduated from Rollins College with a degree in Biochemistry/Molecular Biology. During undergraduate, \
+  he conducted research in both the laboratories of Dr. Jurrien Dean studying germ granule trafficking in developing oocytes, \
+  and Dr. Kasandra Riley profiling ncRNA expression of S. epidermis in stress response. As a graduate student in the Tewhey lab, \
+  he employs Massively Parallel Reporter Assays (MPRA) to create enhancer profiles for disease-associated loci. In his free time, \
+  he is an avid runner that enjoys Star Trek, hiking, and Chinese food."
+
 - name: Lucy Benjamin
   image: /static/img/members/Benjamin.jpg
   # altimage: /static/img/members/Benjamin_pb.jpg
