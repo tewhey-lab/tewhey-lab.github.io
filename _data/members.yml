@@ -1,23 +1,54 @@
-- name: Ryan Tewhey
-  image: /static/img/members/Ryan.png
-  pronouns: he/him/his
-  position: Principal Investigator
-  email: ryan.tewhey (at) jax.org
-  twitter: Ry_2E
-  orcid: 0000-0002-4607-8001
-  github: tewhey-lab
-  description: "Ryan is a human geneticist with expertise in developing large-scale screening methods to understand how genetic variation \
-  impacts human traits and disease. His primary focus is the investigation of non-coding regions of the genome that control gene expression. \
-  He has pioneered the use of massively parallel reporter assays (MPRA) and CRISPR based screens of non-coding regions to identify causal \
-  alleles from genome wide association studies. His broad interests lie in the application of novel technologies to answer questions related \
-  to human health and disease. His time is evenly divided between experimental and computational approaches. \
+- name: Lucy Benjamin
+  image: /static/img/members/Benjamin.jpg
+  # altimage: /static/img/members/Benjamin_pb.jpg
+  position: Research Administrative Assistant
+  pronouns: she/her/hers
+  email: lucy.benjamin (at) jax.org
+  description: "Lucy graduated from Oxford University and MIT with degrees in Georgraphy and Real Estate. Before coming to JAX, \
+  Lucy was a chartered surveyor in the UK and has since set up several businesses in the US including a small granola \
+  manufacturing company. Now, as a Research Administrative Assistant in the Tewhey lab, Lucy works doing a variety of administrative \
+  jobs for Ryan and the lab group. For fun, lucy loves to cook, bike ride, play duplicate bridge and garden, although she does not \
+  have much spare time."
 
-  Ryan completed his undergraduate degree from the University of Maine, Orono. He received his PhD from the University of California, San Diego \
-  in 2012 while carrying out work at The Scripps Research Translational Institute. He completed is postdoctoral work at Harvard University and \
-  The Broad Institute. His awards include Forbes Magazine's 30 under 30, NSF/A-STAR EAPSI fellow, the Charles J. Epstein Award for Research \
-  Excellence by the American Society of Human Genetics, and an NHGRI Pathway to Independence Award. Ryan is currently an assistant professor \
-  at The Jackson Laboratory in Bar Harbor and holds appointments at Tufts University School of Medicine and The University of Maine Graduate \
-  School of Biomedical Science and Engineering. "
+- name: Daniel Berenzy
+  image: /static/img/members/Daniel.jpg
+  altimage: /static/img/members/Daniel_alt.jpg
+  pronouns: he/him/his
+  position: Research Asssitant I
+  email: daniel.berenzy (at) jax.org
+  description: "Daniel graduated from Florida Gulf Coast University (FGCU) with a degree in Biotechnology, while working with \
+  Dr. Takashi Ueda in the school’s Biotechnology lab. Upon graduating from FGCU, Daniel immediately joined the Tewhey Lab as a \
+  Research Assistant and concurrently enrolled in the Professional Science Masters (PSM) program in Bioinformatics at the \
+  University of Maine. As a Research Assistant in the Tewhey Lab, Daniel contributes to several different projects in both the \
+  “wet” and “dry” lab but his expertise is in Biotechnology methods. In his free time, Daniel studies for a Master’s degree but \
+  is also an avid Cyclist, Climber, Kayaker and all-around outdoorsy type. "
+
+- name: John Butts
+  image: /static/img/members/John.jpeg
+  altimage: /static/img/members/John_alt.jpg
+  pronouns: he/him/his
+  position: Graduate Student
+  email: john.butts (at) jax.org
+  description: "John graduated from University of Dayton with a B.S./M.S. in Biology. It was there he first began his interest in gene \
+  regulation, particularly cis-regulatory elements, while working with Dr. Thomas Williams studying the evolution of pigmenation patterns \
+  in Drosophila. Following graduation John joined Dr. Victoria Meller’s lab at Wayne State University working as Lab Manager and \
+  Research Assistant studying the impact of chromatin conformation on dosage compensation in fruit flies. As a PhD student John hopes \
+  to continue to probe the logic underyling CREs and how advancements in experimental methods can enahance this study. In his free time \
+  John enjoys making music, running, and playing tennis."
+
+- name: Hannah Dewey
+  image: /static/img/members/Hannah.JPG
+  # altimage: /static/img/members/Dewey_pb.jpg
+  pronouns: she/her/hers
+  position: Data Analyst I
+  email: hannah.dewey (at) jax.org
+  github: deweyhannah
+  description: "Hannah graduated from the University of Maine with a degree in Mathematics, while working with Dr. Andre Khalil \
+  in the CompuMAINE lab. Before joining the Tewhey Lab, Hannah completed postgraduate degrees in Applied Mathematics (2015) and \
+  Bioinformatics and Computational Genomics (2019) at Rensselaer Polytechinic Institute and Queens University Belfast respectively, \
+  as well as serving as a Peace Corps Volunteer in Namibia. Now, as a data analyst in the Tewhey Lab, Hannah works developing \
+  pipelines to be used in the analysis of MPRA count data as well as participating in the analysis itself. In her free time Hannah \
+  enjoys baking, sharing said baked goods with other lab members, and knitting."
 
 - name: Susan Kales
   image: /static/img/members/Susan-Meeting.jpg
@@ -46,46 +77,6 @@
   Kousuke works 2-legged human genetics to decipher the mechanisms of the cis regulatory element which makes wonderful variety \
   of animal morphology and phenotype. In his free time Kousuke enjoys snowboarding and taking care of his kawaii tortoise, Chicago."
 
-- name: Daniel Berenzy
-  image: /static/img/members/Daniel.jpg
-  altimage: /static/img/members/Daniel_alt.jpg
-  pronouns: he/him/his
-  position: Research Asssitant I
-  email: daniel.berenzy (at) jax.org
-  description: "Daniel graduated from Florida Gulf Coast University (FGCU) with a degree in Biotechnology, while working with \
-  Dr. Takashi Ueda in the school’s Biotechnology lab. Upon graduating from FGCU, Daniel immediately joined the Tewhey Lab as a \
-  Research Assistant and concurrently enrolled in the Professional Science Masters (PSM) program in Bioinformatics at the \
-  University of Maine. As a Research Assistant in the Tewhey Lab, Daniel contributes to several different projects in both the \
-  “wet” and “dry” lab but his expertise is in Biotechnology methods. In his free time, Daniel studies for a Master’s degree but \
-  is also an avid Cyclist, Climber, Kayaker and all-around outdoorsy type. "
-
-- name: Hannah Dewey
-  image: /static/img/members/Hannah.JPG
-  # altimage: /static/img/members/Dewey_pb.jpg
-  pronouns: she/her/hers
-  position: Data Analyst I
-  email: hannah.dewey (at) jax.org
-  github: deweyhannah
-  description: "Hannah graduated from the University of Maine with a degree in Mathematics, while working with Dr. Andre Khalil \
-  in the CompuMAINE lab. Before joining the Tewhey Lab, Hannah completed postgraduate degrees in Applied Mathematics (2015) and \
-  Bioinformatics and Computational Genomics (2019) at Rensselaer Polytechinic Institute and Queens University Belfast respectively, \
-  as well as serving as a Peace Corps Volunteer in Namibia. Now, as a data analyst in the Tewhey Lab, Hannah works developing \
-  pipelines to be used in the analysis of MPRA count data as well as participating in the analysis itself. In her free time Hannah \
-  enjoys baking, sharing said baked goods with other lab members, and knitting."
-
-- name: John Butts
-  image: /static/img/members/John.jpeg
-  altimage: /static/img/members/John_alt.jpg
-  pronouns: he/him/his
-  position: Graduate Student
-  email: john.butts (at) jax.org
-  description: "John graduated from University of Dayton with a B.S./M.S. in Biology. It was there he first began his interest in gene \
-  regulation, particularly cis-regulatory elements, while working with Dr. Thomas Williams studying the evolution of pigmenation patterns \
-  in Drosophila. Following graduation John joined Dr. Victoria Meller’s lab at Wayne State University working as Lab Manager and \
-  Research Assistant studying the impact of chromatin conformation on dosage compensation in fruit flies. As a PhD student John hopes \
-  to continue to probe the logic underyling CREs and how advancements in experimental methods can enahance this study. In his free time \
-  John enjoys making music, running, and playing tennis."
-
 - name: Luke Parsley
   # image: /static/img/members/Luke.
   # altimage: /static/img/members/Luke_alt.
@@ -98,14 +89,23 @@
   he employs Massively Parallel Reporter Assays (MPRA) to create enhancer profiles for disease-associated loci. In his free time, \
   he is an avid runner that enjoys Star Trek, hiking, and Chinese food."
 
-- name: Lucy Benjamin
-  image: /static/img/members/Benjamin.jpg
-  # altimage: /static/img/members/Benjamin_pb.jpg
-  position: Research Administrative Assistant
-  pronouns: she/her/hers
-  email: lucy.benjamin (at) jax.org
-  description: "Lucy graduated from Oxford University and MIT with degrees in Georgraphy and Real Estate. Before coming to JAX, \
-  Lucy was a chartered surveyor in the UK and has since set up several businesses in the US including a small granola \
-  manufacturing company. Now, as a Research Administrative Assistant in the Tewhey lab, Lucy works doing a variety of administrative \
-  jobs for Ryan and the lab group. For fun, lucy loves to cook, bike ride, play duplicate bridge and garden, although she does not \
-  have much spare time."
+- name: Ryan Tewhey
+  image: /static/img/members/Ryan.png
+  pronouns: he/him/his
+  position: Principal Investigator
+  email: ryan.tewhey (at) jax.org
+  twitter: Ry_2E
+  orcid: 0000-0002-4607-8001
+  github: tewhey-lab
+  description: "Ryan is a human geneticist with expertise in developing large-scale screening methods to understand how genetic variation \
+  impacts human traits and disease. His primary focus is the investigation of non-coding regions of the genome that control gene expression. \
+  He has pioneered the use of massively parallel reporter assays (MPRA) and CRISPR based screens of non-coding regions to identify causal \
+  alleles from genome wide association studies. His broad interests lie in the application of novel technologies to answer questions related \
+  to human health and disease. His time is evenly divided between experimental and computational approaches. \
+
+  Ryan completed his undergraduate degree from the University of Maine, Orono. He received his PhD from the University of California, San Diego \
+  in 2012 while carrying out work at The Scripps Research Translational Institute. He completed is postdoctoral work at Harvard University and \
+  The Broad Institute. His awards include Forbes Magazine's 30 under 30, NSF/A-STAR EAPSI fellow, the Charles J. Epstein Award for Research \
+  Excellence by the American Society of Human Genetics, and an NHGRI Pathway to Independence Award. Ryan is currently an assistant professor \
+  at The Jackson Laboratory in Bar Harbor and holds appointments at Tufts University School of Medicine and The University of Maine Graduate \
+  School of Biomedical Science and Engineering. "
