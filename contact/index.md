@@ -6,7 +6,7 @@ group: contact
 
 <img class="img-fluid mx-auto d-block" src="/static/img/contact_calico_jungle_dahlov_ipcar.jpg" alt="Calico Jungle by Dahlov Ipcar" style="paddig-bottom:0.5em;">
 Calico Jungle &copy;1968 [Dahlov Ipcar](https://www.dahlovipcarart.com/), &copy;2019 Robert Ipcar 
-
+Reprinted with permission of McIntosh & Otis, Inc.
 # Contact the Tewhey Lab
 
 <div class="row">
