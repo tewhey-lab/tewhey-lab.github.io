@@ -25,3 +25,6 @@
 - name: contact
   link: "/contact"
   group: contact
+
+- link: "/news"
+  group: news
