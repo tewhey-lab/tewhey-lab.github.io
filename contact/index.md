@@ -9,14 +9,25 @@ group: contact
 **Reprinted with permission of McIntosh & Otis, Inc.**
 
 # Contact the Tewhey Lab
+---
 
 <div class="row">
 
 <div class="col-md-4">
 
   <h4>Lab Area </h4>
-  tel: 207 288 6000 <br>
-  snail mail: 
+  600 Main Street <br>
+  Bar Harbor, ME 04609  <br>
+  tel: 207 288 6000
+
+</div>
+
+<div class="col-md-4">
+
+  <h4> Lucy Benjamin</h4>
+  Research Administrative Assistant <br>
+  Email:  lucy.benjamin (at) jax.org  <br>
+  Phone: 207 288-6321   <br>
 
 </div>
 
@@ -25,19 +36,8 @@ group: contact
   <h4>Ryan Tewhey</h4>
   Assistant Professor  <br>
   The Jackson Laboratory (Bar Harbor Campus)  <br>
-  email: ryan.tewhey (at) jax.org <br>
-  tel: 207 288 6000
-
-</div>
-
-<div class="col-md-4">
-
-  <h4> Lucy Benjamin</h4>
-  Research Administrative Assistant to Dr. Ryan Tewhey and  others<br>
-  Department of   <br>
-  Email:  lucy.benjamin (at) jax.org  <br>
-  Phone: 207 288-6321   <br>
-
+  email: info (at) tewheylab.org <br>
+ 
 </div>
 
 </div>

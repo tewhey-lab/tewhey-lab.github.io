@@ -85,8 +85,8 @@
   of animal morphology and phenotype. In his free time Kousuke enjoys snowboarding and taking care of his kawaii tortoise, Chicago."
 
 - name: Luke Parsley
-  # image: /static/img/members/Luke.
-  # altimage: /static/img/members/Luke_alt.
+  image: /static/img/members/Luke.jpg
+  altimage: /static/img/members/Luke_alt.jpg
   position: Graduate Student
   email: luke.parsley (at) jax.org
   description: "Luke graduated from Rollins College with a degree in Biochemistry/Molecular Biology. During undergraduate, \
