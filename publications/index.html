@@ -15,10 +15,10 @@ group: publications
 
 {% for publication in site.data.publications %}
 <hr>
-<div class="row" style="padding-top: 5px; margin-top: -5px;" id="{{publication.pmid}}">
+<div class="row" style="padding-top: 0px; margin-top: -10px;  margin-bottom: -10px" id="{{publication.pmid}}">
 <div style="font-size: 108% !important;">{{ publication.citation | markdownify }}</div>
-<div class="row" style="padding-top: - 2px; margin-top: 2px;">
-			<strong> &emsp; &emsp; Access the paper: &emsp; </strong>
+<div class="row" style="padding-top: - 5px; margin-top: -20px;">
+			<strong> &emsp; &emsp; &emsp;Access the paper: &emsp; </strong>
 			<!--PMID-->
 			{% if publication.pmid %}
 			<li>PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{publication.pmid}}" alt = "pubmed link: {{publication.pmid}}"> {{publication.pmid}}</a> &emsp; </li>
