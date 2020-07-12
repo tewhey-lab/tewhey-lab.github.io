@@ -11,7 +11,7 @@ Long Meadow and Islands by [Tom Curry](http://tomcurrymaineartist.com/)
 ---
 
 ### Collaborators:
-  - [Paradis Sabeti](https://www.sabetilab.org) (The Broad Institute)
+  - [Pardis Sabeti](https://www.sabetilab.org) (The Broad Institute)
   - [Michael Stitzel](https://www.jax.org/research-and-faculty/research-labs/the-stitzel-lab) (JAX)
   - [Duygu Ucar](https://www.jax.org/research-and-faculty/research-labs/the-ucar-lab) (JAX)
   - [James Jarvis](http://medicine.buffalo.edu/faculty/profile.html?ubit=jamesjar) (University of Buffalo)
