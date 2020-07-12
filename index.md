@@ -5,8 +5,8 @@ group: home
 ---
 
 # Welcome to the Tewhey Lab
-###### We are group of human geneticist, molecular biologists and computational scientists interested in understanding the how genetic variation impacts human traits and risk to disease.
-###### Our lab is located in Snell Building at the Bar Harbor Campus of The Jackson Laboratory.
+###### We are a group of human geneticist, molecular biologists and computational scientists interested in understanding how genetic variation impacts human traits and risk to disease.
+###### Our lab is located in the Snell Building on the Bar Harbor Campus of The Jackson Laboratory.
 
 ---
 

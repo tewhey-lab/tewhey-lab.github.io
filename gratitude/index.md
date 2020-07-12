@@ -24,7 +24,7 @@ Long Meadow and Islands by [Tom Curry](http://tomcurrymaineartist.com/)
   
 ### Maine Artists:
 The beautiful artwork on this site is used with the permission of the Maine artists who created them. We are grateful for their incredible talent and generosity.  
-To see more of their works, click on their names below:
+To see more of their work, click on their names below:
   - [Tom Curry](http://tomcurrymaineartist.com/)
   - [Judy Taylor](http://www.judytaylorstudio.com/)
   - [Eric Hopkins](http://www.erichopkins.com/)
