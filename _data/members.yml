@@ -33,6 +33,17 @@
   to continue to probe the logic underyling CREs and how advancements in experimental methods can enahance this study. In his free time \
   John enjoys making music, running, and playing tennis."
 
+- name: Rodrigo Castro
+  image: /static/img/members/RodrigoCastro.jpg
+  altimage: /static/img/members/RodrigoCastro_fun.jpg
+  position: Postdoctoral Associate
+  email: rodrigo.castro (at) jax.org
+  github: irodcast
+  twitter: i_rodcast
+  description: "Rodrigo graduated from Georgia State University with a doctoral degree in mathematics, focusing in deep learning research. \
+  As a postdoctoral associate in the Tewhey lab, Rodrigo works on generative deep-learning models for cis-regulatory elements and deriving \
+  new synthetic elements for desired regulatory functions. In his spare time, Rodrigo enjoys practicing music, biking, and learning about new AI advances. "
+
 - name: Hannah Dewey
   image: /static/img/members/Hannah.JPG
   # altimage: /static/img/members/Dewey_pb.jpg
