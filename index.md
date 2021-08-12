@@ -12,16 +12,16 @@ group: home
 
 ### What's new with us?
 
-_10-06-2020_ &nbsp; &nbsp; **COVID-19 Sequencing** <br>
-The Tewhey Lab is working with the Maine CDCP to sequence positive COVID-19 cases within the state of Maine. Our work will help develop an epidemiological narrative based on the genetic fingerprint of the virus in order to better understand how the virus is circulating.
+_29-06-2021_ &nbsp; &nbsp; **HCR-FlowFISH work published in Nature Genetics** <br>
+Our work describing HCR-FlowFISH as a flexible phenotyping methods for CRISPR non-coding screens is now out in [Nature Genetics](https://www.nature.com/articles/s41588-021-00900-4). Our article made the cover with a beautiful illustration from our friends at [SciStories](https://scistories.com/). Check it out [here](https://www.nature.com/ng/volumes/53/issues/8). This work was a collaboration between the Sabeti Lab at the Broad Institute and the Reilly Lab at Yale University.
 
-_05-06-2020_ &nbsp; &nbsp; **New Lab Members** <br>
-We would like to welcome our new lab members John and Luke who did rotations with us over the winter. John joins us from the Graduate School of Biomedical Science and Engineering at the University of Maine, and Luke joins us from Tufts. Both will be working on continuations of their rotation projects, and we look forward to seeing where they will go!
+_30-05-2021_ &nbsp; &nbsp; **Autoimmune GWAS MPRA Preprint** <br>
+Postdoc Kousuke Mouri is a first author on a new preprint in collaboration with Dr. John Ray's laboratory at the Benaroya Research Institute using MPRA to localize genome wide association signals of T-cell mediated autoimmune disorders. In addition, we knock-out a cis-regulatory element that influences expression of Bach2 and show it plays a role in CD8 T-cell biology. You can read the preprint [here](https://www.biorxiv.org/content/10.1101/2021.05.30.445673v1.abstract). 
 
-_13-05-2020_ &nbsp; &nbsp; **Pre-Print Announcement** <br>
-We have released our preprint on bioRxiv describing HCR-FlowFISH, a flexible phenotyping method for CRISPRi/a screens of cis-regulatory elements. This project is in collaboration with Steve Reilly and Pardis Sabeti at the Broad Institute and part of our work as an ENCODE Characterization Center.
+_11-02-2021_ &nbsp; &nbsp; **Front page of the Portland Press Herald** <br>
+The Tewhey Lab's partnership with the Maine CDC was featured on the front page of the PPH in an article describing of Maine was well prepared for COVID-19 genomic surveillance. Read the article [here](https://www.pressherald.com/2021/02/11/maine-well-positioned-to-find-cases-of-covid-19-variants/).
 
-_09-05-2020_ &nbsp; &nbsp; **Natalia Returns and NSF Fellowship Awarded** <br>
-COVID-19 has upturned many people's summer/internship plans including Natalia's. She was initially intending to spend the summer break working on wildlife conservation in Madagascar! Unfortunately, the program was cancelled but lucky for all of us she is back in Maine and will continue working in the lab this summer. Natalia also applied for NSF funding and was recently awarded a fellowship for the summer! Natalia will be extending the work she started last summer as an SSP student investigating synthetic regulatory elements. 
+_13-01-2021_ &nbsp; &nbsp; **3'UTR MPRA Preprint** <br>
+We just uploaded a preprint describing our work, in collaboration with the Sabeti Lab using MPRA to functionally test human variation residing 3' UTR. You can read the preprint [here](https://www.biorxiv.org/content/10.1101/2021.01.13.424697v1).
 
 _Check [here](https://tewhey-lab.github.io/news/) for more updates from the Tewhey Lab_
