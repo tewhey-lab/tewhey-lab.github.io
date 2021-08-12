@@ -27,28 +27,28 @@ Genome-wide functional screen of 3’UTR variants uncovers causal variants for h
   biorxiv: '2021.01.13.424697'
   #pdf: '/static/pdf/publications/'
   
-- citation: "Reilly SK, Gosai SJ, Gutierrez A, Ulirsch JC, Kanai M, **Mouri K, Berenzy D, Kales S**, Butler GB, Gladden-Young A, Bhuiyan RM, Stitzel ML, Finucane HK, Sabeti PC, **Tewhey R**.\
+- citation: "Reilly SK, Gosai SJ, Gutierrez A, Ulirsch JC, Kanai M, **Mouri K, Berenzy D, Kales S**, Butler GB, Gladden-Young A, Bhuiyan RM, Stitzel ML, Finucane HK, Sabeti PC, **Tewhey R**.<br/> 
 Direct characterization of cis-regulatory elements and functional dissection of complex genetic associations using HCR–FlowFISH. Nature Genetics. 2021"
   date: '202107'
   pmid: '34326544'
   biorxiv: '2020.05.11.078675'
   pdf: 'https://www.nature.com/articles/s41588-021-00900-4'
 
-- citation: "Wang L, Sinnott-Armstrong N, Wagschal A, Wark AR, Camporez J-P, Perry RJ, Ji F, Sohn Y, Oh J, Wu S, Chery J, Moud BN, Saadat A, Dankel SN, Mellgren G, Tallapragada DSP, Strobel SM, Lee M-J, **Tewhey R**, Sabeti PC, Schaefer A, Petri A, Kauppinen S, Chung RT, Soukas A, Avruch J, Fried SK, Hauner H, Sadreyev RI, Shulman GI, Claussnitzer M, Näär AM.\
+- citation: "Wang L, Sinnott-Armstrong N, Wagschal A, Wark AR, Camporez J-P, Perry RJ, Ji F, Sohn Y, Oh J, Wu S, Chery J, Moud BN, Saadat A, Dankel SN, Mellgren G, Tallapragada DSP, Strobel SM, Lee M-J, **Tewhey R**, Sabeti PC, Schaefer A, Petri A, Kauppinen S, Chung RT, Soukas A, Avruch J, Fried SK, Hauner H, Sadreyev RI, Shulman GI, Claussnitzer M, Näär AM.<br/> 
 A MicroRNA Linking Human Positive Selection and Metabolic Disorders. Cell. 2020"
   date: '202010'
   pmid: '33058756'
   #biorxiv: ''
   pdf: 'https://www.sciencedirect.com/science/article/pii/S0092867420311582'
 
-- citation: "Thibodeau A, Khetan S, Eroglu A, **Tewhey R**, Stitzel ML, Ucar D.
+- citation: "Thibodeau A, Khetan S, Eroglu A, **Tewhey R**, Stitzel ML, Ucar D.<br/> 
 CoRE-ATAC: A deep learning model for the functional classification of regulatory elements from single cell and bulk ATAC-seq data. bioRxiv. 2020"
   date: '202007'
   #pmid: ''
   biorxiv: '2020.06.22.165183'
   #pdf: ''
 
-- citation: "Khetan S, **Kales S**, Kursawe R, Jillette A, Reilly SK, Ucar D, **Tewhey R**, Stitzel ML.
+- citation: "Khetan S, **Kales S**, Kursawe R, Jillette A, Reilly SK, Ucar D, **Tewhey R**, Stitzel ML.<br/> 
 Functional characterization of thousands of type 2 diabetes-associated and chromatin-modulating variants under
 steady state and endoplasmic reticulum stress. Nature Communication. 2021."
   date: '202002'
@@ -57,35 +57,37 @@ steady state and endoplasmic reticulum stress. Nature Communication. 2021."
   # pdf: '/static/pdf/publications/'
 
 - citation: "Ray JP, de Boer CG, Fulco CP, Lareau CA, Kanai M, Ulirsch JC, **Tewhey R**, Ludwig LS, Reilly SK, Bergman DT, Engreitz JM,
-Issner R, Finucane HK, Lander ES, Regev A, Hacohen N. Prioritizing disease and trait causal variants at the TNFAIP3 locus using functional
+Issner R, Finucane HK, Lander ES, Regev A, Hacohen N.<br/> 
+Prioritizing disease and trait causal variants at the TNFAIP3 locus using functional
 and genomic features. Nat Commun. 2020"
   date: '202003'
   pmid: '32144282'
   pdf: 'https://www.nature.com/articles/s41467-020-15022-4'
 
 - citation: "Kreimer A, Zeng H, Edwards MD, Guo Y, Tian K, Shin S, Welch R, Wainberg M, Mohan R, Sinnott-Armstrong NA, Li Y,
-Eraslan G, Amin TB, **Tewhey R**, Sabeti PC, Goke J, Mueller NS, Kellis M, Kundaje A, Beer MA, Keles S, Gifford DK, Yosef N.
+Eraslan G, Amin TB, **Tewhey R**, Sabeti PC, Goke J, Mueller NS, Kellis M, Kundaje A, Beer MA, Keles S, Gifford DK, Yosef N.<br/> 
 Predicting gene expression in massively parallel reporter assays: A comparative study. Hum Mutat. 2017."
   date: '201703'
   pmid: '28220625'
   pdf: 'https://onlinelibrary.wiley.com/doi/full/10.1002/humu.23197'
 
 - citation: "Grossman SR, Zhang X, Wang L, Engreitz J, Melnikov A, Rogov P, **Tewhey R**, Isakova A, Deplancke B,
-Bernstein BE, Mikkelsen TS, Lander ES. Systematic dissection of genomic features determining transcription factor binding
+Bernstein BE, Mikkelsen TS, Lander ES.<br/> 
+Systematic dissection of genomic features determining transcription factor binding
 and enhancer function. Proc Natl Acad Sci U S A. 2017"
   date: '201702'
   pmid: '28137873'
-  pdf: '/static/pdf/publications/Grossman_2017.pdf'
+  pdf: 'https://www.pnas.org/content/114/7/E1291'
 
-- citation: "**Tewhey R**, Kotliar D, Park DS, Liu B, Winnicki S, Reilly SK, Andersen KG, Mikkelsen TS, Lander ES, Schaffner SF, Sabeti PC.
+- citation: "**Tewhey R**, Kotliar D, Park DS, Liu B, Winnicki S, Reilly SK, Andersen KG, Mikkelsen TS, Lander ES, Schaffner SF, Sabeti PC.<br/> 
 Direct Identification of Hundreds of Expression-Modulating Variants using a Multiplexed Reporter Assay. Cell. 2016."
   date: '201606'
   pmid: '27259153'
-  pdf: '/static/pdf/publications/Tewhey_2016.pdf'
+  pdf: 'https://www.sciencedirect.com/science/article/pii/S0092867416304214'
 
 - citation: "Wagschal A, Najafi-Shoushtari SH, Wang L, Goedeke L, Sinha S, deLemos AS, Black JC, Ramírez CM, Li Y,
 **Tewhey R**, Hatoum I, Shah N, Lu Y, Kristo F, Psychogios N, Vrbanac V, Lu YC, Hla T, de Cabo R, Tsang JS, Schadt E,
-Sabeti PC, Kathiresan S, Cohen DE, Whetstine J, Chung RT, Fernández-Hernando C, Kaplan LM, Bernards A, Gerszten RE, Näär AM.
+Sabeti PC, Kathiresan S, Cohen DE, Whetstine J, Chung RT, Fernández-Hernando C, Kaplan LM, Bernards A, Gerszten RE, Näär AM.<br/> 
 Genome-wide identification of microRNAs regulating cholesterol and triglyceride homeostasis. Nat Med. 2015."
   date: '201511'
   pmid: '26501192'
@@ -96,13 +98,14 @@ England EM, Winnicki S, Branco LM, Gire SK, Phelan E, Tariyal R, **Tewhey R**, O
 Jalloh S, Gbakie M, Saffa S, Karbo K, Gladden AD, Qu J, Stremlau M, Nekoui M, Finucane HK, Tabrizi S, Vitti JJ, Birren B,
 Fitzgerald M, McCowan C, Ireland A, Berlin AM, Bochicchio J, Tazon-Vega B, Lennon NJ, Ryan EM, Bjornson Z, Milner DA Jr, Lukens AK,
 Broodie N, Rowland M, Heinrich M, Akdag M, Schieffelin JS, Levy D, Akpan H, Bausch DG, Rubins K, McCormick JB, Lander ES, Günther S,
-Hensley L, Okogbenin S, Schaffner SF, Okokhere PO, Khan SH, Grant DS, Akpede GO, Asogun DA, Gnirke A, Levin JZ, Happi CT, Garry RF, Sabeti PC.
+Hensley L, Okogbenin S, Schaffner SF, Okokhere PO, Khan SH, Grant DS, Akpede GO, Asogun DA, Gnirke A, Levin JZ, Happi CT, Garry RF, Sabeti PC.<br/> 
 Clinical Sequencing Uncovers Origins and Evolution of Lassa Virus. Cell. 2015."
   date: '201508'
   pmid: '26276630'
   pdf: '/static/pdf/publications/Andersen_2015.pdf'
 
-- citation: "Bright AT, Manary MJ, **Tewhey R**, Arango EM, Wang T, Schork NJ, Yanow SK, Winzeler EA. A high resolution case study of a patient
+- citation: "Bright AT, Manary MJ, **Tewhey R**, Arango EM, Wang T, Schork NJ, Yanow SK, Winzeler EA.<br/> 
+A high resolution case study of a patient
 with recurrent Plasmodium vivax infections shows that relapses were caused by meiotic siblings. PLoS Negl Trop Dis. 2014."
   date: '201406'
   pmid: '24901334'
@@ -112,18 +115,19 @@ with recurrent Plasmodium vivax infections shows that relapses were caused by me
 Darst BF, Smith EN, Carson A, Pham P, Phillips T, Villarasa N, Tisch R, Zhang G, Levy S, Murray S, Chen W, Srinivasan S,
 Berenson G, Brandt H, Crawford S, Crow S, Fichter MM, Halmi KA, Johnson C, Kaplan AS, La Via M, Mitchell JE, Strober M, Rotondo A,
 Treasure J, Woodside DB, Bulik CM, Keel P, Klump KL, Lilenfeld L, Plotnicov K, Topol EJ, Shih PB, Magistretti P, Bergen AW,
-Berrettini W, Kaye W, Schork NJ. Evidence for the role of EPHX2 gene variants in anorexia nervosa. Mol Psychiatry. 2014."
+Berrettini W, Kaye W, Schork NJ.<br/> 
+Evidence for the role of EPHX2 gene variants in anorexia nervosa. Mol Psychiatry. 2014."
   date: '201406'
   pmid: '23999524'
   pdf: '/static/pdf/publications/Zeeland_2014.pdf'
 
-- citation: "**Tewhey R**, Gu B, Kelesidis T, Charlton C, Bobenchik A, Hindler J, Schork NJ, Humphries RM.
+- citation: "**Tewhey R**, Gu B, Kelesidis T, Charlton C, Bobenchik A, Hindler J, Schork NJ, Humphries RM.<br/> 
 Mechanisms of linezolid resistance among coagulase-negative staphylococci determined by whole-genome sequencing. mBio. 2014."
   date: '201405'
   pmid: '24915435'
   pdf: '/static/pdf/publications/Tewhey_2014.pdf'
 
-- citation: "Hernandez D, **Tewhey R**, Veyrieras JB, Farinelli L, Østerås M, François P, Schrenzel J.
+- citation: "Hernandez D, **Tewhey R**, Veyrieras JB, Farinelli L, Østerås M, François P, Schrenzel J.<br/> 
 De novo finished 2.8 Mbp Staphylococcus aureus genome assembly from 100 bp short and long range paired-end reads. Bioinformatics. 2014."
   date: '201401'
   pmid: '24130309'
@@ -131,101 +135,107 @@ De novo finished 2.8 Mbp Staphylococcus aureus genome assembly from 100 bp short
 
 - citation: "Matranga CB, Andersen KG, Winnicki S, Busby M, Gladden AD, **Tewhey R**, Stremlau M, Berlin A, Gire SK,
 England E, Moses LM, Mikkelsen TS, Odia I, Ehiane PE, Folarin O, Goba A, Kahn SH, Grant DS, Honko A, Hensley L,
-Happi C, Garry RF, Malboeuf CM, Birren BW, Gnirke A, Levin JZ, Sabeti PC. Enhanced methods for unbiased deep sequencing of
+Happi C, Garry RF, Malboeuf CM, Birren BW, Gnirke A, Levin JZ, Sabeti PC.<br/> 
+Enhanced methods for unbiased deep sequencing of
 Lassa and Ebola RNA viruses from clinical and biological samples. Genome Biol. 2014."
   date: '201401'
   pmid: '25403361'
   pdf: '/static/pdf/publications/Mantraga_2014.pdf'
 
-- citation: "Berti AD, Sakoulas G, Nizet V, **Tewhey R**, Rose WE. β-Lactam antibiotics targeting PBP1 selectively
+- citation: "Berti AD, Sakoulas G, Nizet V, **Tewhey R**, Rose WE.<br/> 
+β-Lactam antibiotics targeting PBP1 selectively
 enhance daptomycin activity against methicillin-resistant Staphylococcus aureus. Antimicrob Agents Chemother. 2013."
   date: '201310'
   pmid: '23896478'
   pdf: '/static/pdf/publications/Berti_2013.pdf'
 
-- citation: "Kelesidis T, **Tewhey R**, Humphries RM. Evolution of high-level daptomycin resistance in Enterococcus
+- citation: "Kelesidis T, **Tewhey R**, Humphries RM.<br/> 
+Evolution of high-level daptomycin resistance in Enterococcus
 faecium during daptomycin therapy is associated with limited mutations in the bacterial genome. J Antimicrob Chemother. 2013."
   date: '201304'
   pmid: '23580562'
   pdf: '/static/pdf/publications/Kelesidis_2013.pdf'
 
-- citation: "Vidaillac C, Gardete S, **Tewhey R**, Sakoulas G, Kaatz GW, Rose WE, Tomasz A, Rybak MJ.
+- citation: "Vidaillac C, Gardete S, **Tewhey R**, Sakoulas G, Kaatz GW, Rose WE, Tomasz A, Rybak MJ.<br/> 
 Alternative mutational pathways to intermediate resistance to vancomycin in methicillin-resistant Staphylococcus aureus. J Infect Dis. 2013."
   date: '201303'
   pmid: '23539745'
   pdf: '/static/pdf/publications/Vidaillac_2013.pdf'
 
-- citation: "Werth BJ, Sakoulas G, Rose WE, Pogliano J, **Tewhey R**, Rybak MJ. Ceftaroline increases membrane binding and
+- citation: "Werth BJ, Sakoulas G, Rose WE, Pogliano J, **Tewhey R**, Rybak MJ.<br/> 
+Ceftaroline increases membrane binding and
 enhances the activity of daptomycin against daptomycin-nonsusceptible vancomycin-intermediate Staphylococcus aureus in a
 pharmacokinetic/pharmacodynamic model. Antimicrob Agents Chemother. 2013."
   date: '201301'
   pmid: '23070161'
   pdf: '/static/pdf/publications/Werth_2013.pdf'
 
-- citation: "Torkamani A, Pham P, Libiger O, Bansal V, Zhang G, Scott-Van Zeeland AA, **Tewhey R**, Topol EJ, Schork NJ.
+- citation: "Torkamani A, Pham P, Libiger O, Bansal V, Zhang G, Scott-Van Zeeland AA, **Tewhey R**, Topol EJ, Schork NJ.<br/> 
 Clinical implications of human population differences in genome-wide rates of functional genotypes. Front Genet. 2012."
   date: '201211'
   pmid: '23125845'
   pdf: '/static/pdf/publications/Torkamani_2012.pdf'
 
-- citation: "Humphries RM, Kelesidis T, **Tewhey R**, Rose WE, Schork N, Nizet V, Sakoulas G. Genotypic and phenotypic
-evaluation of the evolution of high-level daptomycin nonsusceptibility in vancomycin-resistant Enterococcus faecium.
+- citation: "Humphries RM, Kelesidis T, **Tewhey R**, Rose WE, Schork N, Nizet V, Sakoulas G.<br/> 
+Genotypic and phenotypic evaluation of the evolution of high-level daptomycin nonsusceptibility in vancomycin-resistant Enterococcus faecium.
 Antimicrob Agents Chemother. 2012."
   date: '201211'
   pmid: '22948885'
   pdf: '/static/pdf/publications/Humphries_2012.pdf'
 
-- citation: "**Tewhey R**, Cannavino CR, Leake JA, Bansal V, Topol EJ, Torkamani A, Bradley JS, Schork NJ.
+- citation: "**Tewhey R**, Cannavino CR, Leake JA, Bansal V, Topol EJ, Torkamani A, Bradley JS, Schork NJ.<br/> 
 Genetic structure of community acquired methicillin-resistant Staphylococcus aureus USA300. BMC Genomics. 2012."
   date: '201209'
   pmid: '23009684'
   pdf: '/static/pdf/publications/Publications/Tewhey_2012.pdf'
 
-- citation: "Bright AT, **Tewhey R**, Abeles S, Chuquiyauri R, Llanos-Cuentas A, Ferreira MU, Schork NJ, Vinetz JM, Winzeler EA.
+- citation: "Bright AT, **Tewhey R**, Abeles S, Chuquiyauri R, Llanos-Cuentas A, Ferreira MU, Schork NJ, Vinetz JM, Winzeler EA.<br/> 
 Whole genome sequencing analysis of Plasmodium vivax using whole genome capture. BMC Genomics. 2012."
   date: '201206'
   pmid: '22721170'
   pdf: '/static/pdf/publications/Bright_2012.pdf'
 
-- citation: "Bansal V, **Tewhey R**, Leproust EM, Schork NJ. Efficient and cost effective population resequencing by
-pooling and in-solution hybridization. PLoS One. 2011."
+- citation: "Bansal V, **Tewhey R**, Leproust EM, Schork NJ.<br/> 
+Efficient and cost effective population resequencing by pooling and in-solution hybridization. PLoS One. 2011."
   date: '201103'
   pmid: '21479135'
   pdf: '/static/pdf/publications/Bansal_2011b.PDF'
 
-- citation: "**Tewhey R**, Bansal V, Torkamani A, Topol EJ, Schork NJ. The importance of phase information for human genomics.
-Nat Rev Genet. 2011. <br>"
+- citation: "**Tewhey R**, Bansal V, Torkamani A, Topol EJ, Schork NJ.<br/> 
+The importance of phase information for human genomics. Nat Rev Genet. 2011."
   date: '201103'
   pmid: '21301473'
   pdf: '/static/pdf/publications/Tewhey_2011.pdf'
 
-- citation: "Bansal V, **Tewhey R**, Topol EJ, Schork NJ. The next phase in human genetics. Nat Biotechnol. 2011."
+- citation: "Bansal V, **Tewhey R**, Topol EJ, Schork NJ.<br/> 
+The next phase in human genetics. Nat Biotechnol. 2011."
   date: '201101'
   pmid: '21221098'
   pdf: '/static/pdf/publications/Bansal_2011a.pdf'
 
 - citation: "Sim BM, Chantratita N, Ooi WF, Nandi T, **Tewhey R**, Wuthiekanun V, Thaipadungpanit J, Tumapa S, Ariyaratne P, Sung WK,
-Sem XH, Chua HH, Ramnarayanan K, Lin CH, Liu Y, Feil EJ, Glass MB, Tan G, Peacock SJ, Tan P. Genomic acquisition of a capsular
-polysaccharide virulence cluster by non-pathogenic Burkholderia isolates. Genome Biol. 2010."
+Sem XH, Chua HH, Ramnarayanan K, Lin CH, Liu Y, Feil EJ, Glass MB, Tan G, Peacock SJ, Tan P.<br/> 
+Genomic acquisition of a capsular polysaccharide virulence cluster by non-pathogenic Burkholderia isolates. Genome Biol. 2010."
   date: '201008'
   pmid: '20799932'
   pdf: '/static/pdf/publications/Sim_2010.pdf'
 
-- citation: "Bansal V, Harismendy O, **Tewhey R**, Murray SS, Schork NJ, Topol EJ, Frazer KA. Accurate detection and genotyping of
-SNPs utilizing population sequencing data. Genome Res. 2010."
+- citation: "Bansal V, Harismendy O, **Tewhey R**, Murray SS, Schork NJ, Topol EJ, Frazer KA.<br/> 
+Accurate detection and genotyping of SNPs utilizing population sequencing data. Genome Res. 2010."
   date: '201004'
   pmid: '20150320'
   pdf: '/static/pdf/publications/Bansal_2010.pdf'
 
 - citation: "**Tewhey R**, Warner JB, Nakano M, Libby B, Medkova M, David PH, Kotsopoulos SK, Samuels ML, Hutchison JB, Larson JW,
-Topol EJ, Weiner MP, Harismendy O, Olson J, Link DR, Frazer KA. Microdroplet-based PCR enrichment for large-scale targeted sequencing.
-Nat Biotechnol. 2009."
+Topol EJ, Weiner MP, Harismendy O, Olson J, Link DR, Frazer KA.<br/> 
+Microdroplet-based PCR enrichment for large-scale targeted sequencing. Nat Biotechnol. 2009."
   date: '200911'
   pmid: '19881494'
   pdf: '/static/pdf/publications/Tewhey_2009b.pdf'
 
 - citation: "**Tewhey R**, Nakano M, Wang X, Pabón-Peña C, Novak B, Giuffre A, Lin E, Happe S, Roberts DN, LeProust EM, Topol EJ,
-Harismendy O, Frazer KA. Enrichment of sequencing targets from the human genome by solution hybridization. Genome Biol. 2009."
+Harismendy O, Frazer KA.<br/> 
+Enrichment of sequencing targets from the human genome by solution hybridization. Genome Biol. 2009."
   date: '200910'
   pmid: '19835619'
   pdf: '/static/pdf/publications/Tewhey_2009a.pdf'
@@ -233,9 +243,8 @@ Harismendy O, Frazer KA. Enrichment of sequencing targets from the human genome 
 - citation: "Orho-Melander M, Melander O, Guiducci C, Perez-Martinez P, Corella D, Roos C, **Tewhey R**, Rieder MJ, Hall J,
 Abecasis G, Tai ES, Welch C, Arnett DK, Lyssenko V, Lindholm E, Saxena R, de Bakker PI, Burtt N, Voight BF, Hirschhorn JN,
 Tucker KL, Hedner T, Tuomi T, Isomaa B, Eriksson KF, Taskinen MR, Wahlstrand B, Hughes TE, Parnell LD, Lai CQ, Berglund G,
-Peltonen L, Vartiainen E, Jousilahti P, Havulinna AS, Salomaa V, Nilsson P, Groop L, Altshuler D, Ordovas JM, Kathiresan S.
-Common missense variant in the glucokinase regulatory protein gene is associated with increased plasma triglyceride and C-reactive
-protein but lower fasting glucose concentrations. Diabetes. 2008."
+Peltonen L, Vartiainen E, Jousilahti P, Havulinna AS, Salomaa V, Nilsson P, Groop L, Altshuler D, Ordovas JM, Kathiresan S.<br/> 
+Common missense variant in the glucokinase regulatory protein gene is associated with increased plasma triglyceride and C-reactive protein but lower fasting glucose concentrations. Diabetes. 2008."
   date: '200811'
   pmid: '18678614'
   pdf: '/static/pdf/publications/Oroho-Melander_2008.pdf'
@@ -245,8 +254,8 @@ Hughes TE, Groop L, Altshuler D, Almgren P, Florez JC, Meyer J, Ardlie K, Bengts
 Lyon HN, Melander O, Newton-Cheh C, Nilsson P, Orho-Melander M, Råstam L, Speliotes EK, Taskinen MR, Tuomi T, Guiducci C,
 Berglund A, Carlson J, Gianniny L, Hackett R, Hall L, Holmkvist J, Laurila E, Sjögren M, Sterner M, Surti A, Svensson M, Svensson M,
 **Tewhey R**, Blumenstiel B, Parkin M, Defelice M, Barry R, Brodeur W, Camarata J, Chia N, Fava M, Gibbons J, Handsaker B, Healy C,
-Nguyen K, Gates C, Sougnez C, Gage D, Nizzari M, Gabriel SB, Chirn GW, Ma Q, Parikh H, Richardson D, Ricke D, Purcell S. Genome-wide
-association analysis identifies loci for type 2 diabetes and triglyceride levels. Science. 2007."
+Nguyen K, Gates C, Sougnez C, Gage D, Nizzari M, Gabriel SB, Chirn GW, Ma Q, Parikh H, Richardson D, Ricke D, Purcell S.<br/> 
+Genome-wide association analysis identifies loci for type 2 diabetes and triglyceride levels. Science. 2007."
   date: '200706'
   pmid: '17463246'
   # pdf: '/static/pdf/publications/'
