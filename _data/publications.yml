@@ -13,14 +13,14 @@
 #       url: http://mullinslab.ucsf.edu/
 #
 
-- citation: "**Mouri K**, Guo MH, de Boer CG, Newby GA, Gentili M, Liu DR, Hacohen N, **Tewhey R**, Ray JP.\
+- citation: "**Mouri K**, Guo MH, de Boer CG, Newby GA, Gentili M, Liu DR, Hacohen N, **Tewhey R**, Ray JP.<br/> 
 Prioritization of autoimmune disease-associated genetic variants that perturb regulatory element activity in T cells. bioRxiv. 2021"
   date: '202105'
   #pmid: ''
   biorxiv: '2021.05.30.445673'
   #pdf: '/static/pdf/publications/'
 
-- citation: "Griesemer D, Xue J, Reilly S, Ulirsch J, Kukreja K, Davis J, Kanai M, Yang D, Montgomery S, Novina C, **Tewhey R**, Sabeti P.\
+- citation: "Griesemer D, Xue J, Reilly S, Ulirsch J, Kukreja K, Davis J, Kanai M, Yang D, Montgomery S, Novina C, **Tewhey R**, Sabeti P.<br/> 
 Genome-wide functional screen of 3’UTR variants uncovers causal variants for human disease and evolution. bioRxiv. 2021"
   date: '202101'
   #pmid: ''
