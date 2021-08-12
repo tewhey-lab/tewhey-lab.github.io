@@ -13,7 +13,7 @@
 #       url: http://mullinslab.ucsf.edu/
 #
 
-- citation: "**Mouri K**, Guo MH, de Boer CG, Newby GA, Gentili M, Liu DR, Hacohen N, **Tewhey R**, Ray JP.<br/> <span style='color:LightCoral'>Prioritization ofautoimmune disease-associated genetic variants that perturb regulatory element activity in T cells</span>. bioRxiv. 2021"
+- citation: "**Mouri K**, Guo MH, de Boer CG, Newby GA, Gentili M, Liu DR, Hacohen N, **Tewhey R**, Ray JP.<br/> <span style='color:IndianRed'>Prioritization of autoimmune disease-associated genetic variants that perturb regulatory element activity in T cells</span>. bioRxiv. 2021"
   date: '202105'
   #pmid: ''
   biorxiv: '2021.05.30.445673'
