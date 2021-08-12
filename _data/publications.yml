@@ -39,14 +39,14 @@ A MicroRNA Linking Human Positive Selection and Metabolic Disorders. Cell. 2020"
   date: '202010'
   pmid: '33058756'
   #biorxiv: ''
-  #pdf: '/static/pdf/publications/'
+  pdf: 'https://www.sciencedirect.com/science/article/pii/S0092867420311582'
 
 - citation: "Thibodeau A, Khetan S, Eroglu A, **Tewhey R**, Stitzel ML, Ucar D.
 CoRE-ATAC: A deep learning model for the functional classification of regulatory elements from single cell and bulk ATAC-seq data. bioRxiv. 2020"
   date: '202007'
   #pmid: ''
   biorxiv: '2020.06.22.165183'
-  #pdf: '/static/pdf/publications/Reilly_2021.pdf'
+  #pdf: ''
 
 - citation: "Khetan S, **Kales S**, Kursawe R, Jillette A, Reilly SK, Ucar D, **Tewhey R**, Stitzel ML.
 Functional characterization of thousands of type 2 diabetes-associated and chromatin-modulating variants under
@@ -61,14 +61,14 @@ Issner R, Finucane HK, Lander ES, Regev A, Hacohen N. Prioritizing disease and t
 and genomic features. Nat Commun. 2020"
   date: '202003'
   pmid: '32144282'
-  pdf: '/static/pdf/publications/Ray_2020.pdf'
+  pdf: 'https://www.nature.com/articles/s41467-020-15022-4'
 
 - citation: "Kreimer A, Zeng H, Edwards MD, Guo Y, Tian K, Shin S, Welch R, Wainberg M, Mohan R, Sinnott-Armstrong NA, Li Y,
 Eraslan G, Amin TB, **Tewhey R**, Sabeti PC, Goke J, Mueller NS, Kellis M, Kundaje A, Beer MA, Keles S, Gifford DK, Yosef N.
 Predicting gene expression in massively parallel reporter assays: A comparative study. Hum Mutat. 2017."
   date: '201703'
   pmid: '28220625'
-  pdf: '/static/pdf/publications/Kriemer_2017.pdf'
+  pdf: 'https://onlinelibrary.wiley.com/doi/full/10.1002/humu.23197'
 
 - citation: "Grossman SR, Zhang X, Wang L, Engreitz J, Melnikov A, Rogov P, **Tewhey R**, Isakova A, Deplancke B,
 Bernstein BE, Mikkelsen TS, Lander ES. Systematic dissection of genomic features determining transcription factor binding
