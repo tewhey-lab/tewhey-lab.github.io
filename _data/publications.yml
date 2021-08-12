@@ -17,22 +17,22 @@
 Prioritization of autoimmune disease-associated genetic variants that perturb regulatory element activity in T cells. bioRxiv. 2021"
   date: '202105'
   #pmid: ''
-  biorxiv: '2021.05.30.445673v1'
+  biorxiv: '2021.05.30.445673'
   #pdf: '/static/pdf/publications/'
 
 - citation: "Griesemer D, Xue J, Reilly S, Ulirsch J, Kukreja K, Davis J, Kanai M, Yang D, Montgomery S, Novina C, **Tewhey R**, Sabeti P.
 Genome-wide functional screen of 3’UTR variants uncovers causal variants for human disease and evolution. bioRxiv. 2021"
   date: '202101'
   #pmid: ''
-  biorxiv: '2021.01.13.424697v1'
+  biorxiv: '2021.01.13.424697'
   #pdf: '/static/pdf/publications/'
   
 - citation: "Reilly SK, Gosai SJ, Gutierrez A, Ulirsch JC, Kanai M, **Mouri K, Berenzy D, Kales S**, Butler GB, Gladden-Young A, Bhuiyan RM, Stitzel ML, Finucane HK, Sabeti PC, **Tewhey R**.
-HCR-FlowFISH: A flexible CRISPR screening method to identify cis-regulatory elements and their taget genes. Nature Genetics. 2021"
+Direct characterization of cis-regulatory elements and functional dissection of complex genetic associations using HCR–FlowFISH. Nature Genetics. 2021"
   date: '202107'
   pmid: '34326544'
   biorxiv: '2020.05.11.078675'
-  pdf: '/static/pdf/publications/Reilly_2021.pdf'
+  pdf: 'https://www.nature.com/articles/s41588-021-00900-4'
 
 - citation: "Wang L, Sinnott-Armstrong N, Wagschal A, Wark AR, Camporez J-P, Perry RJ, Ji F, Sohn Y, Oh J, Wu S, Chery J, Moud BN, Saadat A, Dankel SN, Mellgren G, Tallapragada DSP, Strobel SM, Lee M-J, **Tewhey R**, Sabeti PC, Schaefer A, Petri A, Kauppinen S, Chung RT, Soukas A, Avruch J, Fried SK, Hauner H, Sadreyev RI, Shulman GI, Claussnitzer M, Näär AM.
 A MicroRNA Linking Human Positive Selection and Metabolic Disorders. Cell. 2020"
@@ -45,7 +45,7 @@ A MicroRNA Linking Human Positive Selection and Metabolic Disorders. Cell. 2020"
 CoRE-ATAC: A deep learning model for the functional classification of regulatory elements from single cell and bulk ATAC-seq data. bioRxiv. 2020"
   date: '202007'
   #pmid: ''
-  biorxiv: '2020.06.22.165183v2'
+  biorxiv: '2020.06.22.165183'
   #pdf: '/static/pdf/publications/Reilly_2021.pdf'
 
 - citation: "Khetan S, **Kales S**, Kursawe R, Jillette A, Reilly SK, Ucar D, **Tewhey R**, Stitzel ML.
