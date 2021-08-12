@@ -14,7 +14,7 @@
 #
 
 - citation: "**Mouri K**, Guo MH, de Boer CG, Newby GA, Gentili M, Liu DR, Hacohen N, **Tewhey R**, Ray JP.<br/> 
-autoimmune disease-associated</span> genetic variants that perturb regulatory element activity in T cells. bioRxiv. 2021"
+<span style="color:blue">autoimmune disease-associated genetic variants that perturb regulatory element activity in T cells</span>. bioRxiv. 2021"
   date: '202105'
   #pmid: ''
   biorxiv: '2021.05.30.445673'
