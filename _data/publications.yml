@@ -12,6 +12,7 @@
 #     - name: Mullins lab
 #       url: http://mullinslab.ucsf.edu/
 #
+{::options parse_block_html="true" /}
 
 - citation: "**Mouri K**, Guo MH, de Boer CG, Newby GA, Gentili M, Liu DR, Hacohen N, **Tewhey R**, Ray JP.<br/> 
 <p style="color:#FF0000";>4Prioritization of autoimmune disease-associated genetic variants that perturb regulatory element activity in T cells. bioRxiv. 2021<\p>"
