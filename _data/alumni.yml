@@ -1,11 +1,23 @@
+- name: Lucy Benjamin
+  position: Research Administrative Assistant
+  startdate: 2017
+  enddate: 2022
+  current: 
+
+- name: Natalia Fuentes
+  position: Summer Student
+  startdate: 2018
+  enddate: 2022
+  current: Graduated - Harvard
+
 - name: Connor Kean
   position: Summer Student
   startdate: 2017
   enddate: 2019
   current: Undergraduate Student - Towson University
 
-- name: Natalia Fuentes
-  position: Summer Student
-  startdate: 2018
-  enddate: 2021
-  current: Graduated - Harvard
+- name: Luke Parsley
+  position: Graduate Student
+  startdate: 2019
+  enddate: 2022
+  current: 
