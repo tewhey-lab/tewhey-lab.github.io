@@ -81,7 +81,20 @@
   in a molecular diagnostic lab and she worked at Chugai Pharmaceutical Co. in Tokyo, Japan in the International Group. \
   Susan is a Research Assistant in the Tewhey Lab and contributes to many different projects but her expertise is in ES cell work.  \
   In her spare time Susan likes to paint, draw, walk/hike with her dog and husband, cook and be on the water boating or swimming."
-
+  
+- name: Frank Liu
+  image:
+  altimage:
+  position: Summer Student
+  email: frankliu (@) college.harvard.edu
+  github: frankliuyc
+  description: "Frank is a rising freshman at Harvard College, likely concentrating in molecular biology, government, \
+  and East Asian studies. Originally from Newton, MA, Frank joined the Tewhey Lab as a summer student in the 2022 \
+  Summer Student Program, where he is working with Dr. Rodrigo Castro on deep learning models for enhancer elements. \
+  Before joining the Tewhey Lab he has worked on synthetic spider silks, as well as protein interactions and mechanical strength \
+  at MIT and Brigham Women’s. Academically Frank is also interested in advocacy, creative writing, and policy. Outside of the lab, \
+  Frank loves to read, hike, and explore the food scene; his favorite band is Animal Collective."
+  
 - name: Kousuke Mouri (KOH-skay)
   image: /static/img/members/Kousuke.jpg
   altimage: /static/img/members/Kousuke_and_Lobster.JPG
