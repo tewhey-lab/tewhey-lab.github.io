@@ -4,8 +4,8 @@
   enddate: 2019
   current: Undergraduate Student - Towson University
 
-#- name: Natalia Fuentes
-#  position: Summer Student
-#  startdate: 2018
-#  enddate: 2020
-#  current: Undergraduate Student - Harvard
+- name: Natalia Fuentes
+  position: Summer Student
+  startdate: 2018
+  enddate: 2021
+  current: Graduated - Harvard
