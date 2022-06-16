@@ -57,17 +57,17 @@
   pipelines to be used in the analysis of MPRA count data as well as participating in the analysis itself. In her free time Hannah \
   enjoys baking, sharing said baked goods with other lab members, and knitting."
 
-- name: Natalia Fuentes
-  image: /static/img/members/Natalia.jpeg
-  altimage: /static/img/members/Natalia_alt.jpg
-  position: Undergraduate Student
-  email: nfuentes (at) college.harvard.edu
-  description: "Natalia is a rising junior at Harvard College, studying Integrative Biology with a secondary in Ethnicity, Migration, \
-  and Rights. She joined the Tewhey Lab as a member of the 2019 JAX Summer Student Program, and completed a project using a \
-  Massively Parallel Reporter Assay (MPRA) to test the regulatory function of machine-learning derived synthetic elements. \
-  As a returning undergraduate student, she's working to computationally characterize this library of novel sequences using \
-  known biological markers. With her spare time, Natalia enjoys performing with Mariachi Véritas, getting lost on mountains \
-  in Maine, and taking her indoor cat outside."
+#- name: Natalia Fuentes
+#  image: /static/img/members/Natalia.jpeg
+#  altimage: /static/img/members/Natalia_alt.jpg
+#  position: Undergraduate Student
+#  email: nfuentes (at) college.harvard.edu
+#  description: "Natalia is a rising junior at Harvard College, studying Integrative Biology with a secondary in Ethnicity, Migration, \
+#  and Rights. She joined the Tewhey Lab as a member of the 2019 JAX Summer Student Program, and completed a project using a \
+#  Massively Parallel Reporter Assay (MPRA) to test the regulatory function of machine-learning derived synthetic elements. \
+#  As a returning undergraduate student, she's working to computationally characterize this library of novel sequences using \
+#  known biological markers. With her spare time, Natalia enjoys performing with Mariachi Véritas, getting lost on mountains \
+#  in Maine, and taking her indoor cat outside."
 
 - name: Susan Kales
   image: /static/img/members/Susan-Meeting.jpg
