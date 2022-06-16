@@ -1,13 +1,13 @@
-- name: Lucy Benjamin
-  image: /static/img/members/Benjamin.jpg
-  # altimage: /static/img/members/Benjamin_pb.jpg
-  position: Research Administrative Assistant
-  email: lucy.benjamin (at) jax.org
-  description: "Lucy graduated from Oxford University and MIT with degrees in Georgraphy and Real Estate. Before coming to JAX, \
-  Lucy was a chartered surveyor in the UK and has since set up several businesses in the US including a small granola \
-  manufacturing company. Now, as a Research Administrative Assistant in the Tewhey lab, Lucy works doing a variety of administrative \
-  jobs for Ryan and the lab group. For fun, lucy loves to cook, bike ride, play duplicate bridge and garden, although she does not \
-  have much spare time."
+#- name: Lucy Benjamin
+#  image: /static/img/members/Benjamin.jpg
+#  # altimage: /static/img/members/Benjamin_pb.jpg
+#  position: Research Administrative Assistant
+#  email: lucy.benjamin (at) jax.org
+#  description: "Lucy graduated from Oxford University and MIT with degrees in Georgraphy and Real Estate. Before coming to JAX, \
+#  Lucy was a chartered surveyor in the UK and has since set up several businesses in the US including a small granola \
+#  manufacturing company. Now, as a Research Administrative Assistant in the Tewhey lab, Lucy works doing a variety of administrative \
+#  jobs for Ryan and the lab group. For fun, lucy loves to cook, bike ride, play duplicate bridge and garden, although she does not \
+#  have much spare time."
 
 - name: Daniel Berenzy
   image: /static/img/members/Daniel.jpg
@@ -95,16 +95,16 @@
   Kousuke works 2-legged human genetics to decipher the mechanisms of the cis regulatory element which makes wonderful variety \
   of animal morphology and phenotype. In his free time Kousuke enjoys snowboarding and taking care of his kawaii tortoise, Chicago."
 
-- name: Luke Parsley
-  image: /static/img/members/Luke.jpg
-  altimage: /static/img/members/Luke_alt.jpg
-  position: Graduate Student
-  email: luke.parsley (at) jax.org
-  description: "Luke graduated from Rollins College with a degree in Biochemistry/Molecular Biology. During undergraduate, \
-  he conducted research in both the laboratories of Dr. Jurrien Dean studying germ granule trafficking in developing oocytes, \
-  and Dr. Kasandra Riley profiling ncRNA expression of S. epidermis in stress response. As a graduate student in the Tewhey lab, \
-  he employs Massively Parallel Reporter Assays (MPRA) to create enhancer profiles for disease-associated loci. In his free time, \
-  he is an avid runner that enjoys Star Trek, hiking, and Chinese food."
+#- name: Luke Parsley
+#  image: /static/img/members/Luke.jpg
+#  altimage: /static/img/members/Luke_alt.jpg
+#  position: Graduate Student
+#  email: luke.parsley (at) jax.org
+#  description: "Luke graduated from Rollins College with a degree in Biochemistry/Molecular Biology. During undergraduate, \
+#  he conducted research in both the laboratories of Dr. Jurrien Dean studying germ granule trafficking in developing oocytes, \
+#  and Dr. Kasandra Riley profiling ncRNA expression of S. epidermis in stress response. As a graduate student in the Tewhey lab, \
+#  he employs Massively Parallel Reporter Assays (MPRA) to create enhancer profiles for disease-associated loci. In his free time, \
+#  he is an avid runner that enjoys Star Trek, hiking, and Chinese food."
 
 - name: Ryan Tewhey
   image: /static/img/members/Ryan.jpg
