@@ -69,6 +69,16 @@
 #  known biological markers. With her spare time, Natalia enjoys performing with Mariachi Véritas, getting lost on mountains \
 #  in Maine, and taking her indoor cat outside."
 
+- name: Debi Foster
+  image: /static/img/members/Debi.png
+  # altimage:
+  position: Research Administrative Asisstant
+  email: debi.foster (at) jax.org
+  description: " Before joining JAX, Debi has 20 years of Admin experience primarily in the medical field. As the RAA \
+  for the Tewhey Lab, Debi assists them with ordering products for the lab, coordinating travel and expenses for conferences \
+  and scheduling meetings as necessary. In her spare time Debi likes to spend time with her family, go boating in the ocean \
+  and be outside playing catch with the dogs."
+
 - name: Susan Kales
   image: /static/img/members/Susan-Meeting.jpg
   altimage: /static/img/members/Susan-Skip.jpg
@@ -107,6 +117,20 @@
   with Dr. Toshihiko Shiroishi at National Institute of Genetics, Japan. Now, as a postodoctoral associate in the Tewhey lab, \
   Kousuke works 2-legged human genetics to decipher the mechanisms of the cis regulatory element which makes wonderful variety \
   of animal morphology and phenotype. In his free time Kousuke enjoys snowboarding and taking care of his kawaii tortoise, Chicago."
+  
+- name: Niketa Nerukar
+  image: /static/img/members/Niketa.jpg
+  altimage: /static/img/members/Niketa_fun.jpg
+  position: Graduate Student
+  email: niketa.nerukar (at) jax.org
+  twitter: niketa_n
+  orcid: 0000-0002-7707-9373
+  description: "Niketa graduated from Christ University, Bangalore with a triple major B.S. in Biotechnology, Chemistry \
+  and Zoology. Following graduation, Niketa joined Dr. Sangeeta Bhatia’s lab at MIT working as a research technician and \
+  assistant lab manager, studying liver-stage malaria and consequently,circadian patterns of drug metabolism and immune \
+  response in the liver. Now, as a graduate student in the Tewhey lab, Niketa aims to study howregulatory variants contribute \
+  to complex disease. In her free time, Niketaenjoys long walks, swimming, reading, exploring new restaurants and jamming \
+  to Taylor Swift and 2000-2010’s pop music. "
 
 #- name: Luke Parsley
 #  image: /static/img/members/Luke.jpg
