@@ -24,10 +24,10 @@ group: contact
 
 <div class="col-md-4">
 
-  <h4> Lucy Benjamin</h4>
+  <h4> Debi Foster</h4>
   Research Administrative Assistant <br>
-  Email:  lucy.benjamin (at) jax.org  <br>
-  Phone: 207 288-6321   <br>
+  Email:  debi.foster (at) jax.org  <br>
+  
 
 </div>
 
