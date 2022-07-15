@@ -22,7 +22,7 @@ _05-05-2022_ &nbsp; &nbsp; **Tewhey Lab featured on the JAX website** <br>
 The Tewhey Lab was featured on the JAX website. Read the article [here](https://www.jax.org/news-and-insights/2022/may/genome-explorer) to learn more about our work on regulatory elements, collaborative efforts on Type II Diabetes and auto-immune disease, and Ryan's scientific journey. 
 
 _11-02-2022_ &nbsp; &nbsp; **MPRAduo Preprint** <br>
-Our work on characterizing genome-wide RE1 silencers using MPRAduo is out on Biorxiv. Our team modified MPRA to test repressive elements and characterized ~13000 human RE1. You can read the preprint [here](https://www.biorxiv.org/content/10.1101/2022.02.11.479757v1) 
+Our work on characterizing genome-wide RE1 silencers using MPRAduo is out on Biorxiv. Our team modified MPRA to test repressive elements and characterized ~13000 human RE1. You can read the preprint [here](https://www.biorxiv.org/content/10.1101/2022.02.11.479757v1). 
 
 
 
