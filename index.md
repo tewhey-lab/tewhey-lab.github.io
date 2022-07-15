@@ -12,7 +12,7 @@ group: home
 
 ### What's new with us?
 
-_13-01-2021_ &nbsp; &nbsp; **New Lab Members in the Tewhey Lab!** <br>
+_11-06-2022_ &nbsp; &nbsp; **New Lab Members in the Tewhey Lab!** <br>
 We would like to welcome our new lab members Niketa and Frank! Niketa is a first year PhD student in the Tufts Mammalian Genetics program at JAX and Frank is a summer student in the JAX Summer Student Program. You can learn more about Frank and Niketa [here](https://www.tewheylab.org/members/).
 
 _29-06-2021_ &nbsp; &nbsp; **HCR-FlowFISH work published at Nature Genetics** <br>
