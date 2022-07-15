@@ -21,8 +21,8 @@ Postdoctoral Associate Kousuke Mouri's first author paper "Prioritization of aut
 _05-05-2022_ &nbsp; &nbsp; **Tewhey Lab featured on the JAX website** <br>
 The Tewhey Lab was featured on the JAX website. Read the article [here](https://www.jax.org/news-and-insights/2022/may/genome-explorer) to learn more about our work on regulatory elements, collaborative efforts on Type II Diabetes and auto-immune disease, and Ryan's scientific journey. 
 
-_29-06-2021_ &nbsp; &nbsp; **HCR-FlowFISH work published at Nature Genetics** <br>
-Our work describing HCR-FlowFISH as a flexible phenotyping methods for CRISPR non-coding screens is now out at [Nature Genetics](https://www.nature.com/articles/s41588-021-00900-4). Our article made the cover with a beautiful illustration from our friends at [SciStories](https://scistories.com/). Check it out [here](https://www.nature.com/ng/volumes/53/issues/8). This work was a collaboration between the Sabeti Lab at the Broad Institute and the Reilly Lab at Yale University.
+_11-02-2022_ &nbsp; &nbsp; **MPRAduo Preprint** <br>
+Our work on characterizing genome-wide RE1 silencers using MPRAduo is out on Biorxiv. Our team modified MPRA to test repressive elements and characterized ~13000 human RE1. You can read the preprint [here](https://www.biorxiv.org/content/10.1101/2022.02.11.479757v1) 
 
 
 
