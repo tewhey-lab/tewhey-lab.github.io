@@ -9,6 +9,10 @@ Storm Light by [Judy Taylor](http://www.judytaylorstudio.com/)
 
 # Resources
 ---
+## MPRA Protocol
+
+If you want to follow our MPRA Protocol you can find a pdf document describing it [here](/static/pdf/ENCODE_MPRA_Protocol-Tewhey_Lab.pdf)
+
 ## MPRA Processing Pipelines
 
 `MPRAmatch` and `MPRAcount` cover the first two steps of processing MPRA data. `MPRAmatch` aligns sequenced oligos with the reference and pulls the barcods associated with each sequence. `MPRAcount` takes the sequenced barcodes for each cell type tested and arranges a barcode level count table to be used for further analysis.
