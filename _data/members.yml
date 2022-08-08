@@ -9,17 +9,17 @@
 #  jobs for Ryan and the lab group. For fun, lucy loves to cook, bike ride, play duplicate bridge and garden, although she does not \
 #  have much spare time."
 
-- name: Daniel Berenzy
-  image: /static/img/members/Daniel.jpg
-  altimage: /static/img/members/Daniel_alt.jpg
-  position: Research Asssitant I
-  email: daniel.berenzy (at) jax.org
-  description: "Daniel graduated from Florida Gulf Coast University (FGCU) with a degree in Biotechnology, while working with \
-  Dr. Takashi Ueda in the school’s Biotechnology lab. Upon graduating from FGCU, Daniel immediately joined the Tewhey Lab as a \
-  Research Assistant and concurrently enrolled in the Professional Science Masters (PSM) program in Bioinformatics at the \
-  University of Maine. As a Research Assistant in the Tewhey Lab, Daniel contributes to several different projects in both the \
-  “wet” and “dry” lab but his expertise is in Biotechnology methods. In his free time, Daniel studies for a Master’s degree but \
-  is also an avid Cyclist, Climber, Kayaker and all-around outdoorsy type. "
+#- name: Daniel Berenzy
+#  image: /static/img/members/Daniel.jpg
+#  altimage: /static/img/members/Daniel_alt.jpg
+#  position: Research Asssitant I
+#  email: daniel.berenzy (at) jax.org
+#  description: "Daniel graduated from Florida Gulf Coast University (FGCU) with a degree in Biotechnology, while working with \
+#  Dr. Takashi Ueda in the school’s Biotechnology lab. Upon graduating from FGCU, Daniel immediately joined the Tewhey Lab as a \
+#  Research Assistant and concurrently enrolled in the Professional Science Masters (PSM) program in Bioinformatics at the \
+#  University of Maine. As a Research Assistant in the Tewhey Lab, Daniel contributes to several different projects in both the \
+#  “wet” and “dry” lab but his expertise is in Biotechnology methods. In his free time, Daniel studies for a Master’s degree but \
+#  is also an avid Cyclist, Climber, Kayaker and all-around outdoorsy type. "
 
 - name: John Butts
   image: /static/img/members/John.jpeg
