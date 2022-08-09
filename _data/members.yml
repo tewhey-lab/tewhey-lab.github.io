@@ -22,8 +22,8 @@
 #  is also an avid Cyclist, Climber, Kayaker and all-around outdoorsy type. "
 
 - name: John Butts
-  image: /static/img/members/John.jpeg
-  altimage: /static/img/members/John_alt.jpg
+  image: /static/img/members/headshots/John.jpg
+  altimage: /static/img/members/alt/John.jpg
   position: Graduate Student
   email: john.butts (at) jax.org
   description: "John graduated from University of Dayton with a B.S./M.S. in Biology. It was there he first began his interest in gene \
@@ -34,8 +34,8 @@
   John enjoys making music, running, and playing tennis."
 
 - name: Rodrigo Castro
-  image: /static/img/members/RodrigoCastro.jpg
-  altimage: /static/img/members/RodrigoCastro_fun.jpg
+  image: /static/img/members/headshots/Rodrigo.jpg
+  altimage: /static/img/members/alt/Rodrigo.jpg
   position: Postdoctoral Associate
   email: rodrigo.castro (at) jax.org
   github: irodcast
@@ -45,8 +45,8 @@
   new synthetic elements for desired regulatory functions. In his spare time, Rodrigo enjoys practicing music, biking, and learning about new AI advances. "
 
 - name: Hannah Dewey
-  image: /static/img/members/Hannah.JPG
-  # altimage: /static/img/members/Dewey_pb.jpg
+  image: /static/img/members/headshots/Hannah.jpg
+  altimage: /static/img/members/alt/Hannah.JPG
   position: Data Analyst I
   email: hannah.dewey (at) jax.org
   github: deweyhannah
@@ -70,8 +70,8 @@
 #  in Maine, and taking her indoor cat outside."
 
 - name: Debi Foster
-  image: /static/img/members/Debi.png
-  # altimage:
+  image: /static/img/members/headshots/Debi.jpg
+  altimage: /static/img/members/alt/Debi.png
   position: Research Administrative Asisstant
   email: debi.foster (at) jax.org
   description: " Before joining JAX, Debi has 20 years of Admin experience primarily in the medical field. As the RAA \
@@ -80,8 +80,8 @@
   and be outside playing catch with the dogs."
 
 - name: Susan Kales
-  image: /static/img/members/Susan-Meeting.jpg
-  altimage: /static/img/members/Susan-Skip.jpg
+  image: /static/img/members/headshots/Susan.jpeg
+  altimage: /static/img/members/alt/Susan.jpg
   position: Research Assistant III
   email: susan.kales (at) jax.org
   description: "Susan graduated from the University of Colorado, Boulder with a degree in Molecular Cellular Developmental Biology.  \
@@ -93,8 +93,8 @@
   In her spare time Susan likes to paint, draw, walk/hike with her dog and husband, cook and be on the water boating or swimming."
   
 - name: Frank Liu
-  image: /static/img/members/Frank.jpeg
-  altimage: /static/img/members/Frank_fun.jpeg
+  image: /static/img/members/headshots/Frank.jpg
+  altimage: /static/img/members/alt/Frank.jpeg
   position: Summer Student
   email: frankliu (@) college.harvard.edu
   github: frankliuyc
@@ -106,8 +106,8 @@
   Frank loves to read, hike, and explore the food scene; his favorite band is Animal Collective."
   
 - name: Kousuke Mouri (KOH-skay)
-  image: /static/img/members/Kousuke.jpg
-  altimage: /static/img/members/Kousuke_and_Lobster.JPG
+  image: /static/img/members/headshots/Kousuke.jpg
+  altimage: /static/img/members/alt/Kousuke.JPG
   position: Postdoctoral Associate
   email: kousuke.Mouri (at) jax.org
   twitter: kousuke_mouri
@@ -119,8 +119,8 @@
   of animal morphology and phenotype. In his free time Kousuke enjoys snowboarding and taking care of his kawaii tortoise, Chicago."
   
 - name: Niketa Nerukar
-  image: /static/img/members/Niketa.jpg
-  altimage: /static/img/members/Niketa_fun.jpg
+  image: /static/img/members/headshots/Niketa.jpg
+  altimage: /static/img/members/alt/Niketa.jpg
   position: Graduate Student
   email: niketa.nerukar (at) jax.org
   twitter: niketa_n
@@ -144,8 +144,8 @@
 #  he is an avid runner that enjoys Star Trek, hiking, and Chinese food."
 
 - name: Ryan Tewhey
-  image: /static/img/members/Ryan.jpg
-  altimage: /static/img/members/Ryan_alt.jpg
+  image: /static/img/members/headshots/Ryan.jpg
+  altimage: /static/img/members/alt/Ryan.jpg
   position: Principal Investigator
   email: ryan.tewhey (at) jax.org
   twitter: r_tewhey
