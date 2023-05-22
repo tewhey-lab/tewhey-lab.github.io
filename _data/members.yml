@@ -36,12 +36,12 @@
 - name: Rodrigo Castro
   image: /static/img/members/headshots/Rodrigo.jpg
   altimage: /static/img/members/alt/Rodrigo.jpg
-  position: Postdoctoral Associate
+  position: Associate Computational Scientist
   email: rodrigo.castro (at) jax.org
   github: irodcast
   twitter: i_rodcast
   description: "Rodrigo graduated from Georgia State University with a doctoral degree in mathematics, focusing in deep learning research. \
-  As a postdoctoral associate in the Tewhey lab, Rodrigo works on generative deep-learning models for cis-regulatory elements and deriving \
+  As a computational scientist in the Tewhey lab, Rodrigo works on generative deep-learning models for cis-regulatory elements and deriving \
   new synthetic elements for desired regulatory functions. In his spare time, Rodrigo enjoys practicing music, biking, and learning about new AI advances. "
 
 - name: Hannah Dewey
@@ -82,7 +82,7 @@
 - name: Susan Kales
   image: /static/img/members/headshots/Susan.jpeg
   altimage: /static/img/members/alt/Susan.jpg
-  position: Research Assistant III
+  position: Associate Lab Manager
   email: susan.kales (at) jax.org
   description: "Susan graduated from the University of Colorado, Boulder with a degree in Molecular Cellular Developmental Biology.  \
   Before joining  JAX for four years Susan worked at Merck & Co. as a Research Biologist.  Susan worked for six years in \
