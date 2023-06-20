@@ -21,9 +21,9 @@
   
 - citation: "**Kousuke Mouri**, **Hannah B Dewey**, **Rodrigo Castro**, **Daniel Berenzy**, **Susan Kales**, **Ryan Tewhey**.<br/> <span style='color:DarkOliveGreen'>Whole genome functional characterization of RE1 silencers using a modified massively parallel reporter assay</span>. bioRxiv. 2022"
   date: '202202'
-  #pmid: ''
+  pmid: '36777181'
   biorxiv: '2022.02.11.479757'
-  #pdf: ''
+  pdf: 'https://www.sciencedirect.com/science/article/pii/S2666979X22001926'
   
 - citation: "Rebecca Earnest, Rockib Uddin, Nicholas Matluk, Nicholas Renzette, Sarah E. Turbett, Katherine J. Siddle, Christine Loreth, Gordon Adams, Christopher H. Tomkins-Tinch, Mary E. Petrone, Jessica E. Rothman, Mallery I. Breban, Robert Tobias Koch, Kendall Billig, Joseph R. Fauver, Chantal B.F. Vogels, Kaya Bilguvar, Bony De Kumar, Marie L. Landry, David R. Peaper, Kevin Kelly, Greg Omerza, Heather Grieser, Sim Meak, John Martha, **Hannah B. Dewey**, **Susan Kales**, **Daniel Berenzy**, Kristin Carpenter-Azevedo, Ewa King, Richard C. Huard, Vlad Novitsky, Mark Howison, Josephine Darpolor, Akarsh Manne, Rami Kantor, Sandra C. Smole, Catherine M. Brown, Timelia Fink, Andrew S. Lang, Glen R. Gallagher, Virginia E. Pitzer, Pardis C. Sabeti, Stacey Gabriel, Bronwyn L. MacInnis, Ahmad Altajar, Alexandra DeJesus, Anderson Brito, Anne E. Watkins, Anthony Muyombwe, Brendan S. Blumenstiel, Caleb Neal, Chaney C. Kalinich, Chen Liu, Christine Loreth, Christopher Castaldi, Claire Pearson, Clare Bernard, Corey M. Nolet, David Ferguson, Erika Buzby, Eva Laszlo, Faye L. Reagan, Gina Vicente, Heather M. Rooke, Heidi Munger, Hillary Johnson, Irina R. Tikhonova, Isabel M. Ott, Jafar Razeq, James C. Meldrim, Jessica Brown, Jianhui Wang, Johanna Vostok, John P. Beauchamp, Jonna L. Grimsby, Joshua Hall, Katelyn S. Messer, Katie L. Larkin, Kyle Vernest, Lawrence C. Madoff, Lisa M. Green, Lori Webber, Luc Gagne, Maesha A. Ulcena, Marianne C. Ray, Marissa E. Fisher, Mary Barter, Matthew D. Lee, Matthew T. DeFelice, Michelle C. Cipicchio, Natasha L. Smith, Niall J. Lennon, Nicholas A. Fitzgerald, Nicholas Kerantzas, Pei Hui, Rachel Harrington, Randy Downing, Rashida Haye, Ryan Lynch, Scott E. Anderson, Scott Hennigan, Sean English, Seana Cofsky, Selina Clancy, Shrikant Mane, Stephanie Ash, Stephanie Baez, Steve Fleming, Steven Murphy, Sushma Chaluvadi, Tara Alpert, Trevor Rivard, Wade Schulz, Zoe M. Mandese, **Ryan Tewhey**, Mark D. Adams, Daniel J. Park, Jacob E. Lemieux, Nathan D. Grubaugh.<br/> <span style='color:DarkOliveGreen'>Comparative transmissibility of SARS-CoV-2 variants Delta and Alpha in New England, USA</span>. Cell Reports Medicine. 2022"
   date: '202204'
@@ -31,37 +31,37 @@
   #biorxiv: ''
   pdf: 'https://www.sciencedirect.com/science/article/pii/S2666379122000908'
 
-- citation: "Lagerborg, K.A., Normandin, E., Bauer, M.R. et al.<br/> <span style='color:DarkOliveGreen'>ynthetic DNA spike-ins (SDSIs) enable sample tracking and detection of inter-sample contamination in SARS-CoV-2 sequencing workflows</span>. Nature Microbiology. 2022"
+- citation: "Lagerborg, K.A., Normandin, E., Bauer, M.R. et al.<br/> an style='color:DarkOliveGreen'>ynthetic DNA spike-ins (SDSIs) enable sample tracking and detection of inter-sample contamination in SARS-CoV-2 sequencing workflows. Nature Microbiology. 2022"
   date: '202112'
   pmid: '34907347'
   biorxiv: '2021.03.16.435654'
   pdf: 'https://www.nature.com/articles/s41564-021-01019-2'
 
-- citation: "Griesemer D, Xue J, Reilly S, Ulirsch J, Kukreja K, Davis J, Kanai M, Yang D, Montgomery S, Novina C, **Tewhey R**, Sabeti P.<br/> <span style='color:DarkOliveGreen'>Genome-wide functional screen of 3’UTR variants uncovers causal variants for human disease and evolution</span>. bioRxiv. 2021"
+- citation: "Griesemer D, Xue J, Reilly S, Ulirsch J, Kukreja K, Davis J, Kanai M, Yang D, Montgomery S, Novina C, **Tewhey R**, Sabeti P.r/> an style='color:DarkOliveGreen'>Genome-wide functional screen of 3’UTR variants uncovers causal variants for human disease and evolution. bioRxiv. 2021"
   date: '202101'
   pmid: '34534445'
   biorxiv: '2021.01.13.424697'
   pdf: 'https://www.sciencedirect.com/science/article/pii/S0092867421009995'
 
-- citation: "Reilly SK, Gosai SJ, Gutierrez A, Ulirsch JC, Kanai M, **Mouri K, Berenzy D, Kales S**, Butler GB, Gladden-Young A, Bhuiyan RM, Stitzel ML, Finucane HK, Sabeti PC, **Tewhey R**.<br/> <span style='color:DarkOliveGreen'>Direct characterization of cis-regulatory elements and functional dissection of complex genetic associations using HCR–FlowFISH</span>. Nature Genetics. 2021"
+- citation: "Reilly SK, Gosai SJ, Gutierrez A, Ulirsch JC, Kanai M, **Mouri K, Berenzy D, Kales S**, Butler GB, Gladden-Young A, Bhuiyan RM, Stitzel ML, Finucane HK, Sabeti PC, **Tewhey R**.<br/> an style='color:DarkOliveGreen'>Direct characterization of cis-regulatory elements and functional dissection of complex genetic associations using HCR–FlowFISH. Nature Genetics. 2021"
   date: '202107'
   pmid: '34326544'
   biorxiv: '2020.05.11.078675'
   pdf: 'https://www.nature.com/articles/s41588-021-00900-4'
 
-- citation: "Wang L, Sinnott-Armstrong N, Wagschal A, Wark AR, Camporez J-P, Perry RJ, Ji F, Sohn Y, Oh J, Wu S, Chery J, Moud BN, Saadat A, Dankel SN, Mellgren G, Tallapragada DSP, Strobel SM, Lee M-J, **Tewhey R**, Sabeti PC, Schaefer A, Petri A, Kauppinen S, Chung RT, Soukas A, Avruch J, Fried SK, Hauner H, Sadreyev RI, Shulman GI, Claussnitzer M, Näär AM.<br/> <span style='color:DarkOliveGreen'>A MicroRNA Linking Human Positive Selection and Metabolic Disorders</span>. Cell. 2020"
+- citation: "Wang L, Sinnott-Armstrong N, Wagschal A, Wark AR, Camporez J-P, Perry RJ, Ji F, Sohn Y, Oh J, Wu S, Chery J, Moud BN, Saadat A, Dankel SN, Mellgren G, Tallapragada DSP, Strobel SM, Lee M-J, **Tewhey R**, Sabeti PC, Schaefer A, Petri A, Kauppinen S, Chung RT, Soukas A, Avruch J, Fried SK, Hauner H, Sadreyev RI, Shulman GI, Claussnitzer M, Näär AM.<br/> an style='color:DarkOliveGreen'>A MicroRNA Linking Human Positive Selection and Metabolic Disorders. Cell. 2020"
   date: '202010'
   pmid: '33058756'
   #biorxiv: ''
   pdf: 'https://www.sciencedirect.com/science/article/pii/S0092867420311582'
 
-- citation: "Thibodeau A, Khetan S, Eroglu A, **Tewhey R**, Stitzel ML, Ucar D.<br/> <span style='color:DarkOliveGreen'>CoRE-ATAC: A deep learning model for the functional classification of regulatory elements from single cell and bulk ATAC-seq data</span>. bioRxiv. 2020"
+- citation: "Thibodeau A, Khetan S, Eroglu A, **Tewhey R**, Stitzel ML, Ucar D.r/> an style='color:DarkOliveGreen'>CoRE-ATAC: A deep learning model for the functional classification of regulatory elements from single cell and bulk ATAC-seq dataspan>. bioRxiv. 2020"
   date: '202007'
   pmid: '34898596'
   biorxiv: '2020.06.22.165183'
   pdf: 'https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009670'
 
-- citation: "Khetan S, **Kales S**, Kursawe R, Jillette A, Reilly SK, Ucar D, **Tewhey R**, Stitzel ML.<br/> <span style='color:DarkOliveGreen'>Functional characterization of thousands of type 2 diabetes-associated and chromatin-modulating variants under steady state and endoplasmic reticulum stress</span>. Nature Communication. 2021."
+- citation: "Khetan S, **Kales S**, Kursawe R, Jillette A, Reilly SK, Ucar D, **Tewhey R**, Stitzel ML.<br/> an style='color:DarkOliveGreen'>Functional characterization of thousands of type 2 diabetes-associated and chromatin-modulating variants under steady state and endoplasmic reticulum stress</span>. Nature Communication. 2021."
   date: '202002'
   pmid: '34475398'
   biorxiv: '2020.02.12.939348'
