@@ -12,6 +12,33 @@
 #     - name: Mullins lab
 #       url: http://mullinslab.ucsf.edu/
 #
+- citation: "Gosai SJ, **Castro RI**, **Fuentes N**, **Butts JC**, **Kales S**, Noche RR, **Mouri K**, Sabeti PC, Reilly SK, **Tewhey R**.<br/> <span  style='color:DarkOliveGreen'>Machine-guided design of synthetic cell type-specific cis-regulatory elements</span>. bioRxiv. 2023"
+  date: '202308'
+  pmid: '37609287'
+  biorxiv: '2023.08.08.552077'
+  pdf: 'https://www.biorxiv.org/content/10.1101/2023.08.08.552077v1'
+
+- citation: "Xue JR, Mackay-Smith A, **Mouri K**, Fernandez Garcia M 5, Dong MX, Akers JF, Noble M, Li X; Zoonomia Consortium, Lindblad-Toh K, Karlsson EK, Noonan JP, Capellini TD, Brennand KJ, **Tewhey R**, Sabeti PC, Reilly SK.<br/> <span  style='color:DarkOliveGreen'>The functional and evolutionary impacts of human-specific deletions in conserved elements</span>. Science. 2023"
+  date: '202304'
+  pmid: '37104592'
+  pdf: 'https://www.science.org/doi/10.1126/science.abn2253'
+
+- citation: "Carrasco Pro S, Hook H, Bray D, **Berenzy D**, Moyer D, Yin M, Labadorf AT, **Tewhey R**, Siggers T, Fuxman Bass JI.<br/> <span  style='color:DarkOliveGreen'>Widespread perturbation of ETS factor binding sites in cancer</span>. Nature Communications. 2023"
+  date: '202302'
+  pmid: '36808133'
+  biorxiv: '2022.08.10.503516'
+  pdf: 'https://www.nature.com/articles/s41467-023-36535-8'
+
+- citation: "Yao D, Tycko J, Oh JW, Bounds LR, Gosai SJ, Lataniotis L, Mackay-Smith A, Doughty BR, Gabdank I, Schmidt H, Youngworth I, Andreeva K, Ren X, Barrera A, Luo Y, Siklenka K, Yardımcı GG, The ENCODE4 Consortium, **Tewhey R**, Kundaje A, Greenleaf WJ, Sabeti PC, Leslie C, Pritykin Y, Moore JE, Beer MA, Gersbach CA, Reddy TE, Shen Y, Engreitz JM, Bassik MC, Reilly SK.<br/> <span  style='color:DarkOliveGreen'>Multi-center integrated analysis of non-coding CRISPR screens</span>. bioRxiv. 2022"
+  date: '202212'
+  biorxiv: '2022.12.21.520137'
+  pdf: 'https://www.biorxiv.org/content/10.1101/2022.12.21.520137v1'
+
+- citation: "Brown EA, **Kales S**, Boyle MJ, Vitti J, Kotliar D, Schaffner SF, **Tewhey R**, Sabeti PC<br/> <span  style='color:DarkOliveGreen'>Three linked opposing regulatory variants under selection associate with IVD</span>. bioRxiv. 2022"
+  date: '202212'
+  pmid: '36808133'
+  biorxiv: '2022.12.22.521605'
+  pdf: 'https://www.biorxiv.org/content/10.1101/2022.12.22.521605v1'
 
 - citation: "**Mouri K**, Guo MH, de Boer CG, Newby GA, Gentili M, Liu DR, Hacohen N, **Tewhey R**, Ray JP.<br/> <span  style='color:DarkOliveGreen'>Prioritization of autoimmune disease-associated genetic variants that perturb regulatory element activity in T cells</span>. Nature Genetics. 2022"
   date: '202205'
