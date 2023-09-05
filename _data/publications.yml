@@ -58,7 +58,7 @@
   #biorxiv: ''
   pdf: 'https://www.sciencedirect.com/science/article/pii/S2666379122000908'
 
-- citation: "Lagerborg, K.A., Normandin, E., Bauer, M.R. et al.<br/> <span style='color:DarkOliveGreen'>ynthetic DNA spike-ins (SDSIs) enable sample tracking and detection of inter-sample contamination in SARS-CoV-2 sequencing workflows</span>. Nature Microbiology. 2022"
+- citation: "Lagerborg, K.A., Normandin, E., Bauer, M.R. et al.<br/> <span style='color:DarkOliveGreen'>Synthetic DNA spike-ins (SDSIs) enable sample tracking and detection of inter-sample contamination in SARS-CoV-2 sequencing workflows</span>. Nature Microbiology. 2022"
   date: '202112'
   pmid: '34907347'
   biorxiv: '2021.03.16.435654'
