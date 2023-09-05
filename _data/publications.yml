@@ -64,8 +64,8 @@
   biorxiv: '2021.03.16.435654'
   pdf: 'https://www.nature.com/articles/s41564-021-01019-2'
 
-- citation: "Griesemer D, Xue J, Reilly S, Ulirsch J, Kukreja K, Davis J, Kanai M, Yang D, Montgomery S, Novina C, **Tewhey R**, Sabeti P.<br/> <span style='color:DarkOliveGreen'>Genome-wide functional screen of 3’UTR variants uncovers causal variants for human disease and evolution</span>. bioRxiv. 2021"
-  date: '202101'
+- citation: "Griesemer D, Xue J, Reilly S, Ulirsch J, Kukreja K, Davis J, Kanai M, Yang D, **Butts J**, Montgomery S, Novina C, **Tewhey R**, Sabeti P.<br/> <span style='color:DarkOliveGreen'>Genome-wide functional screen of 3’UTR variants uncovers causal variants for human disease and evolution</span>. Cell. 2021"
+  date: '202209'
   pmid: '34534445'
   biorxiv: '2021.01.13.424697'
   pdf: 'https://www.sciencedirect.com/science/article/pii/S0092867421009995'
