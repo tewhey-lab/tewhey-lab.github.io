@@ -11,10 +11,12 @@ Long Meadow and Islands by [Tom Curry](http://tomcurrymaineartist.com/)
 ---
 
 ### Collaborators:
+  - [Juan Fuxman Bass](https://www.fuxmanlab.com/) (Boston University)
+  - [John Ray](https://www.benaroyaresearch.org/our-research/labs-research/lab/ray-lab) (Benaroya Research Institute)
+  - [Steve Reilly](https://www.reilly-lab.com) (Yale)
   - [Pardis Sabeti](https://www.sabetilab.org) (The Broad Institute)
+  - [Trevor Siggers](https://blogs.bu.edu/tsiggers/home/) (Boston University)
   - [Michael Stitzel](https://www.jax.org/research-and-faculty/research-labs/the-stitzel-lab) (JAX)
-  - [Duygu Ucar](https://www.jax.org/research-and-faculty/research-labs/the-ucar-lab) (JAX)
-  - [James Jarvis](http://medicine.buffalo.edu/faculty/profile.html?ubit=jamesjar) (University of Buffalo)
   
 ### Current and Past Funding:
   - NIH/NHGRI Pathway to Independence, K99/R00, 2014-2020, (PI HG008179)
