@@ -1,5 +1,5 @@
 ---
-title: The ZhouLab
+title: The ZhouLab @ Temple University
 layout: home
 group: home
 ---
