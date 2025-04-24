@@ -1,12 +1,20 @@
 ---
-title: Tewhey Lab
+title: The ZhouLab
 layout: home
 group: home
 ---
 
-# Welcome to the Tewhey Lab
-###### We are a group of human geneticist, molecular biologists and computational scientists interested in understanding how genetic variation impacts human traits and risk to disease.
-###### Our lab is located in the Snell Building (B21, Floor 3) on the Bar Harbor Campus of The Jackson Laboratory.
+# Welcome to the ZhouLab
+###### Welcome to the Zhou Lab at the Lewis Katz School of Medicine at Temple University.  We are committed to the cutting-edge cell biology and nanomedicine research. We are driven by a passion for discovery at the intersection of nanomedicine, vascular biology, and pulmonary research. Our mission is to develop innovative, cell-targeted therapies to treat a wide range of lung diseases.
+
+
+###### Our lab combines advanced drug delivery technologies, molecular biology, and interdisciplinary collaboration to uncover the mechanisms of disease and pioneer new treatment strategies. We aim to translate our discoveries into real-world solutions that improve lung health and patient outcomes.
+
+
+###### Explore our research, meet the team, and learn more about our journey to shape the future of lung-targeted nanomedicine.
+
+
+###### Our lab is located in the Medical Education & Research Building (Floor 11) on the Medical Campus of Temple University.
 
 ---
 
@@ -23,4 +31,4 @@ _05-05-2022_ &nbsp; &nbsp; **Autoimmune GWAS work published at Nature Genetics**
 Postdoctoral Associate Kousuke Mouri's first author paper "Prioritization of autoimmune disease-associated genetic variants that perturb regulatory element activity in T cells" is now out at [Nature Genetics](https://www.nature.com/articles/s41588-022-01056-5). Using MPRA, 18,000 GWAS variants across 6 T-cell autoimmune diseases were tested for functional activity, leading to the identification of 60 putatively causal variants and development of a mouse model for the risk allele of a prioritized variant near BACH2. This work was in collaboration with Dr. John Ray’s laboratory at the Benaroya Research Institute. 
 
 
-_Check [here](https://tewhey-lab.github.io/news/) for more updates from the Tewhey Lab_
+_Check [here](https://zhouzlab.github.io/news/) for more updates from the ZhouLab_
