@@ -1,5 +1,5 @@
 ---
-title: Contact the Tewhey Lab
+title: Contact the ZhouLab
 layout: default
 group: contact
 ---
@@ -8,7 +8,7 @@ group: contact
 **_The Calico Jungle_ &copy;1968 [Dahlov Ipcar](https://www.dahlovipcarart.com/), &copy;2019 Robert Ipcar** <br>
 **Reprinted with permission of McIntosh & Otis, Inc.**
 
-# Contact the Tewhey Lab
+# Contact the ZhouLab
 ---
 
 <div class="row">
@@ -16,27 +16,24 @@ group: contact
 <div class="col-md-4">
 
   <h4>Lab Area </h4>
-  600 Main Street <br>
-  Bar Harbor, ME 04609  <br>
-  tel: 207 288 6000
+  3500 N. Broad St, Room 1155 <br>
+  Philadelphia, PA, 19140  <br>
+  Tel: 207 288 6000
 
 </div>
 
 <div class="col-md-4">
 
-  <h4> Debi Foster</h4>
-  Research Administrative Assistant <br>
-  Email:  debi.foster (at) jax.org  <br>
+  <h4> Xinlin Huang</h4>
+  Research Assistant <br>
+  Email:  hxl0631@gmail.com  <br>
   
 
 </div>
 
 <div class="col-md-4">
 
-  <h4>Ryan Tewhey</h4>
-  Assistant Professor  <br>
-  The Jackson Laboratory (Bar Harbor Campus)  <br>
-  email: info (at) tewheylab.org <br>
+  
  
 </div>
 
