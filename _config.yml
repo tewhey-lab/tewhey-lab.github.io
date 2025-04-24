@@ -1,7 +1,7 @@
-name: "Tewhey Lab"
-description: "This is the official web page for the Tewhey Lab at The Jackson Laboratory."
+name: "The ZhouLab"
+description: "This is the official web page for the ZhouLab at Temple University."
 
-url: "http://tewheylab.com"
+url: "https://zhouzlab.github.io"
 
 paginate: 5
 plugins: [jekyll-paginate]
