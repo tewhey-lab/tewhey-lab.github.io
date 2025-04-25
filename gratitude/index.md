@@ -26,6 +26,7 @@ Interested candidates should send CV and Contact information for 3 references to
 We are currently seeking <Strong>two</Strong> highly motivated Postdoctoral Fellows to join our interdisciplinary team focused on advancing the understanding and treatment of inflammatory lung diseases. Our lab integrates cutting-edge approaches in lung biology, molecular biology, bioinformatics, and nanomedicine to develop targeted therapeutic strategies.
 
 <Strong>Position 1: Postdoctoral Fellow – Lung Biology & Molecular Mechanisms</Strong>
+
 We are looking for a postdoctoral researcher with strong expertise in:
 - Molecular biology techniques (e.g., CRISPR/Cas9, qPCR, Western blot, RNA-seq)
 - Bioinformatics and sequencing data analysis
@@ -35,6 +36,7 @@ We are looking for a postdoctoral researcher with strong expertise in:
 This position will focus on understanding cell-specific signaling mechanisms in the lung and their role in inflammatory lung diseases such as lung injury and ARDS.
 
 <Strong>Position 2: Postdoctoral Fellow – Drug Delivery & Nanomedicine</Strong>
+
 We are seeking a postdoc with a background in:
 - Drug delivery systems, particularly lipid nanoparticles
 - mRNA delivery and nucleic acid therapeutics
