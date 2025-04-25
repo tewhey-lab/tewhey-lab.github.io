@@ -3,13 +3,15 @@ title: Contact
 ---
 
 
-### Contact the Tewhey Lab
+### Contact the ZhouLab
 
-Ryan Tewhey, Ph.D.
+Zhengjie Zhou, Ph.D.
 Assistant Professor
-The Jackson Laboratory
+Center for Inflammation & Lung Research
+Lewis Katz School of Medicine
+Temple University
 
-email: ryan.tewhey (#!) jax.org
-tel: 207 288 6000
+Email: zhouzhj09@uchicago.edu
+Tel: 405-541-7266
 
 
