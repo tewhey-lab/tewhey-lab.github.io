@@ -16,7 +16,7 @@ We employ cutting-edge molecular biology techniques, high-throughput bioinformat
 
 Our interdisciplinary approach integrates vascular biology, immunology, and nanomedicine, with the goal of translating fundamental discoveries into next-generation therapeutics for patients with severe lung disease.
 
-*Our lab is focused on identifying and understanding the precise genetic mechanisms influencing human complex traits and risk to disease. To accomplish this our work spans several areas of interest:*
+*To accomplish this our work spans several areas of interest:*
 
 #### Lung Biology in Inflammation and Injury
 
