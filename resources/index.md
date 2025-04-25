@@ -1,5 +1,5 @@
 ---
-title: Tewhey Lab Resources
+title: ZhouLab Resources
 layout: default
 group: resources
 ---
