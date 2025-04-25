@@ -46,7 +46,11 @@ This project involves the development of lung-targeted nanotherapies for treatin
 If you're passionate about interdisciplinary research and want to contribute to innovative solutions for lung disease, we’d love to hear from you!
 
 To apply, please send your CV, a brief statement of research interests, and contact information for 3 references to: zhouzhj09@uchicago.edu
-    
+
+### Undergraduate Students Opportunities:
+We encourage undergraduate students to reach out if they are interested in joining the lab through research programs, thesis projects, or for academic credit via work-study opportunities. 
+
+
 We strongly encourage applications from individuals of all backgrounds, and we value diversity in our team.  
 
 
