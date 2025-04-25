@@ -1,7 +1,7 @@
 ---
 title: The ZhouLab @ Temple University
-layout: home
-group: home
+layout: Home
+group: Home
 ---
 
 # Welcome to the ZhouLab
