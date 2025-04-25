@@ -3,8 +3,8 @@
   group: Home
 
 - name: Research
-  link: "/research"
-  group: research
+  link: "/Research"
+  group: Research
 
 - name: Publications
   link: "/publications"
