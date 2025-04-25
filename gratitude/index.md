@@ -1,13 +1,13 @@
 ---
-title: Gratitude from the Tewhey Lab
+title: Open Positions from the ZhouLab
 layout: default
-group: gratitude
+group: open positions
 ---
 
 <img class="img-fluid mx-auto d-block" src="/static/img/acknowledgements_long_meadow_and_islands_tom_curry.png" alt="Long Meadow and Islands by Tom Curry" style="paddig-bottom:0.5em;">
 Long Meadow and Islands by [Tom Curry](http://tomcurrymaineartist.com/)
 
-# Gratitude
+# Open Positions
 ---
 
 ### Collaborators:
