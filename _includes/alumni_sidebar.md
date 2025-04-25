@@ -1,5 +1,5 @@
 
-### Tewhey Lab Alumni
+### ZhouLab Alumni
 
 
 {% for alum in site.data.alumni %}
