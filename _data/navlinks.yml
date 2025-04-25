@@ -1,28 +1,28 @@
-- name: home
+- name: Home
   link: "/"
   group: home
 
-- name: research
+- name: Research
   link: "/research"
   group: research
 
-- name: publications
+- name: Publications
   link: "/publications"
   group: publications
 
-- name: members
+- name: Team
   link: "/members"
   group: members
 
-- name: resources
+- name: Resources
   link: "/resources"
   group: resources
 
-- name: gratitude
+- name: Gratitude
   link: "/gratitude"
   group: gratitude
 
-- name: contact
+- name: Contact
   link: "/contact"
   group: contact
 
