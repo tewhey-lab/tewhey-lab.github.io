@@ -1,7 +1,7 @@
 ---
 title: Research in the ZhouLab
 layout: default
-group: Research
+group: research
 ---
 
 <img class="img-fluid mx-auto d-block" src="/static/img/research_philip_barter_fall_birches.png" alt="Fall Birches by Philip Barter">
