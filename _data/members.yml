@@ -21,116 +21,32 @@
 #  “wet” and “dry” lab but his expertise is in Biotechnology methods. In his free time, Daniel studies for a Master’s degree but \
 #  is also an avid Cyclist, Climber, Kayaker and all-around outdoorsy type. "
 
-- name: John Butts
-  image: /static/img/members/headshots/John.jpg
-  altimage: /static/img/members/alt/John.jpg
-  position: Graduate Student
-  email: john.butts (at) jax.org
-  description: "John graduated from University of Dayton with a B.S./M.S. in Biology. It was there he first began his interest in gene \
-  regulation, particularly cis-regulatory elements, while working with Dr. Thomas Williams studying the evolution of pigmenation patterns \
-  in Drosophila. Following graduation John joined Dr. Victoria Meller’s lab at Wayne State University working as Lab Manager and \
-  Research Assistant studying the impact of chromatin conformation on dosage compensation in fruit flies. As a PhD student John hopes \
-  to continue to probe the logic underyling CREs and how advancements in experimental methods can enhance this study. In his free time \
-  John enjoys making music, running, and playing tennis."
+- name: Zhengjie Zhou
+  image: /static/img/members/headshots/zhou.jpg
+  altimage: /static/img/members/alt/zhou.jpg
+  position: Principal Investigator
+  email: zhouzhj09@uchicago.edu
+  orcid: 0000-0001-8329-6086
+  description: "Zhengjie is a biomedical researcher with expertise in nanomedicine, cell biology, and targeted drug delivery. \
+  His research focuses on developing advanced delivery platforms to modulate cell-specific signaling pathways involved in inflammation and disease, \
+  particularly in the lung and vasculature. He has contributed to innovative strategies for endothelial-drived cardiovascular and lung injury treatments, \
+  and explored the therapeutic potential of various delivery systems. Zhengjie’s broader interests lie in applyings interdisciplinary technologies to address \
+  critical challenges in precision medicine and inflammatory lung diseases. \
 
-- name: Rodrigo Castro
-  image: /static/img/members/headshots/Rodrigo.jpg
-  altimage: /static/img/members/alt/Rodrigo.jpg
-  position: Associate Computational Scientist
-  email: rodrigo.castro (at) jax.org
-  github: irodcast
-  twitter: i_rodcast
-  description: "Rodrigo graduated from Georgia State University with a doctoral degree in mathematics, focusing in deep learning research. \
-  As a computational scientist in the Tewhey lab, Rodrigo works on generative deep-learning models for cis-regulatory elements and deriving \
-  new synthetic elements for desired regulatory functions. In his spare time, Rodrigo enjoys practicing music, biking, and learning about new AI advances. "
+  Zhengjie completed his postdoctoral work at University of Chicago in 2025 and started his independent faculty job at Temple University. \
+  He was the awardee of NIH Pathway to Independence Award in 2023. "
 
-- name: Hannah Dewey
-  image: /static/img/members/headshots/Hannah.jpg
-  altimage: /static/img/members/alt/Hannah.JPG
-  position: Data Analyst I
-  email: hannah.dewey (at) jax.org
-  github: deweyhannah
-  description: "Hannah graduated from the University of Maine with a degree in Mathematics, while working with Dr. Andre Khalil \
-  in the CompuMAINE lab. Before joining the Tewhey Lab, Hannah completed postgraduate degrees in Applied Mathematics (2015) and \
-  Bioinformatics and Computational Genomics (2019) at Rensselaer Polytechinic Institute and Queens University Belfast respectively, \
-  as well as serving as a Peace Corps Volunteer in Namibia. Now, as a data analyst in the Tewhey Lab, Hannah works developing \
-  pipelines to be used in the analysis of MPRA count data as well as participating in the analysis itself. In her free time Hannah \
-  enjoys baking, sharing said baked goods with other lab members, and knitting."
+- name: Xinlin Huang
+  image: /static/img/members/headshots/huang.jpg
+  altimage: /static/img/members/alt/huang.jpg
+  position: Research Asssitant
+  email: hxl0631@gmail.com
+  description: "Xinlin Huang is a research assistant with a strong interest in molecular biology, biotechnology, and translational medicine. \
+  She supports ongoing projects focused on understanding disease mechanisms and developing novel therapeutic strategies, contributing expertise \
+  in experimental design, data analysis, and laboratory techniques. Her work plays a key role in advancing studies at the intersection of \
+  nanomedicine and lung biology, particularly in areas involving targeted drug delivery and cellular signaling pathways. Xinlin is passionate \
+  about applying scientific discovery to improve human health and is committed to collaborative, interdisciplinary research."
 
-#- name: Natalia Fuentes
-#  image: /static/img/members/Natalia.jpeg
-#  altimage: /static/img/members/Natalia_alt.jpg
-#  position: Undergraduate Student
-#  email: nfuentes (at) college.harvard.edu
-#  description: "Natalia is a rising junior at Harvard College, studying Integrative Biology with a secondary in Ethnicity, Migration, \
-#  and Rights. She joined the Tewhey Lab as a member of the 2019 JAX Summer Student Program, and completed a project using a \
-#  Massively Parallel Reporter Assay (MPRA) to test the regulatory function of machine-learning derived synthetic elements. \
-#  As a returning undergraduate student, she's working to computationally characterize this library of novel sequences using \
-#  known biological markers. With her spare time, Natalia enjoys performing with Mariachi Véritas, getting lost on mountains \
-#  in Maine, and taking her indoor cat outside."
-
-- name: Debi Foster
-  image: /static/img/members/headshots/Debi.jpg
-  altimage: /static/img/members/alt/Debi.png
-  position: Research Administrative Asisstant
-  email: debi.foster (at) jax.org
-  description: " Before joining JAX, Debi has 20 years of Admin experience primarily in the medical field. As the RAA \
-  for the Tewhey Lab, Debi assists them with ordering products for the lab, coordinating travel and expenses for conferences \
-  and scheduling meetings as necessary. In her spare time Debi likes to spend time with her family, go boating in the ocean \
-  and be outside playing catch with the dogs."
-
-- name: Susan Kales
-  image: /static/img/members/headshots/Susan.jpeg
-  altimage: /static/img/members/alt/Susan.jpg
-  position: Associate Lab Manager
-  email: susan.kales (at) jax.org
-  description: "Susan graduated from the University of Colorado, Boulder with a degree in Molecular Cellular Developmental Biology.  \
-  Before joining  JAX for four years Susan worked at Merck & Co. as a Research Biologist.  Susan worked for six years in \
-  Tom Jessell’s lab and during that time held a dual position for four years in the Jessell and Axel labs at Columbia University.  \
-  Susan was there when Dr. Axel won the Nobel Prize. Prior to working at Columbia University, Susan worked at MSKCC in Manhattan \
-  in a molecular diagnostic lab and she worked at Chugai Pharmaceutical Co. in Tokyo, Japan in the International Group. \
-  Susan is a Research Assistant in the Tewhey Lab and contributes to many different projects but her expertise is in ES cell work.  \
-  In her spare time Susan likes to paint, draw, walk/hike with her dog and husband, cook and be on the water boating or swimming."
-  
-#- name: Frank Liu
-#  image: /static/img/members/headshots/Frank.jpg
-#  altimage: /static/img/members/alt/Frank.jpeg
-#  position: Summer Student
-#  email: frankliu (@) college.harvard.edu
-#  github: frankliuyc
-#  description: "Frank is a rising freshman at Harvard College, likely concentrating in molecular biology, government, \
-#  and East Asian studies. Originally from Newton, MA, Frank joined the Tewhey Lab as a summer student in the 2022 \
-#  Summer Student Program, where he is working with Dr. Rodrigo Castro on deep learning models for enhancer elements. \
-#  Before joining the Tewhey Lab he has worked on synthetic spider silks, as well as protein interactions and mechanical strength \
-#  at MIT and Brigham Women’s. Academically Frank is also interested in advocacy, creative writing, and policy. Outside of the lab, \
-#  Frank loves to read, hike, and explore the food scene; his favorite band is Animal Collective."
-  
-- name: Kousuke Mouri (KOH-skay)
-  image: /static/img/members/headshots/Kousuke.jpg
-  altimage: /static/img/members/alt/Kousuke.JPG
-  position: Research Scientist
-  email: kousuke.Mouri (at) jax.org
-  twitter: kousuke_mouri
-  orcid: 0000-0003-1712-6833
-  description: "Kousuke graduated from Kyoto University with a degree in life science, while working with Dr. Tadashi Uemura \
-  by using six-legged fruit fly. Before coming to Jax, Kousuke had been working with four-legged mouse as a postdoctoral fellow \
-  with Dr. Toshihiko Shiroishi at National Institute of Genetics, Japan. Now, as a postodoctoral associate in the Tewhey lab, \
-  Kousuke works 2-legged human genetics to decipher the mechanisms of the cis regulatory element which makes wonderful variety \
-  of animal morphology and phenotype. In his free time Kousuke enjoys snowboarding and taking care of his kawaii tortoise, Chicago."
-  
-- name: Niketa Nerurkar
-  image: /static/img/members/headshots/Niketa.jpg
-  altimage: /static/img/members/alt/Niketa.jpg
-  position: Graduate Student
-  email: niketa.nerurkar (at) jax.org
-  twitter: niketa_n
-  orcid: 0000-0002-7707-9373
-  description: "Niketa graduated from Christ University, Bangalore with a triple major B.S. in Biotechnology, Chemistry \
-  and Zoology. Following graduation, Niketa joined Dr. Sangeeta Bhatia’s lab at MIT working as a research technician and \
-  assistant lab manager, studying liver-stage malaria and consequently,circadian patterns of drug metabolism and immune \
-  response in the liver. Now, as a graduate student in the Tewhey lab, Niketa aims to study howregulatory variants contribute \
-  to complex disease. In her free time, Niketaenjoys long walks, swimming, reading, exploring new restaurants and jamming \
-  to Taylor Swift and 2000-2010’s pop music. "
 
 #- name: Luke Parsley
 #  image: /static/img/members/Luke.jpg
@@ -143,23 +59,6 @@
 #  he employs Massively Parallel Reporter Assays (MPRA) to create enhancer profiles for disease-associated loci. In his free time, \
 #  he is an avid runner that enjoys Star Trek, hiking, and Chinese food."
 
-- name: Ryan Tewhey
-  image: /static/img/members/headshots/Ryan.jpg
-  altimage: /static/img/members/alt/Ryan.jpg
-  position: Principal Investigator
-  email: ryan.tewhey (at) jax.org
-  twitter: r_tewhey
-  orcid: 0000-0002-4607-8001
-  github: rtewhey
-  description: "Ryan is a human geneticist with expertise in developing large-scale screening methods to understand how genetic variation \
-  impacts human traits and disease. His primary research focus is the investigation of non-coding regions of the genome that control gene expression. \
-  He has pioneered the use of massively parallel reporter assays (MPRA) and CRISPR based screens of non-coding regions to identify causal \
-  alleles from genome wide association studies. His broad interests lie in the application of novel technologies to answer questions related \
-  to human health and disease. \
 
-  Ryan completed his undergraduate degree at the University of Maine, Orono. He received his PhD from the University of California, San Diego \
-  in 2012 while carrying out work at The Scripps Research Translational Institute and completed his postdoctoral work at Harvard University and \
-  The Broad Institute. His awards include Forbes Magazine's 30 under 30, NSF/A-STAR EAPSI fellow, the Charles J. Epstein Award for Research \
-  Excellence by the American Society of Human Genetics, an NIH Pathway to Independence Award, Maine Public Health Association Champion Award, and the NHGRI Genomic Innovator Award. Ryan is \
-  currently an associate professor at The Jackson Laboratory in Bar Harbor and holds appointments at Tufts University School of Medicine and \
-  The University of Maine Graduate School of Biomedical Science and Engineering."
+
+ 
