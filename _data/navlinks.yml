@@ -18,9 +18,9 @@
   link: "/resources"
   group: resources
 
-- name: gratitude
-  link: "/gratitude"
-  group: gratitude
+- name: open positions
+  link: "/open positions"
+  group: open positions
 
 - name: contact
   link: "/contact"
