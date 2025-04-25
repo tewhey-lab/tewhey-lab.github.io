@@ -10,7 +10,7 @@ group: publications
 </div>
 <br>
 <h1>Selected Publications</h1> (full publications on <a href="https://scholar.google.com/citations?user=WFrvIc4AAAAJ&hl=en/" > Google Scholar) </a> 
-(# co-first author, * corresponding author)
+(# co-first author, ∗ corresponding author)
 <div class="container-fluid">
 
 {% for publication in site.data.publications %}
@@ -18,7 +18,7 @@ group: publications
 <div class="row" style="padding-top: 0px; margin-top: -10px;  margin-bottom: -10px" id="{{publication.pmid}}">
 <div style="font-size: 108% !important;">{{ publication.citation | markdownify }}</div>
 <div class="row" style="padding-top: - 5px; margin-top: -20px;">
-			<strong> &emsp; &emsp; &emsp;Access the paper: &emsp; </strong>
+			 <stron> &emsp; &emsp; &emsp;Access the paper: &emsp; </stron>
 			<!--PMID-->
 			{% if publication.pmid %}
 			<li>PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{publication.pmid}}" alt = "pubmed link: {{publication.pmid}}"> {{publication.pmid}}</a> &emsp; </li>
