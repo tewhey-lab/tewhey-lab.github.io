@@ -12,7 +12,7 @@
 #     - name: Zhoulab
 #       url: http://zhouzlab.github.io/
 #
-- citation: "**Zhengjie Zhou**#, Jiayu Zhu#, Ru-Ting Huang, Angelo Meliton, David Wu, Tony Pan, Nick Asby, Erica Budina, Aaron Alpar, Jeffrey Hubbell, Jun Huang, Gökhan M. Mutlu, Matthew V. Tirrell∗, and Yun Fang∗ <br/> <span  style='color:DarkOliveGreen'>Precision mRNA Nanomedicine for Targeted Vascular Therapies in ARDS and Atherosclerosis</span>. bioRxiv. *Nat. Biomed. Eng.,* in review. 2025. (Highlighted in **Science News**: https://www.science.org/content/article/new-nanoparticle-therapies-target-two-major-killers, doi:10.1126/science.zqbtd4b)"
+- citation: "**Zhengjie Zhou**#, Jiayu Zhu#, Ru-Ting Huang, Angelo Meliton, David Wu, Tony Pan, Nick Asby, Erica Budina, Aaron Alpar, Jeffrey Hubbell, Jun Huang, Gökhan M. Mutlu, Matthew V. Tirrell∗, and Yun Fang∗ <br/> <span  style='color:DarkOliveGreen'>Precision mRNA Nanomedicine for Targeted Vascular Therapies in ARDS and Atherosclerosis</span>. bioRxiv.** *Nat. Biomed. Eng.,* **in review. 2025. (Highlighted in **Science News**: https://www.science.org/content/article/new-nanoparticle-therapies-target-two-major-killers, doi:10.1126/science.zqbtd4b)"
   date: '202308'
   pmid: ''
   biorxiv: '2025.01.09.632179'
