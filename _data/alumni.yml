@@ -1,34 +1,17 @@
-- name: Lucy Benjamin
-  position: Research Administrative Assistant
-  startdate: 2017
-  enddate: 2022
+#- name: Lucy Benjamin
+#  position: Research Administrative Assistant
+#  startdate: 2017
+#  enddate: 2022
   
-- name: Daniel Berenzy
-  position: Research Assistant I
-  startdate: 2019
-  enddate: 2022
-  current: Cell and Molecular Biology Technician (Molecular Biology Services - JAX)
+#- name: Daniel Berenzy
+#  position: Research Assistant I
+#  startdate: 2019
+#  enddate: 2022
+#  current: Cell and Molecular Biology Technician (Molecular Biology Services - JAX)
 
-- name: Natalia Fuentes
-  position: Summer Student
-  startdate: 2018
-  enddate: 2022
-  current: Graduated - Harvard
+#- name: Natalia Fuentes
+#  position: Summer Student
+#  startdate: 2018
+#  enddate: 2022
+#  current: Graduated - Harvard
 
-- name: Connor Kean
-  position: Summer Student
-  startdate: 2017
-  enddate: 2019
-  current: Graduate Student - Cornell
-
-- name: Frank Liu
-  position: Summer Student
-  startdate: 2022
-  enddate: 2022
-  current: Undergraduate - Harvard
-
-- name: Luke Parsley
-  position: Graduate Student
-  startdate: 2019
-  enddate: 2022
-  current: Research Associate - Armed Forces Radiobiology Research Institute
