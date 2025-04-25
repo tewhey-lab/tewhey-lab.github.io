@@ -9,26 +9,49 @@ Long Meadow and Islands by [Tom Curry](http://tomcurrymaineartist.com/)
 
 # Open Positions
 ---
+We are actively looking for passionate and motivated scientists to join our team. Please check below for current openings and contact us directly to inquire about the opportunities.
 
-### Collaborators:
-  - [Juan Fuxman Bass](https://www.fuxmanlab.com/) (Boston University)
-  - [John Ray](https://www.benaroyaresearch.org/our-research/labs-research/lab/ray-lab) (Benaroya Research Institute)
-  - [Steve Reilly](https://www.reilly-lab.com) (Yale)
-  - [Pardis Sabeti](https://www.sabetilab.org) (The Broad Institute)
-  - [Trevor Siggers](https://blogs.bu.edu/tsiggers/home/) (Boston University)
-  - [Michael Stitzel](https://www.jax.org/research-and-faculty/research-labs/the-stitzel-lab) (JAX)
+### Graduate Student Opportunities:
+We are currently recruiting motivated and curious graduate students to join our team.
+Ideal candidates will have:
+- A background in biomedical sciences, nanomedicine, molecular biology, etc.
+- Passion for research and a strong work ethic
+- Willingness to work in a team-oriented, dynamic setting
+- Prior research experience is a plus but not required
+
+Interested candidates should send CV and Contact information for 3 references to: zhouzhj09@uchicago.edu
+
   
-### Current and Past Funding:
-  - NIH/NHGRI Pathway to Independence, K99/R00, 2014-2020, (PI HG008179)
-  - NIH/NHGRI ENCODE Characterization Center, UM1, 2017-2021, (CO-I HG009435)
-  - NIH/NIAID, R01, 2020-2025, (CO-I, AI151051)
-  - NIH/NIAMS, R21, 2018,2020, (CO-I, AR071878)  
-  
-### Maine Artists:
-The beautiful artwork on this site is used with the permission of the Maine artists who created them. We are grateful for their incredible talent and generosity.  
-To see more of their work, click on their names below:
-  - [Tom Curry](http://tomcurrymaineartist.com/)
-  - [Judy Taylor](http://www.judytaylorstudio.com/)
-  - [Eric Hopkins](http://www.erichopkins.com/)
-  - [Philip Barter](http://thebarterarthouse.com/philip-barter)
-  - [Dahlov Ipcar](https://www.dahlovipcarart.com/)
+### Postdoctoral Fellow Opportunities:
+We are currently seeking <Strong>two</Strong> highly motivated Postdoctoral Fellows to join our interdisciplinary team focused on advancing the understanding and treatment of inflammatory lung diseases. Our lab integrates cutting-edge approaches in lung biology, molecular biology, bioinformatics, and nanomedicine to develop targeted therapeutic strategies.
+
+<Strong>Position 1</Strong>: Postdoctoral Fellow – Lung Biology & Molecular Mechanisms
+We are looking for a postdoctoral researcher with strong expertise in:
+- Molecular biology techniques (e.g., CRISPR/Cas9, qPCR, Western blot, RNA-seq)
+- Bioinformatics and sequencing data analysis
+- Lung biology, particularly endothelial and epithelial cell biology
+- Experience with mouse models of lung injury or inflammation is a plus
+
+This position will focus on understanding cell-specific signaling mechanisms in the lung and their role in inflammatory lung diseases such as lung injury and ARDS.
+
+<Strong>Position 2</Strong>: Postdoctoral Fellow – Drug Delivery & Nanomedicine
+We are seeking a postdoc with a background in:
+- Drug delivery systems, particularly lipid nanoparticles
+- mRNA delivery and nucleic acid therapeutics
+- Nanomedicine design and characterization
+- In vitro and in vivo evaluation of delivery platforms
+
+This project involves the development of lung-targeted nanotherapies for treating acute and chronic lung diseases, with opportunities to translate findings into preclinical models.
+
+If you're passionate about interdisciplinary research and want to contribute to innovative solutions for lung disease, we’d love to hear from you!
+
+To apply, please send your CV, a brief statement of research interests, and contact information for 3 references to: zhouzhj09@uchicago.edu
+    
+We strongly encourage applications from individuals of all backgrounds, and we value diversity in our team.  
+
+
+
+
+
+
+
