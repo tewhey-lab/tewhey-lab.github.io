@@ -1,6 +1,6 @@
 - name: Home
   link: "/"
-  group: home
+  group: Home
 
 - name: Research
   link: "/research"
