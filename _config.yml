@@ -1,15 +1,97 @@
-name: "Tewhey Lab"
-description: "This is the official web page for the Tewhey Lab at The Jackson Laboratory."
+# -----------------------------------------------------------------------------
+# Site settings
+# -----------------------------------------------------------------------------
 
-url: "http://tewheylab.com"
+title: Tewhey Lab # The name of your site
+email: ryan.tewhey@jax.org # The best email for people to contact you
+description: >- # The description of your site
+  The Tewhey Lab at The Jackson Laboratory develops and applies high-throughput functional genomics
+  approaches to understand the genetic basis of human disease.
+url: "https://tewheylab.org" # The base hostname & protocol for your site
+repository: "tewheylab/tewheylab.github.io" # The GitHub repository for your site
 
-paginate: 5
-plugins: [jekyll-paginate]
-paginate_path: "news/page:num"
+# -----------------------------------------------------------------------------
+# Theme settings
+# -----------------------------------------------------------------------------
 
-permalink: pretty
+theme: jekyll-theme-al-folio
+remote_theme: alshedivat/al-folio
+
+# -----------------------------------------------------------------------------
+# Al-folio settings
+# -----------------------------------------------------------------------------
+
+# Desired emoji skin tone
+# For a list of skin tones, see https://emojipedia.org/skin-tone-modifier/
+skin_tone:
+
+# Display page-specific sidebars
+page_sidebars: [about, blog, projects, publications]
+
+# The avatar of yourself or your laboratory
+avatar: /assets/img/lab_logo.png # Make sure you have this image in this path
+# The title of your name or lab
+title: The Tewhey Lab
+# A short description of your laboratory
+description: Functional Genomics at The Jackson Laboratory
+
+# Social media links in the sidebar
+# You can find the icon names on fontawesome.com/icons
+social:
+  github: tewheylab
+  twitter: rtewhey
+  # Add other relevant links like Google Scholar if you have them
+  # google_scholar: YOUR_GOOGLE_SCHOLAR_ID
+
+# -----------------------------------------------------------------------------
+# Jekyll settings
+# -----------------------------------------------------------------------------
+
+# For the al-folio theme
+scholar:
+  last_name: Tewhey
+  style: apa # American Psychological Association citation style
+  source: /_bibliography/
+  bibliography: papers.bib # This file will hold your publications
+  sort_by: year, month
+  order: descending
+  replace_strings: true
+  join_strings: true
+
+# Page default values
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Collections for projects and news
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+  news:
+    output: true
+    permalink: /news/:path/
+
+# Markdown provider
 markdown: kramdown
 kramdown:
-  parse_block_html: true
+  input: GFM
+  syntax_highlighter_opts:
+    disable: true
 
-theme: jekyll-theme-slate
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-scholar
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
