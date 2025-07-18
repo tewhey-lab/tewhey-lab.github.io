@@ -1,0 +1,16 @@
+# Add each team member here.
+# The image path is relative to the /assets/img/team/ directory. Create this folder.
+- name: Ryan Tewhey, Ph.D.
+  position: Principal Investigator
+  avatar: /assets/img/team/ryan_tewhey.jpg
+  scholar: "8T42y-IAAAAJ" # This is the ID from the Google Scholar URL
+
+- name: Jane Doe
+  position: Postdoctoral Fellow
+  avatar: /assets/img/team/jane_doe.jpg
+  scholar: "YOUR_ID_HERE"
+
+- name: John Smith
+  position: Graduate Student
+  avatar: /assets/img/team/john_smith.jpg
+  scholar: "YOUR_ID_HERE"
