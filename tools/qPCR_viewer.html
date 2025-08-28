@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive qPCR Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- GridStackJS for resizable/draggable grid -->
+    <link href="https://cdn.jsdelivr.net/npm/gridstack@8.1.1/dist/gridstack.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/gridstack@8.1.1/dist/gridstack-all.js"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .sidebar {
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .main-content {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* **FIX**: Use CSS Grid for robust row sizing */
+        #analysis-container {
+            display: grid;
+            grid-template-rows: 4fr 1fr; /* Creates an 80%/20% (4:1) split */
+            min-height: 0;
+        }
+        .plot-grid-container {
+            min-height: 0; /* Allows flex-grow to work correctly */
+        }
+        .grid-stack-item-content {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .grid-stack-item-header {
+            cursor: move;
+        }
+        .plot-container {
+            width: 100%;
+            height: 100%;
+            flex-grow: 1;
+        }
+        .legend-panel {
+            flex-shrink: 0;
+            overflow-y: auto;
+        }
+        #loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 0.5rem;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-1/4 bg-white p-6 border-r border-gray-200 sidebar">
+            <h1 class="text-2xl font-bold mb-4 text-gray-900">qPCR Analysis</h1>
+            <p class="text-sm text-gray-600 mb-6">Upload your qPCR Excel file to begin. Double-click a plot to reset its zoom.</p>
+
+            <div id="upload-container" class="mb-6">
+                <label for="file-upload" class="w-full inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg cursor-pointer text-center transition-colors">
+                    Upload Excel File
+                </label>
+                <input id="file-upload" type="file" class="hidden" accept=".xls,.xlsx">
+                <p id="file-name" class="text-sm text-gray-500 mt-2 truncate"></p>
+            </div>
+
+            <div id="controls" class="hidden space-y-6">
+                <div>
+                    <h3 class="font-semibold mb-2 text-gray-700">Filter by Target Name</h3>
+                    <div class="flex space-x-2 mb-2">
+                        <button onclick="toggleAll('targets', true)" class="text-xs bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded">All</button>
+                        <button onclick="toggleAll('targets', false)" class="text-xs bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded">None</button>
+                    </div>
+                    <div id="target-filters" class="space-y-1 text-sm"></div>
+                </div>
+                <hr>
+                <div>
+                    <h3 class="font-semibold mb-2 text-gray-700">Filter by Sample ID</h3>
+                    <div class="flex space-x-2 mb-2">
+                        <button onclick="toggleAll('samples', true)" class="text-xs bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded">All</button>
+                        <button onclick="toggleAll('samples', false)" class="text-xs bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded">None</button>
+                    </div>
+                    <div id="sample-filters" class="space-y-1 text-sm"></div>
+                </div>
+                <hr>
+                <div>
+                    <h3 class="font-semibold mb-2 text-gray-700">Filter by Well ID</h3>
+                    <div class="flex space-x-2 mb-2">
+                        <button onclick="toggleAll('wells', true)" class="text-xs bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded">All</button>
+                        <button onclick="toggleAll('wells', false)" class="text-xs bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded">None</button>
+                    </div>
+                    <div id="well-filters" class="checkbox-grid text-xs"></div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="w-3/4 p-6 main-content">
+            <div id="analysis-container" class="hidden h-full">
+                <div id="plot-area" class="plot-grid-container">
+                    <div class="grid-stack h-full">
+                        <div class="grid-stack-item" gs-x="0" gs-y="0" gs-w="6" gs-h="6">
+                            <div class="grid-stack-item-content">
+                                <div class="grid-stack-item-header p-2 text-sm font-semibold text-center text-white" style="background-color: #009ED0;">Fluorescence vs. Temperature</div>
+                                <div id="fluorescence_plot" class="plot-container"></div>
+                            </div>
+                        </div>
+                        <div class="grid-stack-item" gs-x="6" gs-y="0" gs-w="6" gs-h="6">
+                            <div class="grid-stack-item-content">
+                                <div class="grid-stack-item-header p-2 text-sm font-semibold text-center text-white" style="background-color: #009ED0;">Derivative vs. Temperature</div>
+                                <div id="derivative_plot" class="plot-container"></div>
+                            </div>
+                        </div>
+                        <div class="grid-stack-item" gs-x="0" gs-y="6" gs-w="6" gs-h="6">
+                            <div class="grid-stack-item-content">
+                                <div class="grid-stack-item-header p-2 text-sm font-semibold text-center text-white" style="background-color: #009ED0;">Rn vs. Cycle</div>
+                                <div id="rn_plot" class="plot-container"></div>
+                            </div>
+                        </div>
+                        <div class="grid-stack-item" gs-x="6" gs-y="6" gs-w="6" gs-h="6">
+                            <div class="grid-stack-item-content">
+                                <div class="grid-stack-item-header p-2 text-sm font-semibold text-center text-white" style="background-color: #009ED0;">Delta Rn vs. Cycle</div>
+                                <div id="delta_rn_plot" class="plot-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="legend-container" class="mt-6">
+                    <h3 class="font-semibold mb-2 text-gray-700">Legend</h3>
+                    <div id="legend-panel" class="legend-panel bg-white rounded-lg shadow-md p-4 grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 h-full">
+                        <!-- Legend items will be injected here -->
+                    </div>
+                </div>
+            </div>
+            <div id="welcome-message" class="flex items-center justify-center h-full">
+                <div class="text-center">
+                    <div id="loader-container" class="hidden mb-4">
+                        <div id="loader" class="mx-auto"></div>
+                        <p id="loader-text" class="mt-4 text-gray-600">Processing file...</p>
+                    </div>
+                    <h2 class="text-2xl font-semibold text-gray-700">Please upload a file to begin analysis.</h2>
+                    <p class="text-gray-500 mt-2">The application will process the data and generate interactive plots.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Global state
+        let AppState = {
+            well_info: [],
+            melt_data_final: [],
+            amp_data_final: [],
+            ct_points: [],
+            id_color_palette: {},
+            plot_zoom: {
+                fluorescence_plot: null,
+                derivative_plot: null,
+                rn_plot: null,
+                delta_rn_plot: null,
+            },
+            grid: null
+        };
+
+        const fileUpload = document.getElementById('file-upload');
+        fileUpload.addEventListener('change', handleFile);
+
+        function handleFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            document.getElementById('file-name').textContent = file.name;
+            document.getElementById('welcome-message').classList.remove('hidden');
+            document.getElementById('loader-container').classList.remove('hidden');
+            document.getElementById('analysis-container').classList.add('hidden');
+            document.getElementById('controls').classList.add('hidden');
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = new Uint8Array(e.target.result);
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    processWorkbook(workbook);
+                } catch (error) {
+                    console.error("Error processing file:", error);
+                    alert("Failed to process the Excel file. Please ensure it is a valid and uncorrupted .xls or .xlsx file.");
+                    resetUI();
+                }
+            };
+            reader.readAsArrayBuffer(file);
+        }
+        
+        function resetUI() {
+            document.getElementById('loader-container').classList.add('hidden');
+            document.getElementById('file-name').textContent = '';
+            fileUpload.value = '';
+        }
+
+        function findHeaderRow(sheet) {
+            const range = XLSX.utils.decode_range(sheet['!ref']);
+            for (let R = range.s.r; R <= Math.min(range.e.r, 60); ++R) {
+                const firstCellAddress = XLSX.utils.encode_cell({c:0, r:R});
+                const secondCellAddress = XLSX.utils.encode_cell({c:1, r:R});
+                const firstCell = sheet[firstCellAddress] ? sheet[firstCellAddress].v : '';
+                const secondCell = sheet[secondCellAddress] ? sheet[secondCellAddress].v : '';
+                if (firstCell === 'Well' || firstCell === 'Well Position' || secondCell === 'Well Position') {
+                    return R;
+                }
+            }
+            console.warn("Could not find header row, defaulting to 47.");
+            return 47;
+        }
+
+        function processWorkbook(workbook) {
+            const sheetNames = {
+                setup: "Sample Setup",
+                results: "Results",
+                melt: "Melt Curve Raw Data",
+                amp: "Amplification Data"
+            };
+
+            const setupSheet = workbook.Sheets[sheetNames.setup];
+            const resultsSheet = workbook.Sheets[sheetNames.results];
+            const meltSheet = workbook.Sheets[sheetNames.melt];
+            const ampSheet = workbook.Sheets[sheetNames.amp];
+            
+            if (!setupSheet || !resultsSheet || !meltSheet || !ampSheet) {
+                alert("One or more required worksheets are missing from the file: 'Sample Setup', 'Results', 'Melt Curve Raw Data', 'Amplification Data'");
+                resetUI();
+                return;
+            }
+
+            const setup_df = XLSX.utils.sheet_to_json(setupSheet, { range: findHeaderRow(setupSheet) });
+            const results_df = XLSX.utils.sheet_to_json(resultsSheet, { range: findHeaderRow(resultsSheet) });
+            const melt_raw_df = XLSX.utils.sheet_to_json(meltSheet, { range: findHeaderRow(meltSheet) });
+            const amp_df = XLSX.utils.sheet_to_json(ampSheet, { range: findHeaderRow(ampSheet) });
+
+            const setup_map = setup_df.map(row => ({
+                WellNum: parseInt(row['Well']),
+                WellPosition: String(row['Well Position']),
+                SampleName: row['Sample Name'],
+                TargetName: row['Target Name']
+            }));
+
+            const results_info = results_df.map(row => ({
+                WellPosition: String(row['Well Position']),
+                CT: parseFloat(row['CT']),
+                Tm1: parseFloat(row['Tm1']),
+                Tm2: parseFloat(row['Tm2'])
+            }));
+
+            const well_info_map = new Map(results_info.map(row => [row.WellPosition, row]));
+            
+            AppState.well_info = setup_map
+                .map(row => ({ ...row, ...well_info_map.get(row.WellPosition) }))
+                .filter(row => row.SampleName && row.SampleName.trim() !== '');
+            
+            AppState.well_info.forEach(row => {
+                row.ID = `${row.SampleName}-${row.TargetName}-${row.WellPosition}`;
+                row.hover_text = `<b>Well:</b> ${row.WellPosition}<br><b>Sample ID:</b> ${row.SampleName}<br><b>Target:</b> ${row.TargetName}<br><b>CT:</b> ${isNaN(row.CT) ? 'N/A' : row.CT.toFixed(2)}<br><b>Tm1:</b> ${isNaN(row.Tm1) ? 'N/A' : row.Tm1.toFixed(2)}<br><b>Tm2:</b> ${isNaN(row.Tm2) ? 'N/A' : row.Tm2.toFixed(2)}`;
+            });
+            
+            const well_info_by_num_map = new Map(AppState.well_info.map(row => [row.WellNum, row]));
+
+            AppState.melt_data_final = melt_raw_df
+                .map(row => ({
+                    WellNum: parseInt(row.Well),
+                    Temperature: parseFloat(row.Temperature),
+                    Fluorescence: parseFloat(row.Fluorescence),
+                    Derivative: parseFloat(row.Derivative),
+                }))
+                .map(row => ({...row, ...well_info_by_num_map.get(row.WellNum)}))
+                .filter(row => row.ID);
+
+            AppState.amp_data_final = amp_df
+                .map(row => ({
+                    WellNum: parseInt(row.Well),
+                    Cycle: parseInt(row.Cycle),
+                    Rn: parseFloat(row.Rn),
+                    DeltaRn: parseFloat(row['Delta Rn'])
+                }))
+                .map(row => ({...row, ...well_info_by_num_map.get(row.WellNum)}))
+                .filter(row => row.ID);
+
+            const amp_by_id_cycle = new Map(AppState.amp_data_final.map(row => [`${row.ID}-${row.Cycle}`, row]));
+            
+            AppState.ct_points = AppState.well_info
+                .filter(row => !isNaN(row.CT))
+                .map(row => {
+                    const cycle_match = Math.round(row.CT);
+                    const point = amp_by_id_cycle.get(`${row.ID}-${cycle_match}`);
+                    return point ? { ...point, CT: row.CT } : null;
+                })
+                .filter(Boolean);
+
+            const all_ids = [...new Set(AppState.well_info.map(r => r.ID))].sort();
+            const colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'];
+            AppState.id_color_palette = all_ids.reduce((acc, id, i) => {
+                acc[id] = colors[i % colors.length];
+                return acc;
+            }, {});
+
+            // --- Finalize UI ---
+            populateFilters();
+            initializeGrid();
+            drawAllPlots();
+            document.getElementById('welcome-message').classList.add('hidden');
+            document.getElementById('analysis-container').classList.remove('hidden');
+            document.getElementById('controls').classList.remove('hidden');
+        }
+
+        function initializeGrid() {
+            if (AppState.grid) {
+                AppState.grid.destroy();
+            }
+            AppState.grid = GridStack.init({
+                float: false,
+                cellHeight: 'auto',
+                minRow: 1,
+                handle: '.grid-stack-item-header'
+            });
+
+            AppState.grid.on('resizestop', function(event, el) {
+                const plotId = el.querySelector('.plot-container').id;
+                if (plotId) {
+                    Plotly.Plots.resize(plotId);
+                }
+            });
+
+            setTimeout(() => {
+                const plotIds = ['fluorescence_plot', 'derivative_plot', 'rn_plot', 'delta_rn_plot'];
+                plotIds.forEach(id => {
+                    const plotEl = document.getElementById(id);
+                    if (plotEl) {
+                        Plotly.Plots.resize(plotEl);
+                    }
+                });
+            }, 100);
+        }
+
+        function populateFilters() {
+            const unique_targets = [...new Set(AppState.well_info.map(r => r.TargetName))].sort();
+            const unique_samples = [...new Set(AppState.well_info.map(r => r.SampleName))].sort();
+            const unique_wells = [...new Set(AppState.well_info.map(r => r.WellPosition))].sort();
+            
+            const createCheckboxes = (items, containerId, groupName) => {
+                const container = document.getElementById(containerId);
+                container.innerHTML = items.map(item => `
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="checkbox" name="${groupName}" value="${item}" checked onchange="drawAllPlots()">
+                        <span>${item}</span>
+                    </label>
+                `).join('');
+            };
+
+            createCheckboxes(unique_targets, 'target-filters', 'targets');
+            createCheckboxes(unique_samples, 'sample-filters', 'samples');
+            createCheckboxes(unique_wells, 'well-filters', 'wells');
+        }
+
+        function toggleAll(groupName, checked) {
+            document.querySelectorAll(`input[name="${groupName}"]`).forEach(cb => cb.checked = checked);
+            drawAllPlots();
+        }
+
+        function getFilteredData() {
+            const selected_targets = [...document.querySelectorAll('input[name="targets"]:checked')].map(cb => cb.value);
+            const selected_samples = [...document.querySelectorAll('input[name="samples"]:checked')].map(cb => cb.value);
+            const selected_wells = [...document.querySelectorAll('input[name="wells"]:checked')].map(cb => cb.value);
+
+            const filtered_well_info = AppState.well_info.filter(row => 
+                selected_targets.includes(row.TargetName) &&
+                selected_samples.includes(row.SampleName) &&
+                selected_wells.includes(row.WellPosition)
+            );
+            const filtered_ids = new Set(filtered_well_info.map(r => r.ID));
+
+            return {
+                melt: AppState.melt_data_final.filter(r => filtered_ids.has(r.ID)),
+                amp: AppState.amp_data_final.filter(r => filtered_ids.has(r.ID)),
+                ct: AppState.ct_points.filter(r => filtered_ids.has(r.ID)),
+                ids: [...filtered_ids].sort()
+            };
+        }
+        
+        function drawLegend(filtered_ids) {
+            const legendPanel = document.getElementById('legend-panel');
+            legendPanel.innerHTML = '';
+            filtered_ids.forEach(id => {
+                const color = AppState.id_color_palette[id];
+                const item = document.createElement('div');
+                item.className = 'flex items-center space-x-2 text-xs';
+                item.innerHTML = `
+                    <div class="w-3 h-3 rounded-sm" style="background-color: ${color};"></div>
+                    <span class="truncate">${id}</span>
+                `;
+                legendPanel.appendChild(item);
+            });
+        }
+
+        function drawAllPlots() {
+            const { melt, amp, ct, ids } = getFilteredData();
+            
+            drawLegend(ids);
+
+            const trace_map = (data, x_col, y_col) => {
+                const traces = {};
+                data.forEach(row => {
+                    if (!traces[row.ID]) {
+                        traces[row.ID] = {
+                            x: [], y: [], mode: 'lines', type: 'scatter', name: row.ID,
+                            text: [], hoverinfo: 'text',
+                            line: { color: AppState.id_color_palette[row.ID] },
+                        };
+                    }
+                    traces[row.ID].x.push(row[x_col]);
+                    traces[row.ID].y.push(row[y_col]);
+                    traces[row.ID].text.push(row.hover_text);
+                });
+                return Object.values(traces);
+            };
+
+            const plot_layout = (xtitle, ytitle) => ({
+                xaxis: { title: xtitle },
+                yaxis: { title: ytitle },
+                margin: { l: 60, r: 20, b: 50, t: 20 }, // Adjusted top margin for header
+                showlegend: false,
+                hovermode: 'closest'
+            });
+
+            // Fluorescence Plot
+            const fluor_traces = trace_map(melt, 'Temperature', 'Fluorescence');
+            const fluor_layout = plot_layout('Temperature (°C)', 'Fluorescence');
+            if(AppState.plot_zoom.fluorescence_plot) {
+                fluor_layout.xaxis.range = AppState.plot_zoom.fluorescence_plot.xaxis.range;
+                fluor_layout.yaxis.range = AppState.plot_zoom.fluorescence_plot.yaxis.range;
+            }
+            Plotly.newPlot('fluorescence_plot', fluor_traces, fluor_layout, {responsive: true});
+
+            // Derivative Plot
+            const deriv_traces = trace_map(melt, 'Temperature', 'Derivative');
+            const deriv_layout = plot_layout('Temperature (°C)', 'Derivative (-dF/dT)');
+            if(AppState.plot_zoom.derivative_plot) {
+                deriv_layout.xaxis.range = AppState.plot_zoom.derivative_plot.xaxis.range;
+                deriv_layout.yaxis.range = AppState.plot_zoom.derivative_plot.yaxis.range;
+            }
+            Plotly.newPlot('derivative_plot', deriv_traces, deriv_layout, {responsive: true});
+
+            // Rn Plot
+            let rn_traces = trace_map(amp, 'Cycle', 'Rn');
+            const rn_markers = {
+                x: ct.map(r => r.CT), y: ct.map(r => r.Rn),
+                mode: 'markers', type: 'scatter',
+                text: ct.map(r => r.hover_text), hoverinfo: 'text',
+                marker: {
+                    symbol: 'diamond', size: 8, color: ct.map(r => AppState.id_color_palette[r.ID]),
+                    line: { color: 'black', width: 1 }
+                },
+            };
+            rn_traces.push(rn_markers);
+            const rn_layout = plot_layout('Cycle', 'Rn (Normalized Reporter)');
+            if(AppState.plot_zoom.rn_plot) {
+                rn_layout.xaxis.range = AppState.plot_zoom.rn_plot.xaxis.range;
+                rn_layout.yaxis.range = AppState.plot_zoom.rn_plot.yaxis.range;
+            }
+            Plotly.newPlot('rn_plot', rn_traces, rn_layout, {responsive: true});
+
+            // Delta Rn Plot
+            let delta_rn_traces = trace_map(amp, 'Cycle', 'DeltaRn');
+            const delta_rn_markers = {
+                x: ct.map(r => r.CT), y: ct.map(r => r.DeltaRn),
+                mode: 'markers', type: 'scatter',
+                text: ct.map(r => r.hover_text), hoverinfo: 'text',
+                marker: {
+                    symbol: 'diamond', size: 8, color: ct.map(r => AppState.id_color_palette[r.ID]),
+                    line: { color: 'black', width: 1 }
+                },
+            };
+            delta_rn_traces.push(delta_rn_markers);
+            const delta_rn_layout = plot_layout('Cycle', 'Delta Rn');
+            if(AppState.plot_zoom.delta_rn_plot) {
+                delta_rn_layout.xaxis.range = AppState.plot_zoom.delta_rn_plot.xaxis.range;
+                delta_rn_layout.yaxis.range = AppState.plot_zoom.delta_rn_plot.yaxis.range;
+            }
+            Plotly.newPlot('delta_rn_plot', delta_rn_traces, delta_rn_layout, {responsive: true});
+            
+            attachZoomHandlers();
+        }
+        
+        function attachZoomHandlers() {
+            const plotIds = ['fluorescence_plot', 'derivative_plot', 'rn_plot', 'delta_rn_plot'];
+            plotIds.forEach(id => {
+                document.getElementById(id).on('plotly_relayout', (eventData) => {
+                    if (eventData['xaxis.autorange']) {
+                        AppState.plot_zoom[id] = null; // Reset on double-click
+                    } else if (eventData['xaxis.range[0]']) {
+                        AppState.plot_zoom[id] = { // Store manual zoom
+                            xaxis: { range: [eventData['xaxis.range[0]'], eventData['xaxis.range[1]']] },
+                            yaxis: { range: [eventData['yaxis.range[0]'], eventData['yaxis.range[1]']] }
+                        };
+                    }
+                });
+            });
+        }
+
+    </script>
+</body>
+</html>
