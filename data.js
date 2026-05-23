@@ -1,4 +1,25 @@
 // Tewhey Lab data — extracted and lightly trimmed from the source Jekyll repo.
+//
+// ─── Live updates from Google Sheets ────────────────────────────────────────
+// News and Publications are driven from public Google Sheets. To edit:
+//   1. Open the sheet linked below.
+//   2. Add or edit rows. Keep the header row exactly as-is.
+//   3. Save (Sheets autosaves) — changes appear on next page load.
+//
+// Sheet schemas:
+//   News:         date | title | body | link | linkLabel
+//                 (date as YYYY-MM-DD plain text; link / linkLabel optional.)
+//   Publications: year | month | title | authors | venue | type | url | authors_html
+//                 (type = "journal" or "preprint"; authors_html optional —
+//                  only fill to override auto-bolding for a row.)
+//
+// Sheet must be shared "Anyone with the link → Viewer".
+// Leave id empty to fall back to the static arrays in this file.
+
+const GOOGLE_SHEETS = {
+  news:         { id: "1Wwlm2226mdTOzjhOtfszVrMJN05noBw2Ff2zcjGC9LM", tab: "" }, // empty tab = first tab
+  publications: { id: "1VTL19ccMFUlj_NQ-mebcs-hI_EDBSeBlx3dA8QbUYO4", tab: "Website Publications" },
+};
 
 const MEMBERS = [
   {
@@ -307,3 +328,102 @@ const ALUMNI = [
 ];
 
 window.LAB_DATA = { MEMBERS, ALUMNI, PUBLICATIONS, NEWS, COLLABORATORS, FUNDING, ARTISTS, BANNERS };
+
+// ─── Sheets fetcher (gviz endpoint, no auth needed for link-shared sheets) ──
+async function fetchSheetTab(cfg) {
+  const params = new URLSearchParams({ tqx: "out:json", headers: "1" });
+  if (cfg.tab) params.set("sheet", cfg.tab);
+  const url = `https://docs.google.com/spreadsheets/d/${cfg.id}/gviz/tq?${params}`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Sheet ${cfg.id}/${cfg.tab || "(first)"} fetch failed: ${res.status}`);
+  const text = await res.text();
+  const start = text.indexOf("{");
+  const end = text.lastIndexOf("}");
+  if (start < 0 || end < 0) throw new Error(`Unexpected gviz response for "${tabName}"`);
+  const json = JSON.parse(text.slice(start, end + 1));
+  const cols = (json.table && json.table.cols) || [];
+  const rows = (json.table && json.table.rows) || [];
+  const fields = cols.map(c => String(c.label || c.id || "").trim().toLowerCase());
+  return rows.filter(r => r && r.c).map(r => {
+    const obj = {};
+    r.c.forEach((cell, i) => {
+      const key = fields[i];
+      if (!key) return;
+      obj[key] = cell == null ? null : (cell.v != null ? cell.v : (cell.f != null ? cell.f : null));
+      if (cell && cell.f != null && (key === "date")) obj[key] = cell.f; // prefer formatted date strings
+    });
+    return obj;
+  });
+}
+
+function normalizeSheetDate(v) {
+  if (v == null || v === "") return "";
+  if (v instanceof Date) {
+    const y = v.getFullYear(), m = String(v.getMonth() + 1).padStart(2, "0"), d = String(v.getDate()).padStart(2, "0");
+    return `${y}-${m}-${d}`;
+  }
+  const s = String(v).trim();
+  // "Date(YYYY,M,D)" — gviz Date type; month is 0-indexed
+  const m1 = s.match(/^Date\((\d+),(\d+),(\d+)/);
+  if (m1) return `${m1[1]}-${String(+m1[2] + 1).padStart(2, "0")}-${m1[3].padStart(2, "0")}`;
+  // "M/D/YYYY"
+  const m2 = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (m2) return `${m2[3]}-${m2[1].padStart(2, "0")}-${m2[2].padStart(2, "0")}`;
+  return s; // assume ISO-ish (YYYY-MM-DD)
+}
+
+function parseNewsRows(rows) {
+  return rows
+    .filter(r => r.date && r.title)
+    .map(r => ({
+      date: normalizeSheetDate(r.date),
+      title: String(r.title || ""),
+      body: String(r.body || ""),
+      link: r.link || null,
+      linkLabel: r.linklabel || r.linkLabel || null,
+    }))
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
+function parsePublicationRows(rows) {
+  return rows
+    .filter(r => r.title)
+    .map(r => ({
+      year: Number(r.year) || 0,
+      month: Number(r.month) || 0,
+      title: String(r.title),
+      authors: String(r.authors || ""),
+      authorsHtml: r.authors_html || r.authorshtml || null,
+      venue: String(r.venue || ""),
+      type: String(r.type || "journal").toLowerCase().trim(),
+      url: r.url || null,
+    }))
+    .sort((a, b) => (b.year - a.year) || (b.month - a.month));
+}
+
+async function fetchAndApplySheets() {
+  const newsCfg = GOOGLE_SHEETS.news;
+  const pubCfg  = GOOGLE_SHEETS.publications;
+  if (!newsCfg.id && !pubCfg.id) return false;
+  const results = await Promise.allSettled([
+    newsCfg.id ? fetchSheetTab(newsCfg).then(parseNewsRows)        : Promise.resolve(null),
+    pubCfg.id  ? fetchSheetTab(pubCfg).then(parsePublicationRows)  : Promise.resolve(null),
+  ]);
+  let updated = false;
+  if (results[0].status === "fulfilled" && results[0].value && results[0].value.length) {
+    window.LAB_DATA.NEWS = results[0].value;
+    updated = true;
+  } else if (results[0].status === "rejected") {
+    console.warn("News sheet fetch failed:", results[0].reason);
+  }
+  if (results[1].status === "fulfilled" && results[1].value && results[1].value.length) {
+    window.LAB_DATA.PUBLICATIONS = results[1].value;
+    updated = true;
+  } else if (results[1].status === "rejected") {
+    console.warn("Publications sheet fetch failed:", results[1].reason);
+  }
+  return updated;
+}
+
+window.GOOGLE_SHEETS_ENABLED = !!(GOOGLE_SHEETS.news.id || GOOGLE_SHEETS.publications.id);
+window.fetchAndApplySheets = fetchAndApplySheets;

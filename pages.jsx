@@ -248,7 +248,7 @@ function PublicationsPage({ treatment }) {
                   <h3 className="pub-title">
                     {p.url ? <a href={p.url} target="_blank" rel="noopener">{p.title}</a> : p.title}
                   </h3>
-                  <div className="pub-authors" dangerouslySetInnerHTML={{ __html: renderAuthors(p.authors) }} />
+                  <div className="pub-authors" dangerouslySetInnerHTML={{ __html: p.authorsHtml || renderAuthors(p.authors) }} />
                   <div className="pub-venue">
                     <span className="venue-name">{p.venue}</span>
                     <span className={"pub-type-tag " + (p.type === "preprint" ? "preprint" : "")}>{p.type}</span>

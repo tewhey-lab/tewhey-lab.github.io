@@ -61,6 +61,16 @@ function App() {
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
 
+  // Pull live News + Publications from the configured Google Sheet, if any.
+  // Bumping dataVersion forces pages to re-read window.LAB_DATA after the fetch.
+  const [dataVersion, setDataVersion] = useStateA(0);
+  useEffectA(() => {
+    if (!window.GOOGLE_SHEETS_ENABLED || !window.fetchAndApplySheets) return;
+    window.fetchAndApplySheets().then((updated) => {
+      if (updated) setDataVersion((v) => v + 1);
+    });
+  }, []);
+
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
 
   // Apply tweak CSS vars
