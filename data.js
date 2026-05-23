@@ -82,7 +82,7 @@ const MEMBERS = [
     role: "Graduate Student",
     image: "assets/members/zoe.jpg",
     altImage: null,
-    bio: "Bio coming soon.",
+    bio: "Zoe graduated from Northeastern University with a B.S. in Behavioral Neuroscience and graduate work in Nanomedicine and Biotechnology. At Northeastern, Zoe worked in numerous labs on an array of neuroscience topics from early development to movement and rehabilitation. Postgraduate work as a research technician and lab manager was done at Massachusetts General Hospital where Zoe worked on a diagnostic biomarker panel for Alzheimer's disease and gained experience with human pluripotent stem cells and brain organoids. As a PhD student in the Tewhey lab, Zoe aims to develop tools for the study and manipulation of diverse cell types.",
   },
   {
     name: "Kousuke Mouri",
