@@ -35,7 +35,7 @@ function HomePage({ treatment, setRoute }) {
               <div className="stat-row"><span className="k">Institution</span><span className="v">The Jackson Laboratory</span></div>
               <div className="stat-row"><span className="k">Location</span><span className="v">Bar Harbor, Maine</span></div>
               <div className="stat-row"><span className="k">PI</span><span className="v">Ryan Tewhey, PhD</span></div>
-              <div className="stat-row"><span className="k">Group size</span><span className="v">8 researchers</span></div>
+              <div className="stat-row"><span className="k">Group size</span><span className="v">{data.MEMBERS.length} members</span></div>
             </aside>
           </section>
         }
