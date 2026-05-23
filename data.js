@@ -18,7 +18,11 @@
 
 const GOOGLE_SHEETS = {
   news:         { id: "1Wwlm2226mdTOzjhOtfszVrMJN05noBw2Ff2zcjGC9LM", tab: "" }, // empty tab = first tab
-  publications: { id: "1VTL19ccMFUlj_NQ-mebcs-hI_EDBSeBlx3dA8QbUYO4", tab: "Website Publications" },
+  publications: {
+    id: "1VTL19ccMFUlj_NQ-mebcs-hI_EDBSeBlx3dA8QbUYO4",
+    tab: "Website Publications",
+    pressTab: "Website News", // optional sibling tab; rows joined to publications by PMID
+  },
 };
 
 const MEMBERS = [
@@ -131,136 +135,142 @@ const PUBLICATIONS = [
     title: "Machine-guided design of synthetic cell type-specific cis-regulatory elements",
     authors: "Gosai SJ, Castro RI, Fuentes N, Butts JC, Kales S, Noche RR, Mouri K, Sabeti PC, Reilly SK, Tewhey R.",
     venue: "bioRxiv",
-    type: "preprint",
-    url: "https://www.biorxiv.org/content/10.1101/2023.08.08.552077v1",
+    preprint: "https://www.biorxiv.org/content/10.1101/2023.08.08.552077v1",
+    news: [],
   },
   {
     year: 2023, month: 4,
     title: "The functional and evolutionary impacts of human-specific deletions in conserved elements",
     authors: "Xue JR, Mackay-Smith A, Mouri K, Fernandez Garcia M, Dong MX, Akers JF, Noble M, Li X, Zoonomia Consortium, Lindblad-Toh K, Karlsson EK, Noonan JP, Capellini TD, Brennand KJ, Tewhey R, Sabeti PC, Reilly SK.",
     venue: "Science",
-    type: "journal",
-    url: "https://www.science.org/doi/10.1126/science.abn2253",
+    pmid: "37104593",
+    peerReviewed: "https://www.science.org/doi/10.1126/science.abn2253",
+    news: [
+      { label: "Yale News",       url: "https://news.yale.edu/2023/04/27/human-specific-genetic-deletions-shaped-our-evolution" },
+      { label: "Quanta Magazine", url: "https://www.quantamagazine.org/" },
+    ],
   },
   {
     year: 2023, month: 2,
     title: "Widespread perturbation of ETS factor binding sites in cancer",
     authors: "Carrasco Pro S, Hook H, Bray D, Berenzy D, Moyer D, Yin M, Labadorf AT, Tewhey R, Siggers T, Fuxman Bass JI.",
     venue: "Nature Communications",
-    type: "journal",
-    url: "https://www.nature.com/articles/s41467-023-36535-8",
+    peerReviewed: "https://www.nature.com/articles/s41467-023-36535-8",
+    news: [],
   },
   {
     year: 2023, month: 2,
     title: "Whole genome functional characterization of RE1 silencers using a modified massively parallel reporter assay",
     authors: "Mouri K, Dewey HB, Castro R, Berenzy D, Kales S, Tewhey R.",
     venue: "Cell Genomics",
-    type: "journal",
-    url: "https://www.sciencedirect.com/science/article/pii/S2666979X22001926",
+    peerReviewed: "https://www.sciencedirect.com/science/article/pii/S2666979X22001926",
+    news: [
+      { label: "Cell Press Press Release", url: "https://www.cell.com/cell-genomics/pdfExtended/S2666-979X(22)00192-6" },
+    ],
   },
   {
     year: 2022, month: 12,
     title: "Multi-center integrated analysis of non-coding CRISPR screens",
     authors: "Yao D, Tycko J, Oh JW, Bounds LR, Gosai SJ, et al. (ENCODE4 Consortium), Tewhey R, Kundaje A, Greenleaf WJ, Sabeti PC, Reilly SK, Bassik MC.",
     venue: "bioRxiv",
-    type: "preprint",
-    url: "https://www.biorxiv.org/content/10.1101/2022.12.21.520137v1",
+    preprint: "https://www.biorxiv.org/content/10.1101/2022.12.21.520137v1",
+    news: [],
   },
   {
     year: 2022, month: 12,
     title: "Three linked opposing regulatory variants under selection associate with IVD",
     authors: "Brown EA, Kales S, Boyle MJ, Vitti J, Kotliar D, Schaffner SF, Tewhey R, Sabeti PC.",
     venue: "bioRxiv",
-    type: "preprint",
-    url: "https://www.biorxiv.org/content/10.1101/2022.12.22.521605v1",
+    preprint: "https://www.biorxiv.org/content/10.1101/2022.12.22.521605v1",
+    news: [],
   },
   {
     year: 2022, month: 5,
     title: "Prioritization of autoimmune disease-associated genetic variants that perturb regulatory element activity in T cells",
     authors: "Mouri K, Guo MH, de Boer CG, Newby GA, Gentili M, Liu DR, Hacohen N, Tewhey R, Ray JP.",
     venue: "Nature Genetics",
-    type: "journal",
-    url: "https://www.nature.com/articles/s41588-022-01056-5",
+    peerReviewed: "https://www.nature.com/articles/s41588-022-01056-5",
+    news: [],
   },
   {
     year: 2022, month: 4,
     title: "Comparative transmissibility of SARS-CoV-2 variants Delta and Alpha in New England, USA",
     authors: "Earnest R, Uddin R, Matluk N, et al., Dewey HB, Kales S, Berenzy D, et al., Tewhey R, Adams MD, Park DJ, Lemieux JE, Grubaugh ND.",
     venue: "Cell Reports Medicine",
-    type: "journal",
-    url: "https://www.sciencedirect.com/science/article/pii/S2666379122000908",
+    peerReviewed: "https://www.sciencedirect.com/science/article/pii/S2666379122000908",
+    news: [],
   },
   {
     year: 2021, month: 12,
     title: "Synthetic DNA spike-ins (SDSIs) enable sample tracking and detection of inter-sample contamination in SARS-CoV-2 sequencing workflows",
     authors: "Lagerborg KA, Normandin E, Bauer MR, et al.",
     venue: "Nature Microbiology",
-    type: "journal",
-    url: "https://www.nature.com/articles/s41564-021-01019-2",
+    peerReviewed: "https://www.nature.com/articles/s41564-021-01019-2",
+    news: [],
   },
   {
     year: 2021, month: 9,
     title: "Genome-wide functional screen of 3′UTR variants uncovers causal variants for human disease and evolution",
     authors: "Griesemer D, Xue J, Reilly S, Ulirsch J, Kukreja K, Davis J, Kanai M, Yang D, Butts J, Montgomery S, Novina C, Tewhey R, Sabeti P.",
     venue: "Cell",
-    type: "journal",
-    url: "https://www.sciencedirect.com/science/article/pii/S0092867421009995",
+    peerReviewed: "https://www.sciencedirect.com/science/article/pii/S0092867421009995",
+    news: [],
   },
   {
     year: 2021, month: 7,
     title: "Direct characterization of cis-regulatory elements and functional dissection of complex genetic associations using HCR-FlowFISH",
     authors: "Reilly SK, Gosai SJ, Gutierrez A, Ulirsch JC, Kanai M, Mouri K, Berenzy D, Kales S, Butler GB, Gladden-Young A, Bhuiyan RM, Stitzel ML, Finucane HK, Sabeti PC, Tewhey R.",
     venue: "Nature Genetics",
-    type: "journal",
-    url: "https://www.nature.com/articles/s41588-021-00900-4",
+    peerReviewed: "https://www.nature.com/articles/s41588-021-00900-4",
+    news: [],
   },
   {
     year: 2021, month: 9,
     title: "Functional characterization of thousands of type 2 diabetes-associated and chromatin-modulating variants under steady state and endoplasmic reticulum stress",
     authors: "Khetan S, Kales S, Kursawe R, Jillette A, Reilly SK, Ucar D, Tewhey R, Stitzel ML.",
     venue: "Nature Communications",
-    type: "journal",
-    url: "https://www.nature.com/articles/s41467-021-25514-6",
+    peerReviewed: "https://www.nature.com/articles/s41467-021-25514-6",
+    news: [],
   },
   {
     year: 2020, month: 10,
     title: "A MicroRNA Linking Human Positive Selection and Metabolic Disorders",
     authors: "Wang L, Sinnott-Armstrong N, Wagschal A, et al., Tewhey R, Sabeti PC, et al., Näär AM.",
     venue: "Cell",
-    type: "journal",
-    url: "https://www.sciencedirect.com/science/article/pii/S0092867420311582",
+    peerReviewed: "https://www.sciencedirect.com/science/article/pii/S0092867420311582",
+    news: [],
   },
   {
     year: 2020, month: 3,
     title: "Prioritizing disease and trait causal variants at the TNFAIP3 locus using functional and genomic features",
     authors: "Ray JP, de Boer CG, Fulco CP, Lareau CA, Kanai M, Ulirsch JC, Tewhey R, et al., Hacohen N.",
     venue: "Nature Communications",
-    type: "journal",
-    url: "https://www.nature.com/articles/s41467-020-15022-4",
+    peerReviewed: "https://www.nature.com/articles/s41467-020-15022-4",
+    news: [],
   },
   {
     year: 2016, month: 6,
     title: "Direct Identification of Hundreds of Expression-Modulating Variants using a Multiplexed Reporter Assay",
     authors: "Tewhey R, Kotliar D, Park DS, Liu B, Winnicki S, Reilly SK, Andersen KG, Mikkelsen TS, Lander ES, Schaffner SF, Sabeti PC.",
     venue: "Cell",
-    type: "journal",
-    url: "https://www.sciencedirect.com/science/article/pii/S0092867416304214",
+    peerReviewed: "https://www.sciencedirect.com/science/article/pii/S0092867416304214",
+    news: [],
   },
   {
     year: 2011, month: 3,
     title: "The importance of phase information for human genomics",
     authors: "Tewhey R, Bansal V, Torkamani A, Topol EJ, Schork NJ.",
     venue: "Nature Reviews Genetics",
-    type: "journal",
-    url: "https://pubmed.ncbi.nlm.nih.gov/21301473/",
+    peerReviewed: "https://pubmed.ncbi.nlm.nih.gov/21301473/",
+    news: [],
   },
   {
     year: 2009, month: 11,
     title: "Microdroplet-based PCR enrichment for large-scale targeted sequencing",
     authors: "Tewhey R, Warner JB, Nakano M, et al., Link DR, Frazer KA.",
     venue: "Nature Biotechnology",
-    type: "journal",
-    url: "https://pubmed.ncbi.nlm.nih.gov/19881494/",
+    peerReviewed: "https://pubmed.ncbi.nlm.nih.gov/19881494/",
+    news: [],
   },
 ];
 
@@ -399,43 +409,117 @@ function parseNewsRows(rows) {
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-function parsePublicationRows(rows) {
+function hostnameFor(url) {
+  try { return new URL(url).hostname.replace(/^www\./, ""); }
+  catch (e) { return url; }
+}
+
+function normalizePubType(raw) {
+  if (raw == null) return null;
+  const s = String(raw).toLowerCase().trim();
+  if (!s) return null;
+  if (/^(peer.?reviewed|journal|published|paper)$/.test(s)) return "peerReviewed";
+  if (/^(preprint|biorxiv|medrxiv|arxiv)$/.test(s)) return "preprint";
+  return null;
+}
+
+// Scan a row for repeated type/url column pairs (type, type_1, type_2, …).
+// Also accepts legacy peer_reviewed_url / preprint_url fallbacks.
+function extractTypeUrlPairs(row) {
+  const out = { peerReviewed: null, preprint: null };
+  const keys = Object.keys(row);
+  const pairKeys = keys.filter(k => /^type(_\d+)?$/.test(k));
+  pairKeys.forEach((tk) => {
+    const suffix = tk.slice(4); // "" or "_1", "_2", ...
+    const uk = "url" + suffix;
+    const bucket = normalizePubType(row[tk]);
+    const url = row[uk];
+    if (bucket && url && !out[bucket]) out[bucket] = String(url);
+  });
+  if (!out.peerReviewed && row.peer_reviewed_url) out.peerReviewed = String(row.peer_reviewed_url);
+  if (!out.preprint     && row.preprint_url)      out.preprint     = String(row.preprint_url);
+  return out;
+}
+
+// Legacy single-cell news_links column: lines like "Label | URL" or just URLs.
+function parseNewsLinks(raw) {
+  if (!raw) return [];
+  return String(raw)
+    .split(/\r?\n/)
+    .map(s => s.trim())
+    .filter(Boolean)
+    .map(line => {
+      const parts = line.split("|").map(s => s.trim());
+      if (parts.length >= 2) return { label: parts[0], url: parts[1] };
+      return { label: hostnameFor(line), url: line };
+    });
+}
+
+function parsePressRows(rows) {
+  const map = new Map();
+  rows.forEach((r) => {
+    const pmid = r.pmid != null ? String(r.pmid).trim() : "";
+    const url  = r.url ? String(r.url).trim() : "";
+    if (!pmid || !url) return;
+    const label = r.source ? String(r.source).trim() : hostnameFor(url);
+    if (!map.has(pmid)) map.set(pmid, []);
+    map.get(pmid).push({ label, url });
+  });
+  return map;
+}
+
+function parsePublicationRows(rows, pressByPmid) {
+  const press = pressByPmid || new Map();
   return rows
     .filter(r => r.title)
-    .map(r => ({
-      year: Number(r.year) || 0,
-      month: Number(r.month) || 0,
-      title: String(r.title),
-      authors: String(r.authors || ""),
-      authorsHtml: r.authors_html || r.authorshtml || null,
-      venue: String(r.venue || ""),
-      type: String(r.type || "journal").toLowerCase().trim(),
-      url: r.url || null,
-    }))
+    .map(r => {
+      const { peerReviewed, preprint } = extractTypeUrlPairs(r);
+      const pmid = r.pmid != null && r.pmid !== "" ? String(r.pmid).trim() : null;
+      const joined = pmid && press.has(pmid) ? press.get(pmid) : null;
+      const news = joined || parseNewsLinks(r.news_links);
+      return {
+        year: Number(r.year) || 0,
+        month: Number(r.month) || 0,
+        title: String(r.title),
+        authors: String(r.authors || ""),
+        authorsHtml: r.authors_html || r.authorshtml || null,
+        venue: String(r.venue || ""),
+        pmid,
+        peerReviewed,
+        preprint,
+        news,
+      };
+    })
     .sort((a, b) => (b.year - a.year) || (b.month - a.month));
 }
 
+// Sequential fetcher — publications need the press join, so press loads first.
 async function fetchAndApplySheets() {
   const newsCfg = GOOGLE_SHEETS.news;
   const pubCfg  = GOOGLE_SHEETS.publications;
   if (!newsCfg.id && !pubCfg.id) return false;
-  const results = await Promise.allSettled([
-    newsCfg.id ? fetchSheetTab(newsCfg).then(parseNewsRows)        : Promise.resolve(null),
-    pubCfg.id  ? fetchSheetTab(pubCfg).then(parsePublicationRows)  : Promise.resolve(null),
-  ]);
   let updated = false;
-  if (results[0].status === "fulfilled" && results[0].value && results[0].value.length) {
-    window.LAB_DATA.NEWS = results[0].value;
-    updated = true;
-  } else if (results[0].status === "rejected") {
-    console.warn("News sheet fetch failed:", results[0].reason);
+
+  if (newsCfg.id) {
+    try {
+      const news = parseNewsRows(await fetchSheetTab(newsCfg));
+      if (news.length) { window.LAB_DATA.NEWS = news; updated = true; }
+    } catch (e) { console.warn("News sheet fetch failed:", e); }
   }
-  if (results[1].status === "fulfilled" && results[1].value && results[1].value.length) {
-    window.LAB_DATA.PUBLICATIONS = results[1].value;
-    updated = true;
-  } else if (results[1].status === "rejected") {
-    console.warn("Publications sheet fetch failed:", results[1].reason);
+
+  if (pubCfg.id) {
+    let pressByPmid = new Map();
+    if (pubCfg.pressTab) {
+      try {
+        pressByPmid = parsePressRows(await fetchSheetTab({ id: pubCfg.id, tab: pubCfg.pressTab }));
+      } catch (e) { console.warn("Press sheet fetch failed:", e); }
+    }
+    try {
+      const pubs = parsePublicationRows(await fetchSheetTab(pubCfg), pressByPmid);
+      if (pubs.length) { window.LAB_DATA.PUBLICATIONS = pubs; updated = true; }
+    } catch (e) { console.warn("Publications sheet fetch failed:", e); }
   }
+
   return updated;
 }
 

@@ -171,16 +171,25 @@ function ResearchPage({ treatment }) {
 }
 
 // ─── PUBLICATIONS ────────────────────────────────────────────────────────────
+const PUB_FILTERS = [
+  { key: "all",            label: "All" },
+  { key: "peer-reviewed",  label: "Peer-reviewed" },
+  { key: "preprint",       label: "Preprint" },
+  { key: "news",           label: "News" },
+];
+
 function PublicationsPage({ treatment }) {
   const banner = window.LAB_DATA.BANNERS.publications;
   const pubs = window.LAB_DATA.PUBLICATIONS;
   const [filter, setFilter] = useStateP("all");
   const [q, setQ] = useStateP("");
+  const [openNewsKey, setOpenNewsKey] = useStateP(null);
 
   const filtered = useMemoP(() => {
     return pubs.filter((p) => {
-      if (filter === "preprints" && p.type !== "preprint") return false;
-      if (filter === "journals" && p.type !== "journal") return false;
+      if (filter === "peer-reviewed" && !p.peerReviewed) return false;
+      if (filter === "preprint" && !p.preprint) return false;
+      if (filter === "news" && !(p.news && p.news.length > 0)) return false;
       if (q) {
         const hay = (p.title + " " + p.authors + " " + p.venue).toLowerCase();
         if (!hay.includes(q.toLowerCase())) return false;
@@ -189,7 +198,6 @@ function PublicationsPage({ treatment }) {
     });
   }, [filter, q]);
 
-  // group by year
   const byYear = useMemoP(() => {
     const map = new Map();
     filtered.forEach((p) => {
@@ -219,12 +227,11 @@ function PublicationsPage({ treatment }) {
           title="Selected work, 2007 – present."
           lede="Lab members are bolded. For a complete record see Ryan's ORCID or Google Scholar."
           treatment={treatment} />
-        
 
         <div className="pub-filters">
-          {["all", "journals", "preprints"].map((f) =>
-          <button key={f} className={"pub-filter" + (filter === f ? " active" : "")} onClick={() => setFilter(f)}>
-              {f}
+          {PUB_FILTERS.map((f) =>
+          <button key={f.key} className={"pub-filter" + (filter === f.key ? " active" : "")} onClick={() => setFilter(f.key)}>
+              {f.label}
             </button>
           )}
           <input
@@ -232,7 +239,6 @@ function PublicationsPage({ treatment }) {
             placeholder="Search title, author, venue…"
             value={q}
             onChange={(e) => setQ(e.target.value)} />
-          
         </div>
 
         {byYear.length === 0 &&
@@ -243,19 +249,57 @@ function PublicationsPage({ treatment }) {
         <div key={year} className="year-block">
             <div className="year">{year}</div>
             <div className="pubs">
-              {list.map((p, i) =>
-            <article key={i} className="pub">
-                  <h3 className="pub-title">
-                    {p.url ? <a href={p.url} target="_blank" rel="noopener">{p.title}</a> : p.title}
-                  </h3>
-                  <div className="pub-authors" dangerouslySetInnerHTML={{ __html: p.authorsHtml || renderAuthors(p.authors) }} />
-                  <div className="pub-venue">
-                    <span className="venue-name">{p.venue}</span>
-                    <span className={"pub-type-tag " + (p.type === "preprint" ? "preprint" : "")}>{p.type}</span>
-                    {p.url && <a href={p.url} target="_blank" rel="noopener">↗ View</a>}
-                  </div>
-                </article>
-            )}
+              {list.map((p, i) => {
+                const newsKey = `${year}-${i}`;
+                const newsOpen = openNewsKey === newsKey;
+                const titleHref = p.peerReviewed || p.preprint || null;
+                const hasNews = p.news && p.news.length > 0;
+                return (
+                  <article key={i} className="pub">
+                    <h3 className="pub-title">
+                      {titleHref ? <a href={titleHref} target="_blank" rel="noopener">{p.title}</a> : p.title}
+                    </h3>
+                    <div className="pub-authors" dangerouslySetInnerHTML={{ __html: p.authorsHtml || renderAuthors(p.authors) }} />
+                    <div className="pub-venue">
+                      <span className="venue-name">{p.venue}</span>
+                      <div className="pub-chips">
+                        {p.peerReviewed &&
+                          <a className="pub-chip pub-chip--peer" href={p.peerReviewed} target="_blank" rel="noopener">
+                            Peer-reviewed <span className="pub-chip-arrow">↗</span>
+                          </a>
+                        }
+                        {p.preprint &&
+                          <a className="pub-chip pub-chip--preprint" href={p.preprint} target="_blank" rel="noopener">
+                            Preprint <span className="pub-chip-arrow">↗</span>
+                          </a>
+                        }
+                        {hasNews &&
+                          <button
+                            className={"pub-chip pub-chip--news pub-chip--button" + (newsOpen ? " open" : "")}
+                            aria-expanded={newsOpen}
+                            onClick={() => setOpenNewsKey(newsOpen ? null : newsKey)}>
+                            News
+                            {p.news.length > 1 && <span className="pub-chip-count">{p.news.length}</span>}
+                            <span className="pub-chip-caret">▾</span>
+                          </button>
+                        }
+                      </div>
+                    </div>
+                    {hasNews && newsOpen &&
+                      <ul className="pub-news-list">
+                        {p.news.map((n, j) =>
+                          <li key={j}>
+                            <a href={n.url} target="_blank" rel="noopener">
+                              <span className="pub-news-label">{n.label}</span>
+                              <span className="pub-news-arrow">↗</span>
+                            </a>
+                          </li>
+                        )}
+                      </ul>
+                    }
+                  </article>
+                );
+              })}
             </div>
           </div>
         )}
