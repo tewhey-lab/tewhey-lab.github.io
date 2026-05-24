@@ -175,7 +175,6 @@ const PUB_FILTERS = [
   { key: "all",            label: "All" },
   { key: "peer-reviewed",  label: "Peer-reviewed" },
   { key: "preprint",       label: "Preprint" },
-  { key: "news",           label: "News" },
 ];
 
 function PublicationsPage({ treatment }) {
@@ -220,12 +219,12 @@ function PublicationsPage({ treatment }) {
 
   return (
     <>
-      <Banner banner={banner} treatment={treatment} pageTitle="Publications" pageEyebrow="Selected work, 2007 – present" />
+      <Banner banner={banner} treatment={treatment} pageTitle="Publications" pageEyebrow="Selected work" />
       <main className="page">
         <PageHead
           eyebrow="Publications"
-          title="Selected work, 2007 – present."
-          lede="Lab members are bolded. For a complete record see Ryan's ORCID or Google Scholar."
+          title="Selected work."
+          lede={<>For a complete publication record see Ryan's <a href="https://scholar.google.com/citations?hl=en&user=18PeXhgAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Google Scholar <span className="pub-news-arrow" style={{ fontSize: "0.85em" }}>↗</span></a>.</>}
           treatment={treatment} />
 
         <div className="pub-filters">
