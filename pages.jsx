@@ -196,7 +196,7 @@ function PublicationsPage({ treatment }) {
       }
       return true;
     });
-  }, [filter, q]);
+  }, [filter, q, pubs]);
 
   const byYear = useMemoP(() => {
     const map = new Map();
