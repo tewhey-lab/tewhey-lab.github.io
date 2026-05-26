@@ -90,14 +90,14 @@ const MEMBERS = [
   },
   {
     name: "Kousuke Mouri",
-    role: "Research Scientist",
+    role: "Associate Research Scientist",
     pronounce: "KOH-skay",
     image: "assets/members/kousuke.jpg",
     altImage: "assets/members/kousuke_alt.jpg",
     email: "kousuke.mouri (at) jax.org",
     twitter: "kousuke_mouri",
     orcid: "0000-0003-1712-6833",
-    bio: "Kousuke graduated from Kyoto University in life science. Before joining JAX, he was a postdoctoral fellow at the National Institute of Genetics, Japan. Now, as a postdoctoral associate in the Tewhey lab, Kousuke works on human genetics to decipher the mechanisms of the cis-regulatory elements that produce the wide variety of animal morphology and phenotype.",
+    bio: "Kousuke graduated from Kyoto University in life science. Before joining JAX, he was a postdoctoral fellow at the National Institute of Genetics, Japan. Now, as a research scientist in the Tewhey lab, Kousuke works on human genetics to decipher the mechanisms of the cis-regulatory elements that produce the wide variety of animal morphology and phenotype.",
   },
   {
     name: "Niketa Nerurkar",
