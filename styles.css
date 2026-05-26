@@ -270,18 +270,49 @@ a:hover { text-decoration: underline; }
 }
 .hero h1 { margin-bottom: 24px; }
 .hero .lede { margin-bottom: 28px; }
-.hero .stat-card {
-  border: 1px solid var(--rule);
-  padding: 24px;
-  background: var(--paper-2);
+
+/* Combined hero: single column, headline runs full width, metadata pairs under buttons */
+.hero.hero--combo {
+  grid-template-columns: 1fr;
+  gap: 0;
 }
-.hero .stat-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--rule); }
-.hero .stat-row:last-child { border-bottom: 0; }
-.hero .stat-row .k { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
-.hero .stat-row .v { font-family: var(--serif); font-size: 18px; color: var(--ink); }
-.hero .where {
-  font-family: var(--mono); font-size: 12px;
-  color: var(--ink-3); margin-top: 10px; line-height: 1.6;
+.hero.hero--combo h1 {
+  max-width: none;
+  font-size: clamp(42px, 5.2vw, 64px);
+  line-height: 1.04;
+  letter-spacing: -0.022em;
+}
+.hero.hero--combo .lede {
+  max-width: 44em;
+}
+
+/* Metadata pairs under buttons */
+.hero-meta {
+  margin: 28px 0 0;
+  padding: 22px 0 0;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+.hero-meta__pair {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hero-meta__pair dt {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.hero-meta__pair dd {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
 }
 
 /* Buttons / pills */
@@ -620,7 +651,7 @@ a:hover { text-decoration: underline; }
   line-height: 1.35;
   letter-spacing: 0.005em;
 }
-.footer-jax img { height: 30px; width: auto; display: block; }
+.footer-jax img { height: 40px; width: auto; display: block; }
 .footer-jax span { color: var(--ink-3); }
 .footer-jax span b { color: var(--ink); font-weight: 600; }
 .footer-jax:hover { border-color: var(--accent); }

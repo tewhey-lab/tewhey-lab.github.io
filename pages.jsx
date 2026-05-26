@@ -13,7 +13,7 @@ function HomePage({ treatment, setRoute }) {
       <Banner banner={banner} treatment={treatment} pageTitle="The Tewhey Lab" pageEyebrow="Functional Genomics · The Jackson Laboratory" />
       <main className="page">
         {treatment !== "split" &&
-        <section className="hero">
+        <section className="hero hero--combo">
             <div>
               <span className="eyebrow" style={{ display: "block", marginBottom: 18 }}>The Tewhey Lab · est. 2017</span>
               <h1>Decoding the regulatory grammar of the human genome.</h1>
@@ -30,13 +30,25 @@ function HomePage({ treatment, setRoute }) {
                   Publications
                 </button>
               </div>
+              <dl className="hero-meta">
+                <div className="hero-meta__pair">
+                  <dt>Institution</dt>
+                  <dd>The Jackson Laboratory</dd>
+                </div>
+                <div className="hero-meta__pair">
+                  <dt>Location</dt>
+                  <dd>Bar Harbor, Maine</dd>
+                </div>
+                <div className="hero-meta__pair">
+                  <dt>Principal Investigator</dt>
+                  <dd>Ryan Tewhey, PhD</dd>
+                </div>
+                <div className="hero-meta__pair">
+                  <dt>Group size</dt>
+                  <dd>{data.MEMBERS.length} members</dd>
+                </div>
+              </dl>
             </div>
-            <aside className="stat-card">
-              <div className="stat-row"><span className="k">Institution</span><span className="v">The Jackson Laboratory</span></div>
-              <div className="stat-row"><span className="k">Location</span><span className="v">Bar Harbor, Maine</span></div>
-              <div className="stat-row"><span className="k">PI</span><span className="v">Ryan Tewhey, PhD</span></div>
-              <div className="stat-row"><span className="k">Group size</span><span className="v">{data.MEMBERS.length} members</span></div>
-            </aside>
           </section>
         }
 
@@ -539,73 +551,17 @@ function GratitudePage({ treatment }) {
                 We are grateful for their generosity. Click a name to see more of their work.
               </p>
             </div>
-            <div>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 0 }}>
-                {data.ARTISTS.map((a, i) =>
-                <li key={a.name} style={{
-                  fontFamily: "var(--serif)",
-                  fontSize: 28,
-                  padding: "18px 0",
-                  borderBottom: i === data.ARTISTS.length - 1 ? "0" : "1px solid var(--rule)"
-                }}>
-                    <a href={a.url} target="_blank" rel="noopener" style={{ color: "var(--ink)" }}>{a.name}</a>
-                  </li>
+            <div className="thank-col">
+              <ul>
+                {data.ARTISTS.map((a) =>
+                <li key={a.name}>
+                  <a href={a.url} target="_blank" rel="noopener">{a.name}</a>
+                </li>
                 )}
               </ul>
             </div>
           </div>
         </section>
-      </main>
-    </>);
-
-}
-
-// ─── CONTACT ────────────────────────────────────────────────────────────────
-function ContactPage({ treatment }) {
-  const banner = window.LAB_DATA.BANNERS.contact;
-  return (
-    <>
-      <Banner banner={banner} treatment={treatment} pageTitle="Contact" pageEyebrow="Find us in Bar Harbor" />
-      <main className="page">
-        <PageHead
-          eyebrow="Contact"
-          title="Find us in Bar Harbor."
-          lede="Inquiries about joining the lab, collaborations, and reagent requests are welcome."
-          treatment={treatment} />
-        
-
-        <div className="contact-grid">
-          <div className="contact-block">
-            <h4>Lab Area</h4>
-            <div className="name">The Tewhey Lab</div>
-            <div className="line">The Jackson Laboratory</div>
-            <div className="line">Bar Harbor, Maine</div>
-          </div>
-          <div className="contact-block">
-            <h4>Principal Investigator</h4>
-            <div className="name">Ryan Tewhey, PhD</div>
-            <div className="line">Associate Professor</div>
-            <div className="line">The Jackson Laboratory</div>
-            <div className="line" style={{ marginTop: 10 }}>info <span style={{ color: "var(--ink-3)" }}>(at)</span> tewheylab.org</div>
-          </div>
-          <div className="contact-block">
-            <h4>Research Admin</h4>
-            <div className="name">Debi Foster</div>
-            <div className="line">Research Administrative Assistant</div>
-            <div className="line" style={{ marginTop: 10 }}>debi.foster <span style={{ color: "var(--ink-3)" }}>(at)</span> jax.org</div>
-          </div>
-        </div>
-
-        <div className="map-frame">
-          <div>
-            <div className="eyebrow" style={{ marginBottom: 8 }}>Where we are</div>
-            <div className="where-big">On the Bar Harbor campus of The Jackson Laboratory.</div>
-          </div>
-          <div className="coords">
-            Bar Harbor<br />
-            Maine
-          </div>
-        </div>
       </main>
     </>);
 
@@ -669,6 +625,6 @@ function TimelinePage({ treatment, setRoute }) {
 
 Object.assign(window, {
   HomePage, ResearchPage, PublicationsPage,
-  MembersPage, ResourcesPage, GratitudePage, ContactPage,
+  MembersPage, ResourcesPage, GratitudePage,
   TimelinePage,
 });

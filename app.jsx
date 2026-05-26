@@ -162,7 +162,6 @@ const ROUTES = {
   members:      MembersPage,
   resources:    ResourcesPage,
   gratitude:    GratitudePage,
-  contact:      ContactPage,
   timeline:     TimelinePage,
 };
 

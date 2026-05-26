@@ -11,8 +11,7 @@ function Topbar({ route, setRoute }) {
   { id: "publications", label: "Publications" },
   { id: "members", label: "Members" },
   { id: "resources", label: "Resources" },
-  { id: "gratitude", label: "Gratitude" },
-  { id: "contact", label: "Contact" }];
+  { id: "gratitude", label: "Gratitude" }];
 
   return (
     <header className="topbar">
@@ -135,9 +134,12 @@ function Footer({ setRoute }) {
       <div className="footer-inner">
         <div>
           <h5>Tewhey Lab</h5>
-          <p style={{ fontSize: 14, color: "var(--ink-2)", maxWidth: "30ch" }}>
-            Functional Genomics at The Jackson Laboratory, Bar Harbor.
-            We study how genetic variation in regulatory elements shapes human traits and disease.
+          <a href="https://www.jax.org/research-and-faculty/research-labs/the-tewhey-lab" target="_blank" rel="noopener" className="footer-jax" aria-label="The Jackson Laboratory">
+            <img src="assets/logos/jax_helix.png" alt="" />
+            <span>A laboratory of<br /><b>The Jackson Laboratory</b>.</span>
+          </a>
+          <p style={{ fontSize: 14, color: "var(--ink-2)", marginTop: 18 }}>
+            info <span style={{ color: "var(--ink-3)" }}>(at)</span> tewheylab.org
           </p>
         </div>
         <div>
@@ -147,7 +149,6 @@ function Footer({ setRoute }) {
             <li><a onClick={() => setRoute("publications")}>Publications</a></li>
             <li><a onClick={() => setRoute("members")}>Members</a></li>
             <li><a onClick={() => setRoute("resources")}>Resources & Tools</a></li>
-            <li><a onClick={() => setRoute("contact")}>Contact</a></li>
           </ul>
         </div>
         <div>
@@ -156,15 +157,11 @@ function Footer({ setRoute }) {
             <li><a href="https://github.com/tewhey-lab" target="_blank" rel="noopener">GitHub — tewhey-lab</a></li>
             <li><a href="https://twitter.com/r_tewhey" target="_blank" rel="noopener">Twitter — @r_tewhey</a></li>
             <li><a href="https://bsky.app/profile/tewhey.bsky.social" target="_blank" rel="noopener">Bluesky — @tewhey.bsky.social</a></li>
-            <li><a href="https://www.jax.org" target="_blank" rel="noopener">The Jackson Laboratory</a></li>
+            <li><a href="https://www.jax.org/research-and-faculty/research-labs/the-tewhey-lab" target="_blank" rel="noopener">The Jackson Laboratory</a></li>
           </ul>
           <p className="colophon" style={{ marginTop: 24 }}>
             Artwork on this site by Maine artists, reproduced with permission.
           </p>
-          <a href="https://www.jax.org" target="_blank" rel="noopener" className="footer-jax" aria-label="The Jackson Laboratory">
-            <img src="assets/logos/jax_helix.png" alt="" />
-            <span>A laboratory of<br /><b>The Jackson Laboratory</b></span>
-          </a>
         </div>
       </div>
     </footer>);

@@ -457,6 +457,8 @@ const COLLABORATORS = [
 ];
 
 const FUNDING = [
+  "NIH/NHGRI Genomic Innovator, R35 — HG011329",
+  "NIH/NIA Longevity Consortium, Project 2 — U19 AG023122",
   "NIH/NHGRI Pathway to Independence, K99/R00 — HG008179 (2014–2020)",
   "NIH/NHGRI ENCODE Characterization Center, UM1 — HG009435 (2017–2021)",
   "NIH/NIAID R01 — AI151051 (2020–2025)",
