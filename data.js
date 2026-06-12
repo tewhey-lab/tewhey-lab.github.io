@@ -77,9 +77,9 @@ const MEMBERS = [
   {
     name: "Lila Lyons",
     role: "Graduate Student",
-    image: null,
-    altImage: null,
-    bio: "Bio coming soon.",
+    image: "assets/members/lila.jpg",
+    altImage: "assets/members/lila_alt.jpg",
+    bio: "Lila graduated from the University of Connecticut with a bachelor's degree in physics. While an undergraduate, Lila worked in the lab of Pietro De Camilli at Yale School of Medicine where she used human stem cell-derived neurons to understand neurodegeneration in Alzheimer's disease. Following graduation, Lila worked at MIT simulating particle collisions for CERN's next-generation large hadron collider in the lab of Markus Klute. Returning to stem cell-derived models, Lila worked at the Broad Institute of MIT and Harvard in the lab of Paola Arlotta helping to create cortical organoid models that recapitulate the human basal ganglia. As a PhD student in the Tewhey Lab, she plans to study the contribution of cis-regulatory elements to gene regulation across mammalian species in stem cell-derived neurons.",
   },
   {
     name: "Zoe Mattingly",
