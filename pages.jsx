@@ -219,7 +219,7 @@ function PublicationsPage({ treatment }) {
   }, [filtered]);
 
   // Bold names of lab members in author lists
-  const labNames = ["Tewhey R", "Mouri K", "Castro R", "Dewey HB", "Kales S", "Berenzy D", "Butts J", "Butts JC", "Fuentes N", "Nerurkar N", "Castro RI"];
+  const labNames = ["Tewhey R", "Mouri K", "Castro R", "Castro RI", "Iwasaki T", "Dewey HB", "Kales S", "Berenzy D", "Butts J", "Butts JC", "Fuentes N", "Nerurkar N", "Adeniran K", "Lyons L", "Mattingly Z"];
   function renderAuthors(s) {
     let html = s;
     labNames.forEach((n) => {
