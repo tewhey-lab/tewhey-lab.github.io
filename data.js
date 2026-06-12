@@ -493,9 +493,33 @@ const ALUMNI = [
   },
   {
     name: "Natalia Fuentes",
-    labRole: "Summer Student",
-    years: "2019 – 2023",
+    labRole: "JAX Summer Student Program & beyond",
+    years: "2018 – 2023",
     nowAt: "Research Technician, Rizzuto Lab (MSKCC)",
+  },
+  {
+    name: "Daniel Berenzy",
+    labRole: "Research Associate",
+    years: "2019 – 2022",
+    nowAt: "Associate Scientist, JMCRS",
+  },
+  {
+    name: "Luke Parsley",
+    labRole: "Tufts University, M.S. student",
+    years: "2020 – 2022",
+    nowAt: "Biologist, NIH/NIAID",
+  },
+  {
+    name: "Frank Liu",
+    labRole: "JAX Summer Student Program",
+    years: "2022",
+    nowAt: "Undergraduate, Harvard University",
+  },
+  {
+    name: "Connor Kean",
+    labRole: "JAX Summer Student Program",
+    years: "2018 – 2019",
+    nowAt: "PhD Student, Cornell University",
   },
 ];
 

@@ -137,6 +137,7 @@ function ResearchPage({ treatment }) {
                 <div className="keywords">
                   <span className="kw">MPRA</span><span className="kw">CRISPR screens</span>
                   <span className="kw">HCR-FlowFISH</span><span className="kw">Variant prioritization</span>
+                  <span className="kw">Sequence-to-function models</span>
                 </div>
               </div>
             </div>
@@ -172,6 +173,24 @@ function ResearchPage({ treatment }) {
                 <div className="keywords">
                   <span className="kw">Comparative genomics</span><span className="kw">Evolution</span>
                   <span className="kw">Cross-species MPRA</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="topic">
+              <span className="topic-num">Area 04</span>
+              <div className="topic-body">
+                <h3>Designing synthetic cis-regulatory elements with programmable activity.</h3>
+                <p>
+                  The key test of our understanding of regulatory grammar is whether we can write it. Building on
+                  sequence-to-function models trained from our MPRA datasets and in vivo data, we design synthetic CREs
+                  that drive expression at defined strengths in defined cell types. Each design-build-test cycle both
+                  stress-tests our mechanistic models and yields compact, cell-type-specific regulatory elements with
+                  direct applications in engineering targeted gene and cell therapies.
+                </p>
+                <div className="keywords">
+                  <span className="kw">Sequence-to-function models</span><span className="kw">Generative sequence design</span>
+                  <span className="kw">Synthetic enhancers</span><span className="kw">Gene &amp; cell therapy</span>
                 </div>
               </div>
             </div>
@@ -345,7 +364,6 @@ function MembersPage({ treatment }) {
                 </div>
                 <p>{m.bio}</p>
                 <div className="links">
-                  {m.email && <a href={`mailto:${m.email.replace(" (at) ", "@")}`}>Email</a>}
                   {m.github && <a href={`https://github.com/${m.github}`} target="_blank" rel="noopener">GitHub</a>}
                   {m.twitter && <a href={`https://twitter.com/${m.twitter}`} target="_blank" rel="noopener">Twitter</a>}
                   {m.orcid && <a href={`https://orcid.org/${m.orcid}`} target="_blank" rel="noopener">ORCID</a>}
@@ -359,23 +377,19 @@ function MembersPage({ treatment }) {
           <div className="section-head">
             <div className="left">
               <SectionRule label="Alumni" />
-              <p style={{ fontSize: 14, color: "var(--ink-3)" }}>
-                Where former lab members went next.
-              </p>
             </div>
             <ul className="alumni-list">
               <li className="alumnus alumnus--head">
                 <div>Name</div>
                 <div>Position in Tewhey Lab</div>
+                <div>Years</div>
                 <div>Current Position</div>
               </li>
               {window.LAB_DATA.ALUMNI.map((a) =>
               <li key={a.name} className="alumnus">
                   <div className="alumnus-name">{a.name}</div>
-                  <div className="alumnus-meta">
-                    <span className="alumnus-role">{a.labRole}</span>
-                    <span className="alumnus-years">{a.years}</span>
-                  </div>
+                  <div className="alumnus-role">{a.labRole}</div>
+                  <div className="alumnus-years">{a.years}</div>
                   <div className="alumnus-now">{a.nowAt}</div>
                 </li>
               )}

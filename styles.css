@@ -446,9 +446,12 @@ a:hover { text-decoration: underline; }
 .member .links a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
 /* Alumni — smaller, denser, no avatars */
 .section--alumni { padding-top: 56px; border-bottom: 0; }
+/* Full-width: drop the 220px label column so the table starts at the page edge */
+.section--alumni .section-head { display: block; }
+.section--alumni .section-head .left { position: static; margin-bottom: 24px; }
 .alumni-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
 .alumnus {
-  display: grid; grid-template-columns: 1.2fr 1.2fr 1.6fr; gap: 24px; align-items: baseline;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px 20px; align-items: baseline;
   padding: 16px 0;
   border-bottom: 1px solid var(--rule);
 }
@@ -458,11 +461,9 @@ a:hover { text-decoration: underline; }
 }
 .alumnus--head { padding: 10px 0; }
 .alumnus-name { font-family: var(--serif); font-size: 19px; font-weight: 500; letter-spacing: -0.008em; color: var(--ink); }
-.alumnus-meta { display: flex; gap: 14px; align-items: baseline; }
 .alumnus-role { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); }
-.alumnus-years { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-3); }
+.alumnus-years { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-3); white-space: nowrap; }
 .alumnus-now { font-size: 14px; color: var(--ink-2); }
-.alumnus-now::before { content: ""; }
 @media (max-width: 920px) {
   .alumnus { grid-template-columns: 1fr; gap: 4px; }
 }
