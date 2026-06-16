@@ -480,7 +480,7 @@ function ResourcesPage({ treatment }) {
       body: "Google Apps Script to match quotes and identify line numbers.",
       links: [
       { label: "GitHub", icon: "github", href: "https://github.com/tewhey-lab/scripts-and-tools/tree/main/google_workspace_tools/QuoteFinder" },
-      { label: "PDF to JSON", icon: "tool", href: "https://github.com/tewhey-lab/scripts-and-tools/blob/main/google_workspace_tools/QuoteFinder/pdf_engine/pdf_to_json.html" }]
+      { label: "PDF to JSON", icon: "tool", href: "https://tewheylab.org/tools/pdf_to_json.html" }]
     }]
 
   }];

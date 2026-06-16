@@ -6,58 +6,67 @@
     <title>Interactive qPCR Analysis</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <!-- GridStackJS for resizable/draggable grid -->
-    <link href="https://cdn.jsdelivr.net/npm/gridstack@8.1.1/dist/gridstack.min.css" rel="stylesheet"/>
-    <script src="https://cdn.jsdelivr.net/npm/gridstack@8.1.1/dist/gridstack-all.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.35.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
 
     <style>
         body { font-family: 'Inter', sans-serif; }
         .sidebar {
             height: 100vh;
             overflow-y: auto;
+            transition: width 0.2s ease, padding 0.2s ease;
+            scrollbar-width: thin;
+        }
+        .sidebar.collapsed {
+            width: 0 !important;
+            padding: 0 !important;
+            overflow: hidden;
+            border: none;
         }
         .main-content {
             height: 100vh;
             display: flex;
             flex-direction: column;
+            transition: width 0.2s ease;
         }
-        /* **FIX**: Use CSS Grid for robust row sizing */
-        #analysis-container {
-            display: grid;
-            grid-template-rows: 4fr 1fr; /* Creates an 80%/20% (4:1) split */
-            min-height: 0;
-        }
-        .plot-grid-container {
-            min-height: 0; /* Allows flex-grow to work correctly */
-        }
-        .grid-stack-item-content {
+        .plot-cell {
             background-color: white;
             border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            min-height: 0;
         }
-        .grid-stack-item-header {
-            cursor: move;
+        .dark .plot-cell {
+            background-color: #1e293b;
+            box-shadow: 0 1px 3px rgb(0 0 0 / 0.3);
         }
         .plot-container {
             width: 100%;
-            height: 100%;
             flex-grow: 1;
-        }
-        .legend-panel {
-            flex-shrink: 0;
-            overflow-y: auto;
+            min-height: 0;
         }
         #loader {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #3498db;
+            border: 4px solid #e5e7eb;
+            border-top: 4px solid #3b82f6;
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
+            width: 48px;
+            height: 48px;
+            animation: spin 0.8s linear infinite;
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
@@ -65,139 +74,343 @@
         }
         .checkbox-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-            gap: 0.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+            gap: 0.25rem;
+        }
+        .filter-section summary {
+            cursor: pointer;
+            user-select: none;
+            list-style: none;
+        }
+        .filter-section summary::-webkit-details-marker { display: none; }
+        .filter-section summary::before {
+            content: '\25B6';
+            display: inline-block;
+            margin-right: 0.4rem;
+            font-size: 0.6rem;
+            transition: transform 0.15s;
+            vertical-align: middle;
+        }
+        .filter-section[open] summary::before {
+            transform: rotate(90deg);
+        }
+        .plot-grid {
+            display: grid;
+            gap: 0.75rem;
+            flex-grow: 1;
+            min-height: 0;
+        }
+        .layout-2x2 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+        .layout-1x4 { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr 1fr 1fr; }
+
+        .toolbar-btn {
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.15s, color 0.15s;
+            border: 1px solid transparent;
+        }
+        .toolbar-btn:hover { background-color: #e5e7eb; }
+        .dark .toolbar-btn:hover { background-color: #374151; }
+        .toolbar-btn.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .dark .toolbar-btn.active {
+            background-color: #2563eb;
+        }
+        /* Scrollbar styling */
+        .sidebar::-webkit-scrollbar { width: 4px; }
+        .sidebar::-webkit-scrollbar-track { background: transparent; }
+        .sidebar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
+        .dark .sidebar::-webkit-scrollbar-thumb { background: #475569; }
+        #drop-zone.drag-over {
+            border-color: #3b82f6;
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+        .dark #drop-zone.drag-over {
+            border-color: #60a5fa;
+            background-color: rgba(59, 130, 246, 0.15);
         }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
 
-    <div class="flex">
+    <div class="flex h-screen overflow-hidden">
         <!-- Sidebar -->
-        <aside class="w-1/4 bg-white p-6 border-r border-gray-200 sidebar">
-            <h1 class="text-2xl font-bold mb-4 text-gray-900">qPCR Analysis</h1>
-            <p class="text-sm text-gray-600 mb-6">Upload your qPCR Excel file to begin. Double-click a plot to reset its zoom.</p>
+        <aside id="sidebar" class="w-72 bg-white dark:bg-gray-800 p-4 border-r border-gray-200 dark:border-gray-700 sidebar flex-shrink-0">
+            <div class="flex items-center justify-between mb-3">
+                <h1 class="text-lg font-bold text-gray-900 dark:text-gray-100">qPCR Analysis</h1>
+                <button onclick="toggleSidebar()" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300" title="Collapse sidebar">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/></svg>
+                </button>
+            </div>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">Upload a qPCR Excel file. Double-click a plot to reset zoom.</p>
 
-            <div id="upload-container" class="mb-6">
-                <label for="file-upload" class="w-full inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg cursor-pointer text-center transition-colors">
-                    Upload Excel File
-                </label>
-                <input id="file-upload" type="file" class="hidden" accept=".xls,.xlsx">
-                <p id="file-name" class="text-sm text-gray-500 mt-2 truncate"></p>
+            <div id="upload-container" class="mb-4">
+                <div id="drop-zone" class="w-full border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-4 text-center cursor-pointer transition-colors hover:border-blue-400 dark:hover:border-blue-500 hover:bg-blue-50/50 dark:hover:bg-blue-900/20">
+                    <label for="file-upload" class="cursor-pointer block">
+                        <svg class="w-6 h-6 mx-auto mb-1.5 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                        <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">Upload Excel File</span>
+                        <p class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">or drag &amp; drop here</p>
+                    </label>
+                    <input id="file-upload" type="file" class="hidden" accept=".xls,.xlsx">
+                </div>
+                <p id="file-name" class="text-xs text-gray-500 mt-1 truncate"></p>
             </div>
 
-            <div id="controls" class="hidden space-y-6">
-                <div>
-                    <h3 class="font-semibold mb-2 text-gray-700">Filter by Target Name</h3>
-                    <div class="flex space-x-2 mb-2">
-                        <button onclick="toggleAll('targets', true)" class="text-xs bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded">All</button>
-                        <button onclick="toggleAll('targets', false)" class="text-xs bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded">None</button>
+            <div id="controls" class="hidden space-y-3">
+                <!-- Legend (moved into sidebar) -->
+                <details class="filter-section" open>
+                    <summary class="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">Legend</summary>
+                    <div id="legend-panel" class="max-h-40 overflow-y-auto space-y-0.5 mt-1"></div>
+                </details>
+
+                <hr class="dark:border-gray-600">
+
+                <!-- Display Options -->
+                <details class="filter-section" open>
+                    <summary class="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">Display Options</summary>
+                    <div class="space-y-2 mt-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-600 dark:text-gray-400">Line Width</span>
+                            <input id="line-width" type="range" min="0.5" max="4" step="0.5" value="1.5" class="w-24 h-1 accent-blue-600" onchange="drawAllPlots()">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-600 dark:text-gray-400">CT Threshold</span>
+                            <input id="ct-threshold" type="number" value="" step="0.1" placeholder="off" class="w-20 text-xs border rounded px-1.5 py-0.5 dark:bg-gray-700 dark:border-gray-600" onchange="drawAllPlots()">
+                        </div>
+                        <label class="flex items-center space-x-2 text-xs cursor-pointer">
+                            <input id="log-scale-y" type="checkbox" onchange="drawAllPlots()">
+                            <span class="text-gray-600 dark:text-gray-400">Log scale Y (amplification)</span>
+                        </label>
                     </div>
-                    <div id="target-filters" class="space-y-1 text-sm"></div>
-                </div>
-                <hr>
-                <div>
-                    <h3 class="font-semibold mb-2 text-gray-700">Filter by Sample ID</h3>
-                    <div class="flex space-x-2 mb-2">
-                        <button onclick="toggleAll('samples', true)" class="text-xs bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded">All</button>
-                        <button onclick="toggleAll('samples', false)" class="text-xs bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded">None</button>
+                </details>
+
+                <hr class="dark:border-gray-600">
+
+                <details class="filter-section" open>
+                    <summary class="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">Filter by Target</summary>
+                    <div class="flex space-x-1 mb-1">
+                        <button onclick="toggleAll('targets', true)" class="text-xs bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 px-1.5 py-0.5 rounded">All</button>
+                        <button onclick="toggleAll('targets', false)" class="text-xs bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 px-1.5 py-0.5 rounded">None</button>
                     </div>
-                    <div id="sample-filters" class="space-y-1 text-sm"></div>
-                </div>
-                <hr>
-                <div>
-                    <h3 class="font-semibold mb-2 text-gray-700">Filter by Well ID</h3>
-                    <div class="flex space-x-2 mb-2">
-                        <button onclick="toggleAll('wells', true)" class="text-xs bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded">All</button>
-                        <button onclick="toggleAll('wells', false)" class="text-xs bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded">None</button>
+                    <div id="target-filters" class="space-y-0.5 text-xs"></div>
+                </details>
+
+                <hr class="dark:border-gray-600">
+
+                <details class="filter-section" open>
+                    <summary class="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">Filter by Sample</summary>
+                    <div class="flex space-x-1 mb-1">
+                        <button onclick="toggleAll('samples', true)" class="text-xs bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 px-1.5 py-0.5 rounded">All</button>
+                        <button onclick="toggleAll('samples', false)" class="text-xs bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 px-1.5 py-0.5 rounded">None</button>
+                    </div>
+                    <div id="sample-filters" class="space-y-0.5 text-xs"></div>
+                </details>
+
+                <hr class="dark:border-gray-600">
+
+                <details class="filter-section">
+                    <summary class="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">Filter by Well</summary>
+                    <div class="flex space-x-1 mb-1">
+                        <button onclick="toggleAll('wells', true)" class="text-xs bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 px-1.5 py-0.5 rounded">All</button>
+                        <button onclick="toggleAll('wells', false)" class="text-xs bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 px-1.5 py-0.5 rounded">None</button>
                     </div>
                     <div id="well-filters" class="checkbox-grid text-xs"></div>
-                </div>
+                </details>
+
+                <hr class="dark:border-gray-600">
+
+                <details id="smart-groups-section" class="filter-section hidden" open>
+                    <summary class="font-semibold text-sm text-gray-700 dark:text-gray-300 mb-1">Smart Groups</summary>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mb-2">Auto-detected patterns. Check multiple to combine (samples matching <em>any</em> checked group are shown).</p>
+                    <div class="flex space-x-1 mb-1.5">
+                        <button onclick="toggleAll('smartgroups', true)" class="text-xs bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 px-1.5 py-0.5 rounded">All</button>
+                        <button onclick="toggleAll('smartgroups', false)" class="text-xs bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 px-1.5 py-0.5 rounded">None</button>
+                    </div>
+                    <div id="smart-group-checkboxes" class="space-y-0.5"></div>
+                </details>
             </div>
         </aside>
 
         <!-- Main Content -->
-        <main class="w-3/4 p-6 main-content">
-            <div id="analysis-container" class="hidden h-full">
-                <div id="plot-area" class="plot-grid-container">
-                    <div class="grid-stack h-full">
-                        <div class="grid-stack-item" gs-x="0" gs-y="0" gs-w="6" gs-h="6">
-                            <div class="grid-stack-item-content">
-                                <div class="grid-stack-item-header p-2 text-sm font-semibold text-center text-white" style="background-color: #009ED0;">Fluorescence vs. Temperature</div>
-                                <div id="fluorescence_plot" class="plot-container"></div>
-                            </div>
-                        </div>
-                        <div class="grid-stack-item" gs-x="6" gs-y="0" gs-w="6" gs-h="6">
-                            <div class="grid-stack-item-content">
-                                <div class="grid-stack-item-header p-2 text-sm font-semibold text-center text-white" style="background-color: #009ED0;">Derivative vs. Temperature</div>
-                                <div id="derivative_plot" class="plot-container"></div>
-                            </div>
-                        </div>
-                        <div class="grid-stack-item" gs-x="0" gs-y="6" gs-w="6" gs-h="6">
-                            <div class="grid-stack-item-content">
-                                <div class="grid-stack-item-header p-2 text-sm font-semibold text-center text-white" style="background-color: #009ED0;">Rn vs. Cycle</div>
-                                <div id="rn_plot" class="plot-container"></div>
-                            </div>
-                        </div>
-                        <div class="grid-stack-item" gs-x="6" gs-y="6" gs-w="6" gs-h="6">
-                            <div class="grid-stack-item-content">
-                                <div class="grid-stack-item-header p-2 text-sm font-semibold text-center text-white" style="background-color: #009ED0;">Delta Rn vs. Cycle</div>
-                                <div id="delta_rn_plot" class="plot-container"></div>
-                            </div>
-                        </div>
-                    </div>
+        <main id="main-area" class="flex-1 flex flex-col min-w-0">
+            <!-- Top toolbar -->
+            <div id="toolbar" class="hidden flex items-center justify-between px-4 py-2 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex-shrink-0">
+                <div class="flex items-center space-x-1">
+                    <button id="sidebar-open-btn" onclick="toggleSidebar()" class="hidden toolbar-btn mr-2" title="Open sidebar">
+                        <svg class="w-4 h-4 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                    <span class="text-xs text-gray-500 dark:text-gray-400 mr-2">Layout:</span>
+                    <button onclick="setLayout('2x2')" class="toolbar-btn layout-btn active" data-layout="2x2">2x2</button>
+                    <button onclick="setLayout('1x4')" class="toolbar-btn layout-btn" data-layout="1x4">Stack</button>
                 </div>
-                <div id="legend-container" class="mt-6">
-                    <h3 class="font-semibold mb-2 text-gray-700">Legend</h3>
-                    <div id="legend-panel" class="legend-panel bg-white rounded-lg shadow-md p-4 grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 h-full">
-                        <!-- Legend items will be injected here -->
+                <div class="flex items-center space-x-1">
+                    <button onclick="exportAllPlots('png')" class="toolbar-btn" title="Export all as PNG">PNG</button>
+                    <button onclick="exportAllPlots('svg')" class="toolbar-btn" title="Export all as SVG">SVG</button>
+                    <button onclick="toggleDarkMode()" class="toolbar-btn" id="dark-mode-btn" title="Toggle dark/light mode">
+                        <svg id="sun-icon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                        <svg id="moon-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Plot area -->
+            <div id="analysis-container" class="hidden flex-1 p-3 min-h-0">
+                <div id="plot-grid" class="plot-grid layout-2x2 h-full">
+                    <div class="plot-cell" id="cell-fluorescence">
+                        <div class="px-3 py-1.5 text-xs font-semibold text-center text-white flex-shrink-0" style="background-color: #0284c7;">Fluorescence vs. Temperature</div>
+                        <div id="fluorescence_plot" class="plot-container"></div>
+                    </div>
+                    <div class="plot-cell" id="cell-derivative">
+                        <div class="px-3 py-1.5 text-xs font-semibold text-center text-white flex-shrink-0" style="background-color: #0284c7;">Derivative vs. Temperature</div>
+                        <div id="derivative_plot" class="plot-container"></div>
+                    </div>
+                    <div class="plot-cell" id="cell-rn">
+                        <div class="px-3 py-1.5 text-xs font-semibold text-center text-white flex-shrink-0" style="background-color: #0284c7;">Rn vs. Cycle</div>
+                        <div id="rn_plot" class="plot-container"></div>
+                    </div>
+                    <div class="plot-cell" id="cell-deltarn">
+                        <div class="px-3 py-1.5 text-xs font-semibold text-center text-white flex-shrink-0" style="background-color: #0284c7;">Delta Rn vs. Cycle</div>
+                        <div id="delta_rn_plot" class="plot-container"></div>
                     </div>
                 </div>
             </div>
-            <div id="welcome-message" class="flex items-center justify-center h-full">
+
+            <!-- Welcome / loader -->
+            <div id="welcome-message" class="flex items-center justify-center flex-1">
                 <div class="text-center">
                     <div id="loader-container" class="hidden mb-4">
                         <div id="loader" class="mx-auto"></div>
-                        <p id="loader-text" class="mt-4 text-gray-600">Processing file...</p>
+                        <p class="mt-3 text-sm text-gray-500 dark:text-gray-400">Processing file...</p>
                     </div>
-                    <h2 class="text-2xl font-semibold text-gray-700">Please upload a file to begin analysis.</h2>
-                    <p class="text-gray-500 mt-2">The application will process the data and generate interactive plots.</p>
+                    <h2 class="text-xl font-semibold text-gray-600 dark:text-gray-300">Upload a file to begin analysis</h2>
+                    <p class="text-sm text-gray-400 mt-1">Supports .xls and .xlsx from QuantStudio and similar instruments.</p>
                 </div>
             </div>
         </main>
     </div>
 
     <script>
-        // Global state
+        // ===== Global State =====
+        const PLOT_IDS = ['fluorescence_plot', 'derivative_plot', 'rn_plot', 'delta_rn_plot'];
+        const PLOT_CONFIG = {
+            responsive: true,
+            displayModeBar: true,
+            modeBarButtonsToRemove: ['select2d', 'lasso2d', 'autoScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian', 'toggleSpikelines'],
+            displaylogo: false,
+        };
+
         let AppState = {
             well_info: [],
             melt_data_final: [],
             amp_data_final: [],
             ct_points: [],
             id_color_palette: {},
-            plot_zoom: {
-                fluorescence_plot: null,
-                derivative_plot: null,
-                rn_plot: null,
-                delta_rn_plot: null,
-            },
-            grid: null
+            plot_zoom: {},
+            plotsInitialized: false,
+            darkMode: false,
+            currentLayout: '2x2',
         };
 
-        const fileUpload = document.getElementById('file-upload');
-        fileUpload.addEventListener('change', handleFile);
+        // ===== HSL Color Generator (N distinct colors) =====
+        function generateDistinctColors(n) {
+            const colors = [];
+            const saturation = 65;
+            const lightness = 50;
+            // Golden angle for maximum hue separation
+            const goldenAngle = 137.508;
+            for (let i = 0; i < n; i++) {
+                const hue = (i * goldenAngle) % 360;
+                colors.push(`hsl(${hue.toFixed(0)}, ${saturation}%, ${lightness}%)`);
+            }
+            return colors;
+        }
 
-        function handleFile(event) {
-            const file = event.target.files[0];
+        // ===== Dark Mode =====
+        function toggleDarkMode() {
+            AppState.darkMode = !AppState.darkMode;
+            document.documentElement.classList.toggle('dark', AppState.darkMode);
+            document.getElementById('sun-icon').classList.toggle('hidden', !AppState.darkMode);
+            document.getElementById('moon-icon').classList.toggle('hidden', AppState.darkMode);
+            if (AppState.plotsInitialized) drawAllPlots();
+        }
+
+        // ===== Sidebar Toggle =====
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const openBtn = document.getElementById('sidebar-open-btn');
+            sidebar.classList.toggle('collapsed');
+            const isCollapsed = sidebar.classList.contains('collapsed');
+            openBtn.classList.toggle('hidden', !isCollapsed);
+            // Resize plots after transition
+            setTimeout(resizeAllPlots, 250);
+        }
+
+        // ===== Layout =====
+        function setLayout(layout) {
+            AppState.currentLayout = layout;
+            const grid = document.getElementById('plot-grid');
+            grid.className = 'plot-grid h-full layout-' + layout;
+
+            // Update active button
+            document.querySelectorAll('.layout-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.layout === layout);
+            });
+
+            setTimeout(resizeAllPlots, 50);
+        }
+
+        // ===== Resize =====
+        function resizeAllPlots() {
+            PLOT_IDS.forEach(id => {
+                const el = document.getElementById(id);
+                if (el && el.data) {
+                    Plotly.Plots.resize(el);
+                }
+            });
+        }
+
+        // ResizeObserver for robust auto-resize
+        const plotResizeObserver = new ResizeObserver(() => {
+            resizeAllPlots();
+        });
+
+        // ===== File Handling =====
+        const fileUpload = document.getElementById('file-upload');
+        const dropZone = document.getElementById('drop-zone');
+        fileUpload.addEventListener('change', (e) => processFile(e.target.files[0]));
+
+        // Drag and drop
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('drag-over');
+        });
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('drag-over');
+        });
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('drag-over');
+            const file = e.dataTransfer.files[0];
+            if (file && /\.xlsx?$/i.test(file.name)) {
+                processFile(file);
+            } else if (file) {
+                alert('Please drop an .xls or .xlsx file.');
+            }
+        });
+
+        function processFile(file) {
             if (!file) return;
 
             document.getElementById('file-name').textContent = file.name;
             document.getElementById('welcome-message').classList.remove('hidden');
             document.getElementById('loader-container').classList.remove('hidden');
             document.getElementById('analysis-container').classList.add('hidden');
+            document.getElementById('toolbar').classList.add('hidden');
             document.getElementById('controls').classList.add('hidden');
 
             const reader = new FileReader();
@@ -208,13 +421,13 @@
                     processWorkbook(workbook);
                 } catch (error) {
                     console.error("Error processing file:", error);
-                    alert("Failed to process the Excel file. Please ensure it is a valid and uncorrupted .xls or .xlsx file.");
+                    alert("Failed to process the Excel file. Please ensure it is a valid .xls or .xlsx file.");
                     resetUI();
                 }
             };
             reader.readAsArrayBuffer(file);
         }
-        
+
         function resetUI() {
             document.getElementById('loader-container').classList.add('hidden');
             document.getElementById('file-name').textContent = '';
@@ -224,41 +437,36 @@
         function findHeaderRow(sheet) {
             const range = XLSX.utils.decode_range(sheet['!ref']);
             for (let R = range.s.r; R <= Math.min(range.e.r, 60); ++R) {
-                const firstCellAddress = XLSX.utils.encode_cell({c:0, r:R});
-                const secondCellAddress = XLSX.utils.encode_cell({c:1, r:R});
-                const firstCell = sheet[firstCellAddress] ? sheet[firstCellAddress].v : '';
-                const secondCell = sheet[secondCellAddress] ? sheet[secondCellAddress].v : '';
-                if (firstCell === 'Well' || firstCell === 'Well Position' || secondCell === 'Well Position') {
+                const c0 = XLSX.utils.encode_cell({c:0, r:R});
+                const c1 = XLSX.utils.encode_cell({c:1, r:R});
+                const v0 = sheet[c0] ? sheet[c0].v : '';
+                const v1 = sheet[c1] ? sheet[c1].v : '';
+                if (v0 === 'Well' || v0 === 'Well Position' || v1 === 'Well Position') {
                     return R;
                 }
             }
-            console.warn("Could not find header row, defaulting to 47.");
             return 47;
         }
 
+        // ===== Data Processing =====
         function processWorkbook(workbook) {
-            const sheetNames = {
-                setup: "Sample Setup",
-                results: "Results",
-                melt: "Melt Curve Raw Data",
-                amp: "Amplification Data"
+            const sheets = {
+                setup: workbook.Sheets["Sample Setup"],
+                results: workbook.Sheets["Results"],
+                melt: workbook.Sheets["Melt Curve Raw Data"],
+                amp: workbook.Sheets["Amplification Data"]
             };
 
-            const setupSheet = workbook.Sheets[sheetNames.setup];
-            const resultsSheet = workbook.Sheets[sheetNames.results];
-            const meltSheet = workbook.Sheets[sheetNames.melt];
-            const ampSheet = workbook.Sheets[sheetNames.amp];
-            
-            if (!setupSheet || !resultsSheet || !meltSheet || !ampSheet) {
-                alert("One or more required worksheets are missing from the file: 'Sample Setup', 'Results', 'Melt Curve Raw Data', 'Amplification Data'");
+            if (!sheets.setup || !sheets.results || !sheets.melt || !sheets.amp) {
+                alert("Missing required worksheets: 'Sample Setup', 'Results', 'Melt Curve Raw Data', 'Amplification Data'");
                 resetUI();
                 return;
             }
 
-            const setup_df = XLSX.utils.sheet_to_json(setupSheet, { range: findHeaderRow(setupSheet) });
-            const results_df = XLSX.utils.sheet_to_json(resultsSheet, { range: findHeaderRow(resultsSheet) });
-            const melt_raw_df = XLSX.utils.sheet_to_json(meltSheet, { range: findHeaderRow(meltSheet) });
-            const amp_df = XLSX.utils.sheet_to_json(ampSheet, { range: findHeaderRow(ampSheet) });
+            const setup_df = XLSX.utils.sheet_to_json(sheets.setup, { range: findHeaderRow(sheets.setup) });
+            const results_df = XLSX.utils.sheet_to_json(sheets.results, { range: findHeaderRow(sheets.results) });
+            const melt_raw_df = XLSX.utils.sheet_to_json(sheets.melt, { range: findHeaderRow(sheets.melt) });
+            const amp_df = XLSX.utils.sheet_to_json(sheets.amp, { range: findHeaderRow(sheets.amp) });
 
             const setup_map = setup_df.map(row => ({
                 WellNum: parseInt(row['Well']),
@@ -275,17 +483,17 @@
             }));
 
             const well_info_map = new Map(results_info.map(row => [row.WellPosition, row]));
-            
+
             AppState.well_info = setup_map
                 .map(row => ({ ...row, ...well_info_map.get(row.WellPosition) }))
                 .filter(row => row.SampleName && row.SampleName.trim() !== '');
-            
+
             AppState.well_info.forEach(row => {
                 row.ID = `${row.SampleName}-${row.TargetName}-${row.WellPosition}`;
-                row.hover_text = `<b>Well:</b> ${row.WellPosition}<br><b>Sample ID:</b> ${row.SampleName}<br><b>Target:</b> ${row.TargetName}<br><b>CT:</b> ${isNaN(row.CT) ? 'N/A' : row.CT.toFixed(2)}<br><b>Tm1:</b> ${isNaN(row.Tm1) ? 'N/A' : row.Tm1.toFixed(2)}<br><b>Tm2:</b> ${isNaN(row.Tm2) ? 'N/A' : row.Tm2.toFixed(2)}`;
+                row.hover_text = `<b>Well:</b> ${row.WellPosition}<br><b>Sample:</b> ${row.SampleName}<br><b>Target:</b> ${row.TargetName}<br><b>CT:</b> ${isNaN(row.CT) ? 'N/A' : row.CT.toFixed(2)}<br><b>Tm1:</b> ${isNaN(row.Tm1) ? 'N/A' : row.Tm1.toFixed(2)}<br><b>Tm2:</b> ${isNaN(row.Tm2) ? 'N/A' : row.Tm2.toFixed(2)}`;
             });
-            
-            const well_info_by_num_map = new Map(AppState.well_info.map(row => [row.WellNum, row]));
+
+            const well_info_by_num = new Map(AppState.well_info.map(row => [row.WellNum, row]));
 
             AppState.melt_data_final = melt_raw_df
                 .map(row => ({
@@ -294,7 +502,7 @@
                     Fluorescence: parseFloat(row.Fluorescence),
                     Derivative: parseFloat(row.Derivative),
                 }))
-                .map(row => ({...row, ...well_info_by_num_map.get(row.WellNum)}))
+                .map(row => ({...row, ...well_info_by_num.get(row.WellNum)}))
                 .filter(row => row.ID);
 
             AppState.amp_data_final = amp_df
@@ -304,76 +512,58 @@
                     Rn: parseFloat(row.Rn),
                     DeltaRn: parseFloat(row['Delta Rn'])
                 }))
-                .map(row => ({...row, ...well_info_by_num_map.get(row.WellNum)}))
+                .map(row => ({...row, ...well_info_by_num.get(row.WellNum)}))
                 .filter(row => row.ID);
 
-            const amp_by_id_cycle = new Map(AppState.amp_data_final.map(row => [`${row.ID}-${row.Cycle}`, row]));
-            
+            const amp_by_key = new Map(AppState.amp_data_final.map(row => [`${row.ID}-${row.Cycle}`, row]));
+
             AppState.ct_points = AppState.well_info
                 .filter(row => !isNaN(row.CT))
                 .map(row => {
-                    const cycle_match = Math.round(row.CT);
-                    const point = amp_by_id_cycle.get(`${row.ID}-${cycle_match}`);
+                    const point = amp_by_key.get(`${row.ID}-${Math.round(row.CT)}`);
                     return point ? { ...point, CT: row.CT } : null;
                 })
                 .filter(Boolean);
 
+            // Generate distinct colors via golden-angle HSL
             const all_ids = [...new Set(AppState.well_info.map(r => r.ID))].sort();
-            const colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'];
-            AppState.id_color_palette = all_ids.reduce((acc, id, i) => {
-                acc[id] = colors[i % colors.length];
-                return acc;
-            }, {});
+            const colors = generateDistinctColors(all_ids.length);
+            AppState.id_color_palette = {};
+            all_ids.forEach((id, i) => { AppState.id_color_palette[id] = colors[i]; });
 
-            // --- Finalize UI ---
+            // Reset zoom state
+            AppState.plot_zoom = {};
+            AppState.plotsInitialized = false;
+
             populateFilters();
-            initializeGrid();
             drawAllPlots();
+
+            // Attach ResizeObserver to plot grid
+            const plotGrid = document.getElementById('plot-grid');
+            plotResizeObserver.disconnect();
+            plotResizeObserver.observe(plotGrid);
+
             document.getElementById('welcome-message').classList.add('hidden');
             document.getElementById('analysis-container').classList.remove('hidden');
+            document.getElementById('toolbar').classList.remove('hidden');
             document.getElementById('controls').classList.remove('hidden');
+
+            // Initial resize after DOM settles
+            setTimeout(resizeAllPlots, 100);
         }
 
-        function initializeGrid() {
-            if (AppState.grid) {
-                AppState.grid.destroy();
-            }
-            AppState.grid = GridStack.init({
-                float: false,
-                cellHeight: 'auto',
-                minRow: 1,
-                handle: '.grid-stack-item-header'
-            });
-
-            AppState.grid.on('resizestop', function(event, el) {
-                const plotId = el.querySelector('.plot-container').id;
-                if (plotId) {
-                    Plotly.Plots.resize(plotId);
-                }
-            });
-
-            setTimeout(() => {
-                const plotIds = ['fluorescence_plot', 'derivative_plot', 'rn_plot', 'delta_rn_plot'];
-                plotIds.forEach(id => {
-                    const plotEl = document.getElementById(id);
-                    if (plotEl) {
-                        Plotly.Plots.resize(plotEl);
-                    }
-                });
-            }, 100);
-        }
-
+        // ===== Filters =====
         function populateFilters() {
             const unique_targets = [...new Set(AppState.well_info.map(r => r.TargetName))].sort();
             const unique_samples = [...new Set(AppState.well_info.map(r => r.SampleName))].sort();
             const unique_wells = [...new Set(AppState.well_info.map(r => r.WellPosition))].sort();
-            
+
             const createCheckboxes = (items, containerId, groupName) => {
                 const container = document.getElementById(containerId);
                 container.innerHTML = items.map(item => `
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" name="${groupName}" value="${item}" checked onchange="drawAllPlots()">
-                        <span>${item}</span>
+                    <label class="flex items-center space-x-1.5 cursor-pointer">
+                        <input type="checkbox" name="${groupName}" value="${item}" checked onchange="drawAllPlots()" class="accent-blue-600">
+                        <span class="truncate">${item}</span>
                     </label>
                 `).join('');
             };
@@ -381,24 +571,183 @@
             createCheckboxes(unique_targets, 'target-filters', 'targets');
             createCheckboxes(unique_samples, 'sample-filters', 'samples');
             createCheckboxes(unique_wells, 'well-filters', 'wells');
+
+            populateSmartGroups(unique_samples);
+        }
+
+        // ===== Smart Groups =====
+        // Finds common substrings (>= 3 chars, case-insensitive) shared by >= 15% of
+        // sample names. Renders checkboxes so multiple groups can be active at once.
+        // When any smart group checkbox is checked, sample checkboxes are updated to
+        // the union of all checked groups. When none are checked, all samples are shown.
+
+        // Stores the mapping from pattern -> Set of matching sample names (original case)
+        let smartGroupMap = new Map();
+
+        function populateSmartGroups(sampleNames) {
+            const section = document.getElementById('smart-groups-section');
+            const container = document.getElementById('smart-group-checkboxes');
+            container.innerHTML = '';
+            smartGroupMap = new Map();
+
+            if (sampleNames.length < 2) {
+                section.classList.add('hidden');
+                return;
+            }
+
+            const threshold = Math.max(2, Math.ceil(sampleNames.length * 0.15));
+            const MIN_LEN = 3;
+
+            // Build frequency map: lowercased substring -> Set of original sample names
+            const substringCounts = new Map();
+
+            for (const name of sampleNames) {
+                const lower = name.toLowerCase();
+                const seen = new Set();
+                for (let len = MIN_LEN; len <= lower.length; len++) {
+                    for (let start = 0; start <= lower.length - len; start++) {
+                        const sub = lower.substring(start, start + len);
+                        if (!seen.has(sub)) {
+                            seen.add(sub);
+                            if (!substringCounts.has(sub)) {
+                                substringCounts.set(sub, new Set());
+                            }
+                            substringCounts.get(sub).add(name);
+                        }
+                    }
+                }
+            }
+
+            // Filter to substrings meeting threshold but not matching ALL samples
+            const qualifying = [];
+            for (const [sub, names] of substringCounts) {
+                if (names.size >= threshold && names.size < sampleNames.length) {
+                    qualifying.push({ pattern: sub, matches: names, count: names.size });
+                }
+            }
+
+            // Sort longest first for deduplication
+            qualifying.sort((a, b) => b.pattern.length - a.pattern.length || a.pattern.localeCompare(b.pattern));
+
+            // Deduplicate: keep longest pattern per unique sample set, remove
+            // shorter patterns whose matches are a subset of an already-kept pattern.
+            const kept = [];
+            const coveredKeys = new Set();
+
+            for (const q of qualifying) {
+                const matchKey = [...q.matches].sort().join('||');
+                if (coveredKeys.has(matchKey)) continue;
+
+                let redundant = false;
+                for (const k of kept) {
+                    if (k.pattern.includes(q.pattern) && isSupersetOf(k.matches, q.matches)) {
+                        redundant = true;
+                        break;
+                    }
+                }
+                if (redundant) continue;
+
+                coveredKeys.add(matchKey);
+                kept.push(q);
+            }
+
+            // Sort final: most matches first, then alphabetically
+            kept.sort((a, b) => b.count - a.count || a.pattern.localeCompare(b.pattern));
+
+            if (kept.length === 0) {
+                section.classList.add('hidden');
+                return;
+            }
+
+            section.classList.remove('hidden');
+
+            // Store mapping and build checkboxes
+            for (const group of kept) {
+                smartGroupMap.set(group.pattern, group.matches);
+
+                // Choose a display label: use original-case version from the first
+                // sample that contains the pattern, preserving how users wrote it.
+                const displayPattern = getOriginalCasePattern(group.pattern, group.matches);
+
+                const label = document.createElement('label');
+                label.className = 'flex items-center space-x-1.5 cursor-pointer';
+                label.innerHTML = `
+                    <input type="checkbox" name="smartgroups" value="${group.pattern}" class="accent-blue-600" onchange="applySmartGroups()">
+                    <span class="text-xs text-gray-700 dark:text-gray-300 truncate">${displayPattern} <span class="text-gray-400">(${group.count})</span></span>
+                `;
+                container.appendChild(label);
+            }
+        }
+
+        // Recover the original-case version of a lowercase pattern from matching samples
+        function getOriginalCasePattern(lowerPattern, matchingNames) {
+            for (const name of matchingNames) {
+                const idx = name.toLowerCase().indexOf(lowerPattern);
+                if (idx !== -1) {
+                    return name.substring(idx, idx + lowerPattern.length);
+                }
+            }
+            return lowerPattern;
+        }
+
+        function isSupersetOf(setA, setB) {
+            for (const item of setB) {
+                if (!setA.has(item)) return false;
+            }
+            return true;
+        }
+
+        // Called when any smart group checkbox changes.
+        // Union of all checked groups determines which sample checkboxes are checked.
+        // If no smart groups are checked, all samples are re-enabled.
+        function applySmartGroups() {
+            const checked = [...document.querySelectorAll('input[name="smartgroups"]:checked')].map(cb => cb.value);
+
+            if (checked.length === 0) {
+                // No smart groups active: check all samples
+                document.querySelectorAll('input[name="samples"]').forEach(cb => { cb.checked = true; });
+            } else {
+                // Build union of matching sample names
+                const union = new Set();
+                for (const pattern of checked) {
+                    const matches = smartGroupMap.get(pattern);
+                    if (matches) {
+                        for (const name of matches) union.add(name);
+                    }
+                }
+                document.querySelectorAll('input[name="samples"]').forEach(cb => {
+                    cb.checked = union.has(cb.value);
+                });
+            }
+
+            drawAllPlots();
         }
 
         function toggleAll(groupName, checked) {
             document.querySelectorAll(`input[name="${groupName}"]`).forEach(cb => cb.checked = checked);
+            // When smart groups change via All/None, recompute sample selection
+            if (groupName === 'smartgroups') {
+                applySmartGroups();
+                return;
+            }
             drawAllPlots();
         }
 
         function getFilteredData() {
-            const selected_targets = [...document.querySelectorAll('input[name="targets"]:checked')].map(cb => cb.value);
-            const selected_samples = [...document.querySelectorAll('input[name="samples"]:checked')].map(cb => cb.value);
-            const selected_wells = [...document.querySelectorAll('input[name="wells"]:checked')].map(cb => cb.value);
+            const sel = name => [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(cb => cb.value);
+            const selected_targets = sel('targets');
+            const selected_samples = sel('samples');
+            const selected_wells = sel('wells');
 
-            const filtered_well_info = AppState.well_info.filter(row => 
-                selected_targets.includes(row.TargetName) &&
-                selected_samples.includes(row.SampleName) &&
-                selected_wells.includes(row.WellPosition)
+            const targetSet = new Set(selected_targets);
+            const sampleSet = new Set(selected_samples);
+            const wellSet = new Set(selected_wells);
+
+            const filtered_ids = new Set(
+                AppState.well_info
+                    .filter(r => targetSet.has(r.TargetName) && sampleSet.has(r.SampleName) && wellSet.has(r.WellPosition))
+                    .map(r => r.ID)
             );
-            const filtered_ids = new Set(filtered_well_info.map(r => r.ID));
 
             return {
                 melt: AppState.melt_data_final.filter(r => filtered_ids.has(r.ID)),
@@ -407,119 +756,177 @@
                 ids: [...filtered_ids].sort()
             };
         }
-        
+
+        // ===== Legend =====
         function drawLegend(filtered_ids) {
-            const legendPanel = document.getElementById('legend-panel');
-            legendPanel.innerHTML = '';
+            const panel = document.getElementById('legend-panel');
+            panel.innerHTML = '';
             filtered_ids.forEach(id => {
                 const color = AppState.id_color_palette[id];
-                const item = document.createElement('div');
-                item.className = 'flex items-center space-x-2 text-xs';
-                item.innerHTML = `
-                    <div class="w-3 h-3 rounded-sm" style="background-color: ${color};"></div>
-                    <span class="truncate">${id}</span>
-                `;
-                legendPanel.appendChild(item);
+                const el = document.createElement('div');
+                el.className = 'flex items-center space-x-1.5 text-xs py-0.5';
+                el.innerHTML = `<div class="w-2.5 h-2.5 rounded-sm flex-shrink-0" style="background-color: ${color};"></div><span class="truncate text-gray-700 dark:text-gray-300">${id}</span>`;
+                panel.appendChild(el);
             });
+        }
+
+        // ===== Plotting =====
+        function getPlotTheme() {
+            const dark = AppState.darkMode;
+            return {
+                paper_bgcolor: dark ? '#1e293b' : 'white',
+                plot_bgcolor: dark ? '#0f172a' : 'white',
+                font: { color: dark ? '#e2e8f0' : '#374151', size: 11 },
+                xaxis_gridcolor: dark ? '#334155' : '#e5e7eb',
+                yaxis_gridcolor: dark ? '#334155' : '#e5e7eb',
+                xaxis_zerolinecolor: dark ? '#475569' : '#d1d5db',
+                yaxis_zerolinecolor: dark ? '#475569' : '#d1d5db',
+            };
+        }
+
+        function buildTraces(data, x_col, y_col) {
+            const lineWidth = parseFloat(document.getElementById('line-width').value) || 1.5;
+            const grouped = {};
+            data.forEach(row => {
+                if (!grouped[row.ID]) {
+                    grouped[row.ID] = {
+                        x: [], y: [], mode: 'lines', type: 'scatter', name: row.ID,
+                        text: [], hoverinfo: 'text',
+                        line: { color: AppState.id_color_palette[row.ID], width: lineWidth },
+                        showlegend: false,
+                    };
+                }
+                grouped[row.ID].x.push(row[x_col]);
+                grouped[row.ID].y.push(row[y_col]);
+                grouped[row.ID].text.push(row.hover_text);
+            });
+            return Object.values(grouped);
+        }
+
+        function buildCtMarkers(ct_data, y_col) {
+            if (ct_data.length === 0) return [];
+
+            // Group CT markers by ID so each gets the correct color and name
+            const grouped = {};
+            ct_data.forEach(r => {
+                if (!grouped[r.ID]) {
+                    grouped[r.ID] = {
+                        x: [], y: [], mode: 'markers', type: 'scatter',
+                        name: r.ID + ' (CT)',
+                        text: [], hoverinfo: 'text',
+                        marker: {
+                            symbol: 'diamond', size: 7,
+                            color: AppState.id_color_palette[r.ID],
+                            line: { color: AppState.darkMode ? '#e2e8f0' : '#1f2937', width: 1 }
+                        },
+                        showlegend: false,
+                    };
+                }
+                grouped[r.ID].x.push(r.CT);
+                grouped[r.ID].y.push(r[y_col]);
+                grouped[r.ID].text.push(r.hover_text);
+            });
+            return Object.values(grouped);
+        }
+
+        function buildLayout(xtitle, ytitle, plotId, opts = {}) {
+            const theme = getPlotTheme();
+            const layout = {
+                xaxis: {
+                    title: { text: xtitle, font: { size: 11 } },
+                    gridcolor: theme.xaxis_gridcolor,
+                    zerolinecolor: theme.xaxis_zerolinecolor,
+                },
+                yaxis: {
+                    title: { text: ytitle, font: { size: 11 } },
+                    gridcolor: theme.yaxis_gridcolor,
+                    zerolinecolor: theme.yaxis_zerolinecolor,
+                },
+                margin: { l: 55, r: 15, b: 40, t: 10 },
+                showlegend: false,
+                hovermode: 'closest',
+                paper_bgcolor: theme.paper_bgcolor,
+                plot_bgcolor: theme.plot_bgcolor,
+                font: theme.font,
+                shapes: [],
+            };
+
+            if (opts.logY) {
+                layout.yaxis.type = 'log';
+            }
+
+            // Restore zoom if stored
+            const zoom = AppState.plot_zoom[plotId];
+            if (zoom) {
+                layout.xaxis.range = zoom.xaxis.range;
+                layout.yaxis.range = zoom.yaxis.range;
+            }
+
+            // CT threshold line for amplification plots
+            if (opts.ctThreshold != null && !isNaN(opts.ctThreshold)) {
+                layout.shapes.push({
+                    type: 'line',
+                    x0: 0, x1: 1, xref: 'paper',
+                    y0: opts.ctThreshold, y1: opts.ctThreshold, yref: 'y',
+                    line: { color: '#ef4444', width: 1.5, dash: 'dash' },
+                });
+            }
+
+            return layout;
         }
 
         function drawAllPlots() {
             const { melt, amp, ct, ids } = getFilteredData();
-            
             drawLegend(ids);
 
-            const trace_map = (data, x_col, y_col) => {
-                const traces = {};
-                data.forEach(row => {
-                    if (!traces[row.ID]) {
-                        traces[row.ID] = {
-                            x: [], y: [], mode: 'lines', type: 'scatter', name: row.ID,
-                            text: [], hoverinfo: 'text',
-                            line: { color: AppState.id_color_palette[row.ID] },
-                        };
-                    }
-                    traces[row.ID].x.push(row[x_col]);
-                    traces[row.ID].y.push(row[y_col]);
-                    traces[row.ID].text.push(row.hover_text);
-                });
-                return Object.values(traces);
-            };
+            const logY = document.getElementById('log-scale-y').checked;
+            const ctThreshVal = parseFloat(document.getElementById('ct-threshold').value);
+            const ctThreshold = isNaN(ctThreshVal) ? null : ctThreshVal;
 
-            const plot_layout = (xtitle, ytitle) => ({
-                xaxis: { title: xtitle },
-                yaxis: { title: ytitle },
-                margin: { l: 60, r: 20, b: 50, t: 20 }, // Adjusted top margin for header
-                showlegend: false,
-                hovermode: 'closest'
+            // --- Fluorescence ---
+            const fluorTraces = buildTraces(melt, 'Temperature', 'Fluorescence');
+            const fluorLayout = buildLayout('Temperature (\u00b0C)', 'Fluorescence', 'fluorescence_plot');
+
+            // --- Derivative ---
+            const derivTraces = buildTraces(melt, 'Temperature', 'Derivative');
+            const derivLayout = buildLayout('Temperature (\u00b0C)', 'Derivative (-dF/dT)', 'derivative_plot');
+
+            // --- Rn ---
+            const rnTraces = buildTraces(amp, 'Cycle', 'Rn');
+            const rnMarkers = buildCtMarkers(ct, 'Rn');
+            rnTraces.push(...rnMarkers);
+            const rnLayout = buildLayout('Cycle', 'Rn (Normalized Reporter)', 'rn_plot', { logY, ctThreshold });
+
+            // --- Delta Rn ---
+            const drnTraces = buildTraces(amp, 'Cycle', 'DeltaRn');
+            const drnMarkers = buildCtMarkers(ct, 'DeltaRn');
+            drnTraces.push(...drnMarkers);
+            const drnLayout = buildLayout('Cycle', 'Delta Rn', 'delta_rn_plot', { logY, ctThreshold });
+
+            // Use Plotly.react for flicker-free updates (newPlot on first render)
+            const plotFn = AppState.plotsInitialized ? Plotly.react : Plotly.newPlot;
+
+            Promise.all([
+                plotFn('fluorescence_plot', fluorTraces, fluorLayout, PLOT_CONFIG),
+                plotFn('derivative_plot', derivTraces, derivLayout, PLOT_CONFIG),
+                plotFn('rn_plot', rnTraces, rnLayout, PLOT_CONFIG),
+                plotFn('delta_rn_plot', drnTraces, drnLayout, PLOT_CONFIG),
+            ]).then(() => {
+                if (!AppState.plotsInitialized) {
+                    attachZoomHandlers();
+                    AppState.plotsInitialized = true;
+                }
             });
-
-            // Fluorescence Plot
-            const fluor_traces = trace_map(melt, 'Temperature', 'Fluorescence');
-            const fluor_layout = plot_layout('Temperature (°C)', 'Fluorescence');
-            if(AppState.plot_zoom.fluorescence_plot) {
-                fluor_layout.xaxis.range = AppState.plot_zoom.fluorescence_plot.xaxis.range;
-                fluor_layout.yaxis.range = AppState.plot_zoom.fluorescence_plot.yaxis.range;
-            }
-            Plotly.newPlot('fluorescence_plot', fluor_traces, fluor_layout, {responsive: true});
-
-            // Derivative Plot
-            const deriv_traces = trace_map(melt, 'Temperature', 'Derivative');
-            const deriv_layout = plot_layout('Temperature (°C)', 'Derivative (-dF/dT)');
-            if(AppState.plot_zoom.derivative_plot) {
-                deriv_layout.xaxis.range = AppState.plot_zoom.derivative_plot.xaxis.range;
-                deriv_layout.yaxis.range = AppState.plot_zoom.derivative_plot.yaxis.range;
-            }
-            Plotly.newPlot('derivative_plot', deriv_traces, deriv_layout, {responsive: true});
-
-            // Rn Plot
-            let rn_traces = trace_map(amp, 'Cycle', 'Rn');
-            const rn_markers = {
-                x: ct.map(r => r.CT), y: ct.map(r => r.Rn),
-                mode: 'markers', type: 'scatter',
-                text: ct.map(r => r.hover_text), hoverinfo: 'text',
-                marker: {
-                    symbol: 'diamond', size: 8, color: ct.map(r => AppState.id_color_palette[r.ID]),
-                    line: { color: 'black', width: 1 }
-                },
-            };
-            rn_traces.push(rn_markers);
-            const rn_layout = plot_layout('Cycle', 'Rn (Normalized Reporter)');
-            if(AppState.plot_zoom.rn_plot) {
-                rn_layout.xaxis.range = AppState.plot_zoom.rn_plot.xaxis.range;
-                rn_layout.yaxis.range = AppState.plot_zoom.rn_plot.yaxis.range;
-            }
-            Plotly.newPlot('rn_plot', rn_traces, rn_layout, {responsive: true});
-
-            // Delta Rn Plot
-            let delta_rn_traces = trace_map(amp, 'Cycle', 'DeltaRn');
-            const delta_rn_markers = {
-                x: ct.map(r => r.CT), y: ct.map(r => r.DeltaRn),
-                mode: 'markers', type: 'scatter',
-                text: ct.map(r => r.hover_text), hoverinfo: 'text',
-                marker: {
-                    symbol: 'diamond', size: 8, color: ct.map(r => AppState.id_color_palette[r.ID]),
-                    line: { color: 'black', width: 1 }
-                },
-            };
-            delta_rn_traces.push(delta_rn_markers);
-            const delta_rn_layout = plot_layout('Cycle', 'Delta Rn');
-            if(AppState.plot_zoom.delta_rn_plot) {
-                delta_rn_layout.xaxis.range = AppState.plot_zoom.delta_rn_plot.xaxis.range;
-                delta_rn_layout.yaxis.range = AppState.plot_zoom.delta_rn_plot.yaxis.range;
-            }
-            Plotly.newPlot('delta_rn_plot', delta_rn_traces, delta_rn_layout, {responsive: true});
-            
-            attachZoomHandlers();
         }
-        
+
         function attachZoomHandlers() {
-            const plotIds = ['fluorescence_plot', 'derivative_plot', 'rn_plot', 'delta_rn_plot'];
-            plotIds.forEach(id => {
-                document.getElementById(id).on('plotly_relayout', (eventData) => {
-                    if (eventData['xaxis.autorange']) {
-                        AppState.plot_zoom[id] = null; // Reset on double-click
-                    } else if (eventData['xaxis.range[0]']) {
-                        AppState.plot_zoom[id] = { // Store manual zoom
+            PLOT_IDS.forEach(id => {
+                const el = document.getElementById(id);
+                el.on('plotly_relayout', (eventData) => {
+                    if (eventData['xaxis.autorange'] || eventData['yaxis.autorange']) {
+                        delete AppState.plot_zoom[id];
+                    } else if (eventData['xaxis.range[0]'] !== undefined) {
+                        AppState.plot_zoom[id] = {
                             xaxis: { range: [eventData['xaxis.range[0]'], eventData['xaxis.range[1]']] },
                             yaxis: { range: [eventData['yaxis.range[0]'], eventData['yaxis.range[1]']] }
                         };
@@ -528,6 +935,23 @@
             });
         }
 
+        // ===== Export =====
+        function exportAllPlots(format) {
+            const opts = { format, width: 1200, height: 800 };
+            PLOT_IDS.forEach(id => {
+                const el = document.getElementById(id);
+                if (el && el.data) {
+                    Plotly.downloadImage(el, { ...opts, filename: id });
+                }
+            });
+        }
+
+        // ===== Window resize handler =====
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(resizeAllPlots, 150);
+        });
     </script>
 </body>
 </html>
