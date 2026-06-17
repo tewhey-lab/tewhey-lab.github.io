@@ -486,7 +486,7 @@ function ResourcesPage({ treatment }) {
     items: [
     {
       title: "qPCR Viewer",
-      body: "Browser-based viewer for inspecting qPCR runs interactively.",
+      body: "Browser-based viewer for inspecting qPCR runs from Thermo QuantStudios.",
       links: [{ label: "Open tool", icon: "tool", href: "https://tewheylab.org/tools/qPCR_viewer.html" }]
     },
     {
