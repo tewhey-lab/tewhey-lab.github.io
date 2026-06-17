@@ -50,6 +50,16 @@ function App() {
       history.replaceState(null, "", "#" + route);
     }
     window.scrollTo({ top: 0, behavior: "instant" });
+    // Google Analytics — manual page_view per SPA route (auto page_view is
+    // disabled in index.html so each hash-routed tab is counted separately).
+    if (typeof window.gtag === "function") {
+      const title = route.charAt(0).toUpperCase() + route.slice(1);
+      window.gtag("event", "page_view", {
+        page_title: "The Tewhey Lab — " + title,
+        page_location: window.location.href,
+        page_path: "/#" + route,
+      });
+    }
   }, [route]);
 
   useEffectA(() => {

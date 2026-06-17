@@ -427,6 +427,20 @@ const RES_ICONS = {
 
 };
 
+// Fire a GA4 custom event when a resource link is clicked, so individual
+// protocols/code/tools can be tracked. Visible in GA4 Realtime/DebugView and
+// (after registering the params as custom dimensions) in Explorations.
+function trackResourceClick(section, resource, label, href) {
+  if (typeof window.gtag === "function") {
+    window.gtag("event", "resource_click", {
+      section: section,
+      resource: resource,
+      link_label: label,
+      link_url: href,
+    });
+  }
+}
+
 function ResourcesPage({ treatment }) {
   const banner = window.LAB_DATA.BANNERS.resources;
 
@@ -511,7 +525,8 @@ function ResourcesPage({ treatment }) {
                     <p>{it.body}</p>
                     <div className="res-links">
                       {it.links.map((l, j) =>
-                  <a key={j} href={l.href} target="_blank" rel="noopener">
+                  <a key={j} href={l.href} target="_blank" rel="noopener"
+                     onClick={() => trackResourceClick(sec.title, it.title, l.label, l.href)}>
                           {l.icon && <span className="res-link-icon">{RES_ICONS[l.icon]}</span>}
                           {l.label}
                         </a>

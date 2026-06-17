@@ -7,6 +7,18 @@
   <meta name="description" content="The Tewhey Lab develops and applies high-throughput functional genomics approaches to understand the genetic basis of human disease." />
   <meta name="theme-color" content="#1f4f63" />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1YX798ZXV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // send_page_view disabled — the SPA sends a page_view manually on each
+    // route change (see app.jsx) so hash-routed tabs are counted individually.
+    gtag('config', 'G-F1YX798ZXV', { send_page_view: false });
+  </script>
+
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
