@@ -495,6 +495,13 @@ function ResourcesPage({ treatment }) {
       links: [
       { label: "GitHub", icon: "github", href: "https://github.com/tewhey-lab/scripts-and-tools/tree/main/google_workspace_tools/QuoteFinder" },
       { label: "PDF to JSON", icon: "tool", href: "https://tewheylab.org/tools/pdf_to_json.html" }]
+    },
+    {
+      title: "ONT Alignment Tools",
+      body: "Code for vector checks and assessment of oligo insertions from ONT sequencing.",
+      links: [
+      { label: "GitHub", icon: "github", href: "https://github.com/tewhey-lab/scripts-and-tools/tree/main/sequence-tools" },
+      { label: "Plasmid Aligner", icon: "tool", href: "https://tewheylab-plasmid-align.streamlit.app/" }]
     }]
 
   }];
