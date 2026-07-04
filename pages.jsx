@@ -465,12 +465,14 @@ function ResourcesPage({ treatment }) {
     {
       title: "MPRAmatch + MPRAcount",
       body: <><code>MPRAmatch</code> aligns sequenced oligos with the reference and pulls the barcodes associated with each sequence. <code>MPRAcount</code> takes the sequenced barcodes for each cell type tested and arranges a barcode-level count table.</>,
-      links: [{ label: "GitHub", icon: "github", href: "https://github.com/tewhey-lab/MPRA_oligo_barcode_pipeline" }]
+      links: [
+      { label: "MPRAmatch", icon: "github", href: "https://github.com/tewhey-lab/MPRASuite/tree/main/MPRAmatch" },
+      { label: "MPRAcount", icon: "github", href: "https://github.com/tewhey-lab/MPRASuite/tree/main/MPRAcount" }]
     },
     {
       title: "MPRAmodel",
       body: <>Performs an analysis of a barcode-level count table and uses DESeq to determine activity and allelic skew of variants in the dataset.</>,
-      links: [{ label: "GitHub", icon: "github", href: "https://github.com/tewhey-lab/MPRAmodel" }]
+      links: [{ label: "GitHub", icon: "github", href: "https://github.com/tewhey-lab/MPRASuite/tree/main/MPRAmodel" }]
     },
     {
       title: "SARS-CoV-2-Consensus",
