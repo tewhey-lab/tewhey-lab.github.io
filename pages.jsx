@@ -453,7 +453,7 @@ function ResourcesPage({ treatment }) {
     {
       title: "MPRA Protocol",
       body: "The Tewhey Lab MPRA wet-lab protocol used for ENCODE characterization.",
-      links: [{ label: "PDF", icon: "pdf", href: "https://github.com/tewhey-lab" }]
+      links: [{ label: "PDF", icon: "pdf", href: "https://tewheylab.org/static/pdf/ENCODE_MPRA_Protocol-Tewhey_Lab.pdf" }]
     }]
 
   },
