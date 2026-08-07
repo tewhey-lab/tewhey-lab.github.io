@@ -591,6 +591,53 @@ a:hover { text-decoration: underline; }
 .res-link-icon { display: inline-flex; }
 .res-link-icon svg { width: 16px; height: 16px; display: block; }
 
+/* Version tag on the current release */
+.res h3 .res-version {
+  font-family: var(--mono); font-size: 11px; font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--ink-3); margin-left: 10px; vertical-align: middle;
+}
+
+/* Prior-versions disclosure — sits in the .res-links row, styled to match
+   the link buttons but toggles the list below instead of navigating. */
+.res .res-links .res-archive-toggle {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--sans); font-size: 13.5px; font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--ink-3);
+  padding: 8px 14px;
+  border: 1px dashed var(--rule-strong);
+  border-radius: var(--r-card);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color .15s ease, color .15s ease, background .15s ease;
+}
+.res .res-links .res-archive-toggle:hover,
+.res .res-links .res-archive-toggle.open { color: var(--accent); border-color: var(--accent); background: color-mix(in oklch, var(--accent) 5%, transparent); }
+.res-archive-count {
+  font-family: var(--mono); font-size: 9.5px; padding: 1px 5px;
+  background: color-mix(in oklch, var(--ink) 8%, transparent);
+  border-radius: var(--r-pill);
+  letter-spacing: 0.04em;
+}
+.res-archive-caret { font-size: 9px; transition: transform .15s ease; }
+.res-archive-toggle.open .res-archive-caret { transform: rotate(180deg); }
+
+.res-archive-list { list-style: none; padding: 0; margin: 14px 0 0; border-top: 1px dashed var(--rule); max-width: 420px; }
+.res-archive-list li { border-bottom: 1px dashed var(--rule); }
+.res-archive-list li:last-child { border-bottom: 0; }
+.res-archive-list a {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 4px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: color .15s ease, background .15s ease;
+}
+.res-archive-list a:hover { color: var(--accent); background: color-mix(in oklch, var(--ink) 3%, transparent); }
+.res-archive-version { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.06em; }
+.res-archive-arrow { font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
+.res-archive-list a:hover .res-archive-arrow { color: var(--accent); }
+
 /* Gratitude / contact */
 .thank-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding: 16px 0; }
 .thank-col h3 { font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 18px; }

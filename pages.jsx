@@ -444,6 +444,10 @@ function trackResourceClick(section, resource, label, href) {
 function ResourcesPage({ treatment }) {
   const banner = window.LAB_DATA.BANNERS.resources;
 
+  // Which resource card has its version archive expanded, or null. One at a
+  // time, same as the News disclosure on the publications page.
+  const [openArchiveKey, setOpenArchiveKey] = useStateP(null);
+
   const SECTIONS = [
   {
     key: "protocols",
@@ -453,7 +457,16 @@ function ResourcesPage({ treatment }) {
     {
       title: "MPRA Protocol",
       body: "The Tewhey Lab MPRA wet-lab protocol used for ENCODE characterization.",
-      links: [{ label: "PDF", icon: "pdf", href: "https://tewheylab.org/static/pdf/ENCODE_MPRA_Protocol-Tewhey_Lab.pdf" }]
+      version: "v01/2025",
+      links: [{ label: "PDF", icon: "pdf", href: "https://tewheylab.org/static/pdf/ENCODE_MPRA_Protocol-Tewhey_Lab.pdf" }],
+      // Superseded releases, newest first. The unversioned path above always
+      // serves the current release, so on a new version: copy the outgoing
+      // static/pdf/ENCODE_MPRA_Protocol-Tewhey_Lab.pdf to static/pdf/archive/
+      // under its dated name, add it to the top of this list, then bump
+      // `version` above.
+      archive: [
+      { version: "v06/2021", href: "https://tewheylab.org/static/pdf/archive/ENCODE_MPRA_Protocol-Tewhey_Lab_v06-2021.pdf" }]
+
     }]
 
   },
@@ -528,9 +541,16 @@ function ResourcesPage({ treatment }) {
                 <p style={{ fontSize: 14, color: "var(--ink-3)" }}>{sec.blurb}</p>
               </div>
               <div className="res-grid">
-                {sec.items.map((it, i) =>
-              <div key={i} className="res">
-                    <h3>{it.title}</h3>
+                {sec.items.map((it, i) => {
+              const archiveKey = `${sec.key}-${i}`;
+              const archiveOpen = openArchiveKey === archiveKey;
+              const hasArchive = it.archive && it.archive.length > 0;
+              return (
+                <div key={i} className="res">
+                    <h3>
+                      {it.title}
+                      {it.version && <span className="res-version">{it.version}</span>}
+                    </h3>
                     <p>{it.body}</p>
                     <div className="res-links">
                       {it.links.map((l, j) =>
@@ -540,9 +560,33 @@ function ResourcesPage({ treatment }) {
                           {l.label}
                         </a>
                   )}
+                      {hasArchive &&
+                    <button
+                      className={"res-archive-toggle" + (archiveOpen ? " open" : "")}
+                      aria-expanded={archiveOpen}
+                      onClick={() => setOpenArchiveKey(archiveOpen ? null : archiveKey)}>
+                          Archive
+                          <span className="res-archive-count">{it.archive.length}</span>
+                          <span className="res-archive-caret">▾</span>
+                        </button>
+                    }
                     </div>
-                  </div>
-              )}
+                    {hasArchive && archiveOpen &&
+                  <ul className="res-archive-list">
+                        {it.archive.map((v, j) =>
+                    <li key={j}>
+                            <a href={v.href} target="_blank" rel="noopener"
+                               onClick={() => trackResourceClick(sec.title, it.title, `Archive ${v.version}`, v.href)}>
+                              <span className="res-archive-version">{v.version}</span>
+                              <span className="res-archive-arrow">↗</span>
+                            </a>
+                          </li>
+                    )}
+                      </ul>
+                  }
+                  </div>);
+
+            })}
               </div>
             </div>
           </section>
